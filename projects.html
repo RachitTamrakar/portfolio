@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Rachit Tamrakar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Rachit Tamrakar</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html">About</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="page-header">
+            <h1>Projects</h1>
+            <p class="page-subtitle">A showcase of my technical work across embedded systems, robotics, and software engineering</p>
+        </section>
+
+        <div class="projects-grid">
+            <!-- Project 1: Rocket Engine Development (Most Recent) -->
+            <article class="project-card featured">
+                <div class="project-header">
+                    <h2>Liquid Rocket Engine Development & Testing</h2>
+                    <span class="project-tag">Propulsion</span>
+                    <span class="project-tag">Embedded Systems</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-images">
+                        <img src="images/portfolio-001.png" alt="TREL rocket launch" class="project-img">
+                        <img src="images/portfolio-004.png" alt="Rocket engine and control systems showcase" class="project-img">
+                        <img src="images/portfolio-011.png" alt="Propulsion control software interface" class="project-img">
+                    </div>
+                    <p class="project-description">
+                        Leading the design, manufacturing, and testing of a liquid bipropellant rocket engine for TREL's competition vehicle
+                        as Propulsion Design and Test Lead. Managing the complete development cycle from initial CAD design through hot-fire
+                        testing, while coordinating with cross-functional teams and implementing comprehensive safety protocols.
+                    </p>
+                    <h3>Key Accomplishments:</h3>
+                    <ul>
+                        <li><strong>Engine Design:</strong> Designed thrust chamber, injector, and feed system using SolidWorks and computational fluid dynamics analysis to optimize combustion efficiency and cooling</li>
+                        <li><strong>Test Infrastructure:</strong> Built automated test stand with 20+ sensors for pressure, temperature, thrust, and flow rate monitoring with real-time data acquisition</li>
+                        <li><strong>Data Acquisition:</strong> Developed custom DAQ system using STM32 microcontroller sampling at 1kHz across all channels for comprehensive test data</li>
+                        <li><strong>Safety Systems:</strong> Implemented redundant control systems with automatic shutdown sequences and emergency procedures, ensuring safe operation during high-risk testing</li>
+                        <li><strong>Analysis Tools:</strong> Created Python-based post-processing pipeline for performance analysis and visualization, enabling rapid design iteration</li>
+                        <li><strong>Automation:</strong> Programmed automated test sequences reducing manual operations and improving repeatability while minimizing human error</li>
+                        <li><strong>Team Leadership:</strong> Managing cross-functional team for propulsion system development, coordinating between design, manufacturing, and testing phases</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">SolidWorks, Python, C, STM32, LabVIEW, MATLAB, CNC Machining, Propulsion Theory, CFD Analysis</p>
+                    <h3>Impact:</h3>
+                    <p>Reduced test setup time by 40% through automation. Successfully conducted multiple hot-fire tests with comprehensive data collection enabling rapid iteration on engine design. Implemented safety protocols that have maintained perfect safety record across all testing operations.</p>
+                </div>
+            </article>
+
+            <!-- Project 2: Autopilot System -->
+            <article class="project-card featured">
+                <div class="project-header">
+                    <h2>Autopilot for Autonomous Combat Vehicles</h2>
+                    <span class="project-tag">Embedded Systems</span>
+                    <span class="project-tag">Robotics</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-images">
+                        <img src="images/portfolio-003.png" alt="Autonomous vehicle navigating outdoor terrain" class="project-img">
+                        <img src="images/portfolio-005.png" alt="Aerial view of autonomous vehicle path tracking" class="project-img">
+                        <img src="images/portfolio-006.png" alt="Autopilot control system electronics" class="project-img">
+                        <img src="images/portfolio-007.png" alt="Integrated control system enclosure" class="project-img">
+                    </div>
+                    <p class="project-description">
+                        Developed a comprehensive autonomous navigation system for combat vehicles competing in RoboMagellan competitions.
+                        The system integrates multiple sensors and implements advanced algorithms for real-time decision making in outdoor
+                        environments with dynamic obstacles and varying terrain conditions.
+                    </p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li><strong>Multi-Sensor Fusion:</strong> Integrated GPS, IMU, LiDAR, and camera data using Extended Kalman Filter for robust localization with sub-meter accuracy even with GPS dropout</li>
+                        <li><strong>Path Planning:</strong> Implemented A* and RRT algorithms for dynamic obstacle avoidance and optimal path generation in real-time</li>
+                        <li><strong>Computer Vision:</strong> Developed cone detection system using OpenCV and custom CNN achieving 95% detection accuracy at 30fps for navigation waypoints</li>
+                        <li><strong>Control Systems:</strong> Designed PID controllers for steering and throttle with adaptive tuning based on terrain conditions (grass, gravel, pavement)</li>
+                        <li><strong>Real-time Processing:</strong> Optimized C++ codebase to run on embedded ARM processor with <50ms loop time for all sensor processing and control</li>
+                        <li><strong>Safety Systems:</strong> Implemented failsafe mechanisms including emergency stop, GPS fence, and sensor validation for safe operation</li>
+                        <li><strong>System Integration:</strong> Designed and built complete electronics stack including power distribution, motor controllers, and sensor interfaces</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">C++, Python, ROS2, OpenCV, TensorFlow, ARM Cortex-M7, GPS, IMU, LiDAR, Raspberry Pi</p>
+                    <h3>Results:</h3>
+                    <p>Successfully navigated complex outdoor courses with 90% completion rate, handling varied terrain and dynamic obstacles. System processed sensor data and made navigation decisions in real-time with sub-100ms latency, demonstrating robust performance in challenging outdoor conditions.</p>
+                </div>
+            </article>
+
+            <!-- Project 3: Computer Vision for Autonomous Vehicles -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h2>Advanced Perception System for Autonomous Vehicles</h2>
+                    <span class="project-tag">Computer Vision</span>
+                    <span class="project-tag">Machine Learning</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-images">
+                        <img src="images/portfolio-015.png" alt="Real-time autonomous navigation visualization" class="project-img">
+                    </div>
+                    <p class="project-description">
+                        Developed computer vision algorithms for object detection, tracking, and scene understanding as part of the
+                        UT Autonomous Vehicle Team. Created robust perception systems that enable safe autonomous navigation through
+                        accurate environmental understanding and object tracking.
+                    </p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li><strong>Object Detection:</strong> Trained custom YOLOv8 model on road scene dataset achieving 92% mAP for cone detection and classification</li>
+                        <li><strong>Multi-Object Tracking:</strong> Implemented SORT algorithm for consistent object tracking across frames maintaining object identity</li>
+                        <li><strong>Lane Detection:</strong> Developed lane detection using Hough transforms and polynomial fitting for accurate path following</li>
+                        <li><strong>Sensor Fusion:</strong> Fused camera and LiDAR data for robust 3D object localization combining visual and depth information</li>
+                        <li><strong>Real-time Processing:</strong> Optimized inference pipeline to run at 30fps on embedded GPU for real-time operation</li>
+                        <li><strong>Dataset Creation:</strong> Collected and annotated 5000+ images for training custom models specific to competition environment</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">Python, TensorFlow, PyTorch, OpenCV, CUDA, ROS2, Camera Calibration, YOLO</p>
+                    <h3>Results:</h3>
+                    <p>Perception system enabled successful autonomous navigation in various lighting and weather conditions with reliable cone detection at distances up to 30 meters.</p>
+                </div>
+            </article>
+
+            <!-- Project 4: Autonomous Delivery Robot -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h2>Autonomous Campus Delivery Robot</h2>
+                    <span class="project-tag">Robotics</span>
+                    <span class="project-tag">Software</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Designed and built an autonomous delivery robot capable of navigating campus environments to deliver packages
+                        while avoiding pedestrians and obstacles. Integrated multiple sensors and algorithms to enable safe autonomous
+                        navigation in dynamic environments.
+                    </p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li><strong>SLAM Implementation:</strong> Implemented simultaneous localization and mapping using ROS navigation stack and LiDAR for accurate position tracking</li>
+                        <li><strong>Obstacle Avoidance:</strong> Real-time path re-planning using dynamic window approach for collision-free navigation</li>
+                        <li><strong>Object Detection:</strong> YOLOv5-based pedestrian and vehicle detection for safe operation in crowded campus areas</li>
+                        <li><strong>Web Interface:</strong> Developed Flask-based control panel for route planning and robot monitoring</li>
+                        <li><strong>Power Management:</strong> Designed custom battery management system with 6+ hours of autonomous operation</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">ROS/ROS2, Python, C++, Raspberry Pi, LiDAR, Camera, YOLOv5, Flask, GPS</p>
+                </div>
+            </article>
+
+            <!-- Project 5: Satellite Communication Emulator -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h2>Satellite Communication Emulator</h2>
+                    <span class="project-tag">Embedded Systems</span>
+                    <span class="project-tag">Communications</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Developed a satellite ground station communication emulator to test and validate communication protocols
+                        for small satellite missions. Implemented robust communication protocols with error detection and correction
+                        suitable for space applications.
+                    </p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li><strong>Protocol Implementation:</strong> Implemented UART-based communication protocol with error detection and correction for reliable data transfer</li>
+                        <li><strong>Command & Data Handling:</strong> Created packet structure for telecommands and telemetry with CRC validation</li>
+                        <li><strong>Signal Processing:</strong> Developed modulation/demodulation schemes for reliable data transmission in noisy environments</li>
+                        <li><strong>Testing Framework:</strong> Built comprehensive test suite for protocol validation and stress testing</li>
+                        <li><strong>Real-time Monitoring:</strong> Created GUI for real-time packet monitoring and system health visualization</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">C, Python, STM32, UART, Protocol Design, PyQt, Embedded Systems</p>
+                </div>
+            </article>
+
+            <!-- Project 6: Custom Programming Language -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h2>Custom Embedded Systems Programming Language</h2>
+                    <span class="project-tag">Software</span>
+                    <span class="project-tag">Compilers</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Created a domain-specific programming language optimized for embedded systems development with focus
+                        on safety and hardware abstraction. Implemented a full compiler toolchain from lexical analysis through
+                        code generation, resulting in more efficient code than traditional C implementations.
+                    </p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li><strong>Compiler Design:</strong> Implemented full compiler with lexer, parser, semantic analyzer, and code generator following traditional compiler architecture</li>
+                        <li><strong>Type System:</strong> Designed strong static type system with compile-time memory safety guarantees to prevent common embedded bugs</li>
+                        <li><strong>Hardware Abstraction:</strong> Created syntax for direct hardware register access with type safety, eliminating unsafe pointer operations</li>
+                        <li><strong>Optimization:</strong> Implemented optimization passes for minimal code size and execution time critical for embedded systems</li>
+                        <li><strong>Target Backend:</strong> Generated optimized ARM assembly code for STM32 microcontrollers</li>
+                        <li><strong>Standard Library:</strong> Developed standard library for common embedded operations (GPIO, timers, UART, SPI)</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">Python, C, ARM Assembly, Compiler Theory, Language Design, LLVM concepts</p>
+                    <h3>Results:</h3>
+                    <p>Successfully compiled and ran test programs on STM32 hardware with 20-30% reduction in code size compared to equivalent C code through aggressive optimization and dead code elimination.</p>
+                </div>
+            </article>
+
+            <!-- Project 7: Embedded Web Server -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h2>Embedded IoT Web Server</h2>
+                    <span class="project-tag">Embedded Systems</span>
+                    <span class="project-tag">IoT</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Built a lightweight web server on embedded microcontroller for IoT device control and monitoring.
+                        Implemented networking protocols from scratch to create a fully functional web-based control interface
+                        on resource-constrained hardware.
+                    </p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li><strong>HTTP Server:</strong> Implemented minimal HTTP/1.1 server in C with <10KB code footprint for constrained devices</li>
+                        <li><strong>RESTful API:</strong> Created JSON-based API for device control and sensor data access</li>
+                        <li><strong>WebSocket Support:</strong> Added WebSocket protocol for real-time bidirectional communication</li>
+                        <li><strong>Security:</strong> Implemented basic authentication and HTTPS support for secure communications</li>
+                        <li><strong>Web Interface:</strong> Developed responsive web UI for device configuration and monitoring</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">C, ESP32, HTTP, WebSocket, HTML/CSS/JavaScript, JSON, Networking</p>
+                </div>
+            </article>
+
+            <!-- Project 8: FPGA Signal Processing -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h2>FPGA-Based Signal Processing System</h2>
+                    <span class="project-tag">FPGA</span>
+                    <span class="project-tag">Digital Design</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Designed digital systems on FPGA for real-time signal processing applications with focus on parallelism and efficiency.
+                        Leveraged hardware-level parallelism to achieve performance impossible with traditional software implementations.
+                    </p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li><strong>Digital Filter Design:</strong> Implemented FIR and IIR filters in Verilog for real-time audio processing</li>
+                        <li><strong>Parallel Processing:</strong> Utilized FPGA parallelism for 100x speedup over equivalent software implementation</li>
+                        <li><strong>Interface Design:</strong> Created SPI and I2C controllers for sensor communication and data acquisition</li>
+                        <li><strong>Timing Analysis:</strong> Performed static timing analysis and constraint optimization to achieve 100MHz operation</li>
+                        <li><strong>Verification:</strong> Developed comprehensive testbenches for functional verification and edge case testing</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">Verilog, FPGA, Digital Signal Processing, Xilinx Vivado, ModelSim, Timing Analysis</p>
+                </div>
+            </article>
+
+            <!-- Project 9: Custom PCB Speaker -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h2>Custom PCB Speaker System</h2>
+                    <span class="project-tag">Hardware</span>
+                    <span class="project-tag">PCB Design</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Designed and manufactured a complete speaker system from scratch, including custom PCB amplifier,
+                        power supply, and acoustic enclosure. This project demonstrated expertise in analog circuit design,
+                        PCB layout, and audio engineering principles.
+                    </p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li><strong>Amplifier Design:</strong> Designed Class-D amplifier circuit with TI TPA3116D2 achieving 50W output with >90% efficiency</li>
+                        <li><strong>PCB Design:</strong> Created 4-layer PCB in KiCAD with careful impedance matching, ground plane design, and thermal management</li>
+                        <li><strong>Power Supply:</strong> Designed switching power supply with active PFC and low ripple for clean audio reproduction</li>
+                        <li><strong>Signal Processing:</strong> Implemented digital crossover and EQ using DSP for optimized frequency response</li>
+                        <li><strong>Enclosure Design:</strong> Modeled and built ported enclosure in SolidWorks optimized for driver Thiele-Small parameters</li>
+                        <li><strong>Testing & Validation:</strong> Performed frequency response analysis and THD measurements using oscilloscope and audio analyzer</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">KiCAD, SolidWorks, Circuit Analysis, Audio Engineering, Soldering, PCB Manufacturing</p>
+                    <h3>Results:</h3>
+                    <p>Achieved flat frequency response (±3dB 50Hz-20kHz) with <0.1% THD at typical listening levels. Total system cost under $100, demonstrating cost-effective design.</p>
+                </div>
+            </article>
+
+            <!-- Project 10: CNC Machine -->
+            <article class="project-card">
+                <div class="project-header">
+                    <h2>Custom Built CNC Machine</h2>
+                    <span class="project-tag">Hardware</span>
+                    <span class="project-tag">Embedded Systems</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">
+                        Designed and constructed a 3-axis CNC machine for precision machining of mechanical parts and PCBs.
+                        This hands-on project combined mechanical design, electronics, and embedded programming to create
+                        a functional manufacturing tool from scratch.
+                    </p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li><strong>Mechanical Design:</strong> Designed rigid frame with linear rails and ball screws for precision motion control</li>
+                        <li><strong>Motion Control:</strong> Implemented G-code interpreter on Arduino with stepper motor drivers for accurate 3-axis positioning</li>
+                        <li><strong>Electronics:</strong> Built custom controller board with isolated stepper drivers and limit switches for safety</li>
+                        <li><strong>Software:</strong> Developed toolpath generation software with CAM integration for converting designs to machine instructions</li>
+                        <li><strong>Precision:</strong> Achieved ±0.05mm repeatability through careful calibration and mechanical tuning</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">SolidWorks, Arduino, C++, Stepper Motors, G-code, CAM Software, Mechanical Design</p>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Rachit Tamrakar. All rights reserved.</p>
+    </footer>
+</body>
+</html>
