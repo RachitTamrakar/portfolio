@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Rachit Tamrakar</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="projects.js" defer></script>
 </head>
 <body>
     <nav class="navbar">
@@ -20,299 +21,445 @@
     <main class="container">
         <section class="page-header">
             <h1>Projects</h1>
-            <p class="page-subtitle">A showcase of my technical work across embedded systems, robotics, and software engineering</p>
+            <p class="page-subtitle">A showcase of my technical work across industrial automation, propulsion systems, robotics, and software engineering</p>
         </section>
 
+        <!-- Filter buttons for project categories -->
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="professional">Professional Work</button>
+            <button class="filter-btn" data-filter="rocketry">Rocketry & Propulsion</button>
+            <button class="filter-btn" data-filter="robotics">Robotics & AI</button>
+            <button class="filter-btn" data-filter="coursework">Academic Projects</button>
+        </div>
+
         <div class="projects-grid">
-            <!-- Project 1: Rocket Engine Development (Most Recent) -->
-            <article class="project-card featured">
-                <div class="project-header">
-                    <h2>Liquid Rocket Engine Development & Testing</h2>
-                    <span class="project-tag">Propulsion</span>
-                    <span class="project-tag">Embedded Systems</span>
-                </div>
-                <div class="project-content">
-                    <div class="project-images">
-                        <img src="images/portfolio-001.png" alt="TREL rocket launch" class="project-img">
-                        <img src="images/portfolio-004.png" alt="Rocket engine and control systems showcase" class="project-img">
-                        <img src="images/portfolio-011.png" alt="Propulsion control software interface" class="project-img">
-                    </div>
-                    <p class="project-description">
-                        Leading the design, manufacturing, and testing of a liquid bipropellant rocket engine for TREL's competition vehicle
-                        as Propulsion Design and Test Lead. Managing the complete development cycle from initial CAD design through hot-fire
-                        testing, while coordinating with cross-functional teams and implementing comprehensive safety protocols.
-                    </p>
-                    <h3>Key Accomplishments:</h3>
-                    <ul>
-                        <li><strong>Engine Design:</strong> Designed thrust chamber, injector, and feed system using SolidWorks and computational fluid dynamics analysis to optimize combustion efficiency and cooling</li>
-                        <li><strong>Test Infrastructure:</strong> Built automated test stand with 20+ sensors for pressure, temperature, thrust, and flow rate monitoring with real-time data acquisition</li>
-                        <li><strong>Data Acquisition:</strong> Developed custom DAQ system using STM32 microcontroller sampling at 1kHz across all channels for comprehensive test data</li>
-                        <li><strong>Safety Systems:</strong> Implemented redundant control systems with automatic shutdown sequences and emergency procedures, ensuring safe operation during high-risk testing</li>
-                        <li><strong>Analysis Tools:</strong> Created Python-based post-processing pipeline for performance analysis and visualization, enabling rapid design iteration</li>
-                        <li><strong>Automation:</strong> Programmed automated test sequences reducing manual operations and improving repeatability while minimizing human error</li>
-                        <li><strong>Team Leadership:</strong> Managing cross-functional team for propulsion system development, coordinating between design, manufacturing, and testing phases</li>
-                    </ul>
-                    <h3>Technical Stack:</h3>
-                    <p class="tech-stack">SolidWorks, Python, C, STM32, LabVIEW, MATLAB, CNC Machining, Propulsion Theory, CFD Analysis</p>
-                    <h3>Impact:</h3>
-                    <p>Reduced test setup time by 40% through automation. Successfully conducted multiple hot-fire tests with comprehensive data collection enabling rapid iteration on engine design. Implemented safety protocols that have maintained perfect safety record across all testing operations.</p>
-                </div>
-            </article>
 
-            <!-- Project 2: Autopilot System -->
-            <article class="project-card featured">
-                <div class="project-header">
-                    <h2>Autopilot for Autonomous Combat Vehicles</h2>
-                    <span class="project-tag">Embedded Systems</span>
-                    <span class="project-tag">Robotics</span>
-                </div>
-                <div class="project-content">
-                    <div class="project-images">
-                        <img src="images/portfolio-003.png" alt="Autonomous vehicle navigating outdoor terrain" class="project-img">
-                        <img src="images/portfolio-005.png" alt="Aerial view of autonomous vehicle path tracking" class="project-img">
-                        <img src="images/portfolio-006.png" alt="Autopilot control system electronics" class="project-img">
-                        <img src="images/portfolio-007.png" alt="Integrated control system enclosure" class="project-img">
-                    </div>
-                    <p class="project-description">
-                        Developed a comprehensive autonomous navigation system for combat vehicles competing in RoboMagellan competitions.
-                        The system integrates multiple sensors and implements advanced algorithms for real-time decision making in outdoor
-                        environments with dynamic obstacles and varying terrain conditions.
-                    </p>
-                    <h3>Key Features:</h3>
-                    <ul>
-                        <li><strong>Multi-Sensor Fusion:</strong> Integrated GPS, IMU, LiDAR, and camera data using Extended Kalman Filter for robust localization with sub-meter accuracy even with GPS dropout</li>
-                        <li><strong>Path Planning:</strong> Implemented A* and RRT algorithms for dynamic obstacle avoidance and optimal path generation in real-time</li>
-                        <li><strong>Computer Vision:</strong> Developed cone detection system using OpenCV and custom CNN achieving 95% detection accuracy at 30fps for navigation waypoints</li>
-                        <li><strong>Control Systems:</strong> Designed PID controllers for steering and throttle with adaptive tuning based on terrain conditions (grass, gravel, pavement)</li>
-                        <li><strong>Real-time Processing:</strong> Optimized C++ codebase to run on embedded ARM processor with <50ms loop time for all sensor processing and control</li>
-                        <li><strong>Safety Systems:</strong> Implemented failsafe mechanisms including emergency stop, GPS fence, and sensor validation for safe operation</li>
-                        <li><strong>System Integration:</strong> Designed and built complete electronics stack including power distribution, motor controllers, and sensor interfaces</li>
-                    </ul>
-                    <h3>Technical Stack:</h3>
-                    <p class="tech-stack">C++, Python, ROS2, OpenCV, TensorFlow, ARM Cortex-M7, GPS, IMU, LiDAR, Raspberry Pi</p>
-                    <h3>Results:</h3>
-                    <p>Successfully navigated complex outdoor courses with 90% completion rate, handling varied terrain and dynamic obstacles. System processed sensor data and made navigation decisions in real-time with sub-100ms latency, demonstrating robust performance in challenging outdoor conditions.</p>
-                </div>
-            </article>
+            <!-- PROFESSIONAL WORK PROJECTS -->
 
-            <!-- Project 3: Computer Vision for Autonomous Vehicles -->
-            <article class="project-card">
+            <!-- Project 1: Vision Inspection System -->
+            <article class="project-card featured" data-category="professional">
                 <div class="project-header">
-                    <h2>Advanced Perception System for Autonomous Vehicles</h2>
+                    <h2>Multi-Station Vision Inspection System</h2>
                     <span class="project-tag">Computer Vision</span>
-                    <span class="project-tag">Machine Learning</span>
+                    <span class="project-tag">C# / .NET</span>
+                    <span class="project-tag">Industrial Automation</span>
                 </div>
                 <div class="project-content">
                     <div class="project-images">
-                        <img src="images/portfolio-015.png" alt="Real-time autonomous navigation visualization" class="project-img">
+                        <img src="images/vision_system.png" alt="Vision inspection system interface" class="project-img">
                     </div>
+                    <p class="project-meta">Bosch Australia Manufacturing Solutions | March 2024 - Present | Team of 2</p>
                     <p class="project-description">
-                        Developed computer vision algorithms for object detection, tracking, and scene understanding as part of the
-                        UT Autonomous Vehicle Team. Created robust perception systems that enable safe autonomous navigation through
-                        accurate environmental understanding and object tracking.
+                        <strong>The Challenge:</strong> First-ever large-scale vision system for the department on an $8M biodegradable packaging line. 
+                        No templates or previous examples existed. Six inspection stations with 40+ cameras operating at ~0.6 second cycle time. 
+                        Had to learn C# from scratch while building the system.
                     </p>
-                    <h3>Key Features:</h3>
+                    <h3>What I Built:</h3>
                     <ul>
-                        <li><strong>Object Detection:</strong> Trained custom YOLOv8 model on road scene dataset achieving 92% mAP for cone detection and classification</li>
-                        <li><strong>Multi-Object Tracking:</strong> Implemented SORT algorithm for consistent object tracking across frames maintaining object identity</li>
-                        <li><strong>Lane Detection:</strong> Developed lane detection using Hough transforms and polynomial fitting for accurate path following</li>
-                        <li><strong>Sensor Fusion:</strong> Fused camera and LiDAR data for robust 3D object localization combining visual and depth information</li>
-                        <li><strong>Real-time Processing:</strong> Optimized inference pipeline to run at 30fps on embedded GPU for real-time operation</li>
-                        <li><strong>Dataset Creation:</strong> Collected and annotated 5000+ images for training custom models specific to competition environment</li>
+                        <li><strong>Unified C# Application:</strong> Single multithreaded WPF application managing all 6 stations with 4-12 cameras each, using config files for per-station differences</li>
+                        <li><strong>Real-Time PLC Integration:</strong> Designed handshake logic for ProfiNet communication with Siemens PLCs, wrote C# wrapper for Hilscher cifX fieldbus card</li>
+                        <li><strong>SQL Logging System:</strong> Implemented SQL Server Express across all stations for complete product traceability</li>
+                        <li><strong>Asynchronous Pipeline:</strong> Achieved sub-second inspection through carefully designed multithreaded architecture separating UI, PLC polling, and parallel image acquisition</li>
+                        <li><strong>Resilient Design:</strong> Added automatic reconnect logic for graceful recovery from camera and device failures</li>
+                    </ul>
+                    <h3>Technical Challenges Overcome:</h3>
+                    <ul>
+                        <li>Resolved race conditions requiring complete architecture redesign</li>
+                        <li>Network troubleshooting: configured NICs, managed DHCP, resolved packet collisions and dropped frames across high-bandwidth camera network</li>
+                        <li>Mid-project feature additions and performance refactoring to meet strict cycle time requirements</li>
+                        <li>Presented live demo to customer in workshop - nerve-wracking as intern on system central to their production line</li>
                     </ul>
                     <h3>Technical Stack:</h3>
-                    <p class="tech-stack">Python, TensorFlow, PyTorch, OpenCV, CUDA, ROS2, Camera Calibration, YOLO</p>
-                    <h3>Results:</h3>
-                    <p>Perception system enabled successful autonomous navigation in various lighting and weather conditions with reliable cone detection at distances up to 30 meters.</p>
+                    <p class="tech-stack">C#, .NET, WPF, HALCON, SQL Server, Siemens ProfiNet, Multithreading, Computer Vision, Network Configuration</p>
+                    <h3>Impact:</h3>
+                    <p>System successfully deployed to production and running reliably. Architecture became department blueprint for future vision systems, with my classes and design patterns reused by other engineers, saving significant development time.</p>
                 </div>
             </article>
 
-            <!-- Project 4: Autonomous Delivery Robot -->
-            <article class="project-card">
+            <!-- Project 2: YOLO Object Detection -->
+            <article class="project-card" data-category="professional">
                 <div class="project-header">
-                    <h2>Autonomous Campus Delivery Robot</h2>
-                    <span class="project-tag">Robotics</span>
-                    <span class="project-tag">Software</span>
+                    <h2>Real-Time YOLO Object Detection System</h2>
+                    <span class="project-tag">Machine Learning</span>
+                    <span class="project-tag">Computer Vision</span>
                 </div>
                 <div class="project-content">
+                    <div class="project-images">
+                        <img src="images/water_bottle_bbox.png" alt="YOLO object detection with bounding boxes" class="project-img">
+                    </div>
+                    <p class="project-meta">Bosch Australia Manufacturing Solutions | 2024</p>
                     <p class="project-description">
-                        Designed and built an autonomous delivery robot capable of navigating campus environments to deliver packages
-                        while avoiding pedestrians and obstacles. Integrated multiple sensors and algorithms to enable safe autonomous
-                        navigation in dynamic environments.
+                        Created real-time object detection pipeline for accurate product positioning on live manufacturing line with surgical-grade quality requirements.
                     </p>
-                    <h3>Key Features:</h3>
+                    <h3>What I Built:</h3>
                     <ul>
-                        <li><strong>SLAM Implementation:</strong> Implemented simultaneous localization and mapping using ROS navigation stack and LiDAR for accurate position tracking</li>
-                        <li><strong>Obstacle Avoidance:</strong> Real-time path re-planning using dynamic window approach for collision-free navigation</li>
-                        <li><strong>Object Detection:</strong> YOLOv5-based pedestrian and vehicle detection for safe operation in crowded campus areas</li>
-                        <li><strong>Web Interface:</strong> Developed Flask-based control panel for route planning and robot monitoring</li>
-                        <li><strong>Power Management:</strong> Designed custom battery management system with 6+ hours of autonomous operation</li>
+                        <li><strong>Dataset Automation:</strong> Built complete pipeline for image collection, automated labeling, and model training workflow</li>
+                        <li><strong>Optimized YOLO Model:</strong> Trained compact model using transfer learning on small backbone, improving inference time by 1.5× while maintaining accuracy</li>
+                        <li><strong>Real-Time Performance:</strong> Met strict speed requirements for production line cycle times</li>
                     </ul>
                     <h3>Technical Stack:</h3>
-                    <p class="tech-stack">ROS/ROS2, Python, C++, Raspberry Pi, LiDAR, Camera, YOLOv5, Flask, GPS</p>
+                    <p class="tech-stack">Python, YOLO, PyTorch, OpenCV, Transfer Learning, Data Pipeline Automation</p>
+                    <h3>Impact:</h3>
+                    <p>Achieved real-time, reliable detection and cut model development time by 2× through automated training pipeline.</p>
                 </div>
             </article>
 
-            <!-- Project 5: Satellite Communication Emulator -->
-            <article class="project-card">
+            <!-- Project 3: Digital Twin Simulation -->
+            <article class="project-card" data-category="professional">
                 <div class="project-header">
-                    <h2>Satellite Communication Emulator</h2>
+                    <h2>Digital Twin for Robotic Palletizer</h2>
+                    <span class="project-tag">Simulation</span>
+                    <span class="project-tag">Automation</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-meta">Bosch Australia Manufacturing Solutions | Team of 3</p>
+                    <p class="project-description">
+                        Developed physics-based digital twin to test new robotic palletizer features without halting production, enabling Software-in-the-Loop virtual commissioning.
+                    </p>
+                    <h3>What I Built:</h3>
+                    <ul>
+                        <li><strong>High-Fidelity Simulation:</strong> Built complex NX Mechatronics Concept Designer models with thousands of dynamic components and I/O points</li>
+                        <li><strong>Automation Tools:</strong> Created Python and Excel scripts to automate simulation configuration and setup, reducing preparation time by 2×</li>
+                        <li><strong>Virtual Commissioning:</strong> Enabled complete PLC software testing before physical installation</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">Siemens NX Mechatronics Concept Designer, Python, Excel VBA, Digital Twin Technology</p>
+                    <h3>Impact:</h3>
+                    <p>Reduced development time by ~50% by allowing software validation without physical hardware.</p>
+                </div>
+            </article>
+
+            <!-- Project 4: Image Stitching Algorithm -->
+            <article class="project-card" data-category="professional">
+                <div class="project-header">
+                    <h2>Novel Image Stitching Algorithm</h2>
+                    <span class="project-tag">Computer Vision</span>
+                    <span class="project-tag">Algorithm Development</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-meta">Bosch Australia Manufacturing Solutions | 2024</p>
+                    <p class="project-description">
+                        Engineered proprietary image stitching solution to replace commercial software, delivering significant cost savings and performance improvements tailored to manufacturing requirements.
+                    </p>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">C#, Computer Vision, Image Processing Algorithms</p>
+                    <h3>Impact:</h3>
+                    <p>Eliminated commercial licensing costs while improving performance for specific manufacturing use case.</p>
+                </div>
+            </article>
+
+            <!-- ROCKETRY & PROPULSION PROJECTS -->
+
+            <!-- Project 5: Solaris Mk II - Main Project -->
+            <article class="project-card featured" data-category="rocketry">
+                <div class="project-header">
+                    <h2>Solaris Mk II Hybrid Engine & Ground Station Electronics</h2>
+                    <span class="project-tag">Propulsion Systems</span>
                     <span class="project-tag">Embedded Systems</span>
-                    <span class="project-tag">Communications</span>
+                    <span class="project-tag">Award Winner</span>
                 </div>
                 <div class="project-content">
+                    <div class="project-images">
+                        <img src="images/zenith_launch.png" alt="Zenith rocket launch" class="project-img">
+                        <img src="images/solaris_showcase.png" alt="Solaris Mk II engine" class="project-img">
+                        <img src="images/front_end_main_screen.png" alt="Ground station control interface" class="project-img">
+                        <img src="images/pad_enclosure_iter_1.png" alt="Ground station enclosure iteration 1" class="project-img">
+                        <img src="images/pad_enclosure_iter_2.png" alt="Ground station enclosure iteration 2" class="project-img">
+                        <img src="images/pad_enclosure_iter_3.png" alt="Ground station enclosure iteration 3" class="project-img">
+                        <img src="images/ugs_simplified_diagram.png" alt="Ground station system architecture" class="project-img">
+                    </div>
+                    <div class="project-videos">
+                        <h3>Project Videos:</h3>
+                        <div class="video-grid">
+                            <div class="video-item">
+                                <p><strong>Hot-Fire Test</strong></p>
+                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/98cL1cdTau0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-item">
+                                <p><strong>IREC 2025 Launch - Project Zenith</strong></p>
+                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/duVOAWQd4xQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="project-meta">Monash High Powered Rocketry | Team of 5 | August 2023 - June 2025</p>
                     <p class="project-description">
-                        Developed a satellite ground station communication emulator to test and validate communication protocols
-                        for small satellite missions. Implemented robust communication protocols with error detection and correction
-                        suitable for space applications.
+                        <strong>Achievement:</strong> Contributed to winning Jim Furfaro Technical Excellence Award (out of 140+ teams) and 2nd place in category at IREC 2025. 
+                        Developed electronics and software for 4 kN N₂O/paraffin hybrid engine flown on Project Zenith to 12,000 feet.
                     </p>
-                    <h3>Key Features:</h3>
+                    <h3>Personal Ownership - Ground Station Electronics:</h3>
                     <ul>
-                        <li><strong>Protocol Implementation:</strong> Implemented UART-based communication protocol with error detection and correction for reliable data transfer</li>
-                        <li><strong>Command & Data Handling:</strong> Created packet structure for telecommands and telemetry with CRC validation</li>
-                        <li><strong>Signal Processing:</strong> Developed modulation/demodulation schemes for reliable data transmission in noisy environments</li>
-                        <li><strong>Testing Framework:</strong> Built comprehensive test suite for protocol validation and stress testing</li>
-                        <li><strong>Real-time Monitoring:</strong> Created GUI for real-time packet monitoring and system health visualization</li>
+                        <li><strong>Three Design Iterations:</strong> Designed, built, and refined successive hardware versions for fueling, ignition, and 100 kHz data logging based on test results</li>
+                        <li><strong>Electrical Cabinet Design:</strong> Designed and constructed complete DIN rail system housing power supplies, networking, Raspberry Pi, LabJack DAQ, motor drivers, and relays</li>
+                        <li><strong>Cable Fabrication:</strong> Manufactured custom cable assemblies and connectors for actuators, sensors, and communication lines designed for vibration and condensation</li>
+                        <li><strong>Distributed Control System:</strong> Integrated LabJack DAQs (Ethernet), STM32 microcontrollers, and Raspberry Pi using RS422, CAN, and MQTT protocols</li>
+                        <li><strong>Software Architecture:</strong> Developed multithreaded Python backend with state machines for fill, ignition, and abort sequences</li>
+                        <li><strong>SCADA Interface:</strong> Created Ignition SCADA interface for real-time monitoring, telemetry, and safety interlocks</li>
+                        <li><strong>Data Acquisition:</strong> Monitored and controlled 20+ signals across engine and ground station with MQTT database logging and high-rate local telemetry</li>
+                    </ul>
+                    <h3>IREC 2025 Competition Experience:</h3>
+                    <ul>
+                        <li>Co-presented control and telemetry architecture at podium session - directly contributed to Jim Furfaro Award</li>
+                        <li>Set up launch pad and engine systems under tight time constraints</li>
+                        <li>Crisis management: When propellant sensor failed night before launch, stayed up debugging with propulsion lead until successful resolution</li>
+                        <li>Operated control station during hot-fire and cold-flow testing, debugging anomalies under pressure</li>
                     </ul>
                     <h3>Technical Stack:</h3>
-                    <p class="tech-stack">C, Python, STM32, UART, Protocol Design, PyQt, Embedded Systems</p>
+                    <p class="tech-stack">Python, C, RS422, CAN, MQTT, LabJack, STM32, Raspberry Pi, Ignition SCADA, SolidWorks, Creo, DIN Rail Systems, Cable Fabrication</p>
                 </div>
             </article>
 
-            <!-- Project 6: Custom Programming Language -->
-            <article class="project-card">
+            <!-- Project 6: Capacitive Propellant Sensor -->
+            <article class="project-card" data-category="rocketry">
                 <div class="project-header">
-                    <h2>Custom Embedded Systems Programming Language</h2>
-                    <span class="project-tag">Software</span>
-                    <span class="project-tag">Compilers</span>
+                    <h2>Capacitive N₂O Propellant Level Sensor</h2>
+                    <span class="project-tag">Sensor Development</span>
+                    <span class="project-tag">Embedded Firmware</span>
                 </div>
                 <div class="project-content">
+                    <div class="project-images">
+                        <img src="images/cap_fill_assembled.png" alt="Capacitive propellant sensor assembly" class="project-img">
+                        <img src="images/cap_fill_cal_plot.png" alt="Sensor calibration plot" class="project-img">
+                    </div>
+                    <p class="project-meta">Monash High Powered Rocketry | Team Lead of 4</p>
                     <p class="project-description">
-                        Created a domain-specific programming language optimized for embedded systems development with focus
-                        on safety and hardware abstraction. Implemented a full compiler toolchain from lexical analysis through
-                        code generation, resulting in more efficient code than traditional C implementations.
+                        Led development of novel capacitive sensor for accurate in-tank N₂O mass measurement, improving safety and precision in propellant monitoring.
                     </p>
-                    <h3>Key Features:</h3>
+                    <h3>What I Built:</h3>
                     <ul>
-                        <li><strong>Compiler Design:</strong> Implemented full compiler with lexer, parser, semantic analyzer, and code generator following traditional compiler architecture</li>
-                        <li><strong>Type System:</strong> Designed strong static type system with compile-time memory safety guarantees to prevent common embedded bugs</li>
-                        <li><strong>Hardware Abstraction:</strong> Created syntax for direct hardware register access with type safety, eliminating unsafe pointer operations</li>
-                        <li><strong>Optimization:</strong> Implemented optimization passes for minimal code size and execution time critical for embedded systems</li>
-                        <li><strong>Target Backend:</strong> Generated optimized ARM assembly code for STM32 microcontrollers</li>
-                        <li><strong>Standard Library:</strong> Developed standard library for common embedded operations (GPIO, timers, UART, SPI)</li>
+                        <li><strong>Custom Sensing Probe:</strong> Designed mechanical sensor element using CAD for optimal capacitance measurement</li>
+                        <li><strong>STM32 Firmware:</strong> Wrote C firmware for capacitance measurement and signal processing</li>
+                        <li><strong>Calibration Methodology:</strong> Developed regression-based calibration achieving ±10-20g accuracy</li>
+                        <li><strong>Noise Mitigation:</strong> Resolved electrical noise and stability issues through shielding design and probe refinements</li>
+                        <li><strong>System Integration:</strong> Integrated sensor into automated fill sequence for Solaris Mk II</li>
                     </ul>
                     <h3>Technical Stack:</h3>
-                    <p class="tech-stack">Python, C, ARM Assembly, Compiler Theory, Language Design, LLVM concepts</p>
-                    <h3>Results:</h3>
-                    <p>Successfully compiled and ran test programs on STM32 hardware with 20-30% reduction in code size compared to equivalent C code through aggressive optimization and dead code elimination.</p>
+                    <p class="tech-stack">STM32, C Firmware, Capacitive Sensing, Sensor Calibration, CAD, Oscilloscope Debugging</p>
+                    <h3>Impact:</h3>
+                    <p>Improved fueling safety and enabled accurate propellant mass tracking for performance calculations.</p>
                 </div>
             </article>
 
-            <!-- Project 7: Embedded Web Server -->
-            <article class="project-card">
+            <!-- Project 7: High Voltage Ignitor -->
+            <article class="project-card" data-category="rocketry">
                 <div class="project-header">
-                    <h2>Embedded IoT Web Server</h2>
+                    <h2>Arc-Pyro High Voltage Ignitor (14 kV)</h2>
+                    <span class="project-tag">High Voltage Design</span>
+                    <span class="project-tag">Safety Systems</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-images">
+                        <img src="images/arc_pyro_bench.png" alt="High voltage arc pyro test bench" class="project-img">
+                    </div>
+                    <div class="project-video">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/3deML3HB_xQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="project-meta">Monash High Powered Rocketry</p>
+                    <p class="project-description">
+                        Developed novel 14 kV ignition system designed to pyrolyze 3D printed ABS puck for hybrid engine ignition, with comprehensive safety systems.
+                    </p>
+                    <h3>Key Features:</h3>
+                    <ul>
+                        <li><strong>High Voltage System:</strong> 14 kV power supply and arc generation for ABS pyrolysis</li>
+                        <li><strong>Multiple Safety Interlocks:</strong> Cabinet limit switches, isolation switches, and remote arming mechanisms</li>
+                        <li><strong>Test Success:</strong> Demonstrated stable arc formation and gas generation</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">High Voltage Design, Electrical Safety, CAD, Metal Fabrication, Power Electronics</p>
+                </div>
+            </article>
+
+            <!-- Project 8: Hobby Fill Station -->
+            <article class="project-card" data-category="rocketry">
+                <div class="project-header">
+                    <h2>Hobby-Grade Hybrid Engine Fill Station</h2>
+                    <span class="project-tag">Fluid Systems</span>
+                    <span class="project-tag">Wireless Control</span>
+                </div>
+                <div class="project-content">
+                    <div class="project-images">
+                        <img src="images/hobby_fill_station.png" alt="Hobby-grade fill station assembly" class="project-img">
+                    </div>
+                    <p class="project-meta">Monash High Powered Rocketry | Team of 5 | University Course: Design Methods</p>
+                    <p class="project-description">
+                        Designed low-cost N₂O fill station for small hybrid engines with LoRa wireless control for remote valve operation and pressure monitoring.
+                    </p>
+                    <h3>My Contributions:</h3>
+                    <ul>
+                        <li>Primary responsibility for fluid system design and safety</li>
+                        <li>Electronics integration and LoRa communication system</li>
+                        <li>Valve control and pressure monitoring implementation</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">Arduino, LoRa, Fluid System Design, CAD, Python, C Programming</p>
+                </div>
+            </article>
+
+            <!-- Project 9: Arduino Flight Logger -->
+            <article class="project-card" data-category="rocketry">
+                <div class="project-header">
+                    <h2>Flight Data Logger for Chameleon Rocket</h2>
                     <span class="project-tag">Embedded Systems</span>
-                    <span class="project-tag">IoT</span>
+                    <span class="project-tag">Data Acquisition</span>
                 </div>
                 <div class="project-content">
+                    <div class="project-images">
+                        <img src="images/l1_datalogger.png" alt="Arduino flight data logger board" class="project-img">
+                        <img src="images/chamelion_launch.png" alt="Chameleon rocket launch" class="project-img">
+                    </div>
+                    <p class="project-meta">Monash High Powered Rocketry | Independent Project</p>
                     <p class="project-description">
-                        Built a lightweight web server on embedded microcontroller for IoT device control and monitoring.
-                        Implemented networking protocols from scratch to create a fully functional web-based control interface
-                        on resource-constrained hardware.
+                        Independently designed and programmed Arduino-based flight data logger capturing acceleration and altitude at 1 kHz. 
+                        Successfully flown on Chameleon rocket to 1,200 ft altitude.
                     </p>
                     <h3>Key Features:</h3>
                     <ul>
-                        <li><strong>HTTP Server:</strong> Implemented minimal HTTP/1.1 server in C with <10KB code footprint for constrained devices</li>
-                        <li><strong>RESTful API:</strong> Created JSON-based API for device control and sensor data access</li>
-                        <li><strong>WebSocket Support:</strong> Added WebSocket protocol for real-time bidirectional communication</li>
-                        <li><strong>Security:</strong> Implemented basic authentication and HTTPS support for secure communications</li>
-                        <li><strong>Web Interface:</strong> Developed responsive web UI for device configuration and monitoring</li>
+                        <li>High-speed data logging at 1 kHz sample rate</li>
+                        <li>Flight-proven system providing complete acceleration and altitude profile</li>
+                        <li>Enabled post-flight trajectory validation and performance analysis</li>
                     </ul>
                     <h3>Technical Stack:</h3>
-                    <p class="tech-stack">C, ESP32, HTTP, WebSocket, HTML/CSS/JavaScript, JSON, Networking</p>
+                    <p class="tech-stack">Arduino, C, Accelerometer, Altimeter, Data Logging, PCB Assembly</p>
                 </div>
             </article>
 
-            <!-- Project 8: FPGA Signal Processing -->
-            <article class="project-card">
+            <!-- Project 10: Solaris Mk III Support -->
+            <article class="project-card" data-category="rocketry">
                 <div class="project-header">
-                    <h2>FPGA-Based Signal Processing System</h2>
-                    <span class="project-tag">FPGA</span>
-                    <span class="project-tag">Digital Design</span>
+                    <h2>Solaris Mk III Support (12 kN LOX-Paraffin Engine)</h2>
+                    <span class="project-tag">Propulsion</span>
+                    <span class="project-tag">International Competition</span>
                 </div>
                 <div class="project-content">
+                    <p class="project-meta">Monash High Powered Rocketry | Race2Space UK Competition</p>
                     <p class="project-description">
-                        Designed digital systems on FPGA for real-time signal processing applications with focus on parallelism and efficiency.
-                        Leveraged hardware-level parallelism to achieve performance impossible with traditional software implementations.
+                        Supported assembly and hot-fire campaign of 12 kN liquid oxygen (LOX) and paraffin hybrid engine for UK-based propulsion competition.
                     </p>
-                    <h3>Key Features:</h3>
+                    <h3>Contribution:</h3>
                     <ul>
-                        <li><strong>Digital Filter Design:</strong> Implemented FIR and IIR filters in Verilog for real-time audio processing</li>
-                        <li><strong>Parallel Processing:</strong> Utilized FPGA parallelism for 100x speedup over equivalent software implementation</li>
-                        <li><strong>Interface Design:</strong> Created SPI and I2C controllers for sensor communication and data acquisition</li>
-                        <li><strong>Timing Analysis:</strong> Performed static timing analysis and constraint optimization to achieve 100MHz operation</li>
-                        <li><strong>Verification:</strong> Developed comprehensive testbenches for functional verification and edge case testing</li>
+                        <li>Assembly support for larger-scale LOX-paraffin engine system</li>
+                        <li>Hot-fire testing campaign participation</li>
+                        <li>International competition experience in UK</li>
                     </ul>
-                    <h3>Technical Stack:</h3>
-                    <p class="tech-stack">Verilog, FPGA, Digital Signal Processing, Xilinx Vivado, ModelSim, Timing Analysis</p>
                 </div>
             </article>
 
-            <!-- Project 9: Custom PCB Speaker -->
-            <article class="project-card">
+            <!-- ROBOTICS & AI PROJECTS -->
+
+            <!-- Project 11: Fruit Navigation Robot -->
+            <article class="project-card" data-category="robotics">
                 <div class="project-header">
-                    <h2>Custom PCB Speaker System</h2>
-                    <span class="project-tag">Hardware</span>
-                    <span class="project-tag">PCB Design</span>
+                    <h2>Fruit Navigation and Mapping Robot</h2>
+                    <span class="project-tag">SLAM</span>
+                    <span class="project-tag">Computer Vision</span>
+                    <span class="project-tag">Autonomous Navigation</span>
                 </div>
                 <div class="project-content">
+                    <div class="project-video">
+                        <iframe width="100%" height="315" src="https://www.youtube.com/embed/DxhbGrSirxs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <p class="project-meta">University Course: Intelligent Robotics | Major Project</p>
                     <p class="project-description">
-                        Designed and manufactured a complete speaker system from scratch, including custom PCB amplifier,
-                        power supply, and acoustic enclosure. This project demonstrated expertise in analog circuit design,
-                        PCB layout, and audio engineering principles.
+                        Enabled mobile robot to autonomously map unknown environment and locate specific fruit objects using SLAM, computer vision, and autonomous navigation.
                     </p>
-                    <h3>Key Features:</h3>
+                    <h3>What I Built:</h3>
                     <ul>
-                        <li><strong>Amplifier Design:</strong> Designed Class-D amplifier circuit with TI TPA3116D2 achieving 50W output with >90% efficiency</li>
-                        <li><strong>PCB Design:</strong> Created 4-layer PCB in KiCAD with careful impedance matching, ground plane design, and thermal management</li>
-                        <li><strong>Power Supply:</strong> Designed switching power supply with active PFC and low ripple for clean audio reproduction</li>
-                        <li><strong>Signal Processing:</strong> Implemented digital crossover and EQ using DSP for optimized frequency response</li>
-                        <li><strong>Enclosure Design:</strong> Modeled and built ported enclosure in SolidWorks optimized for driver Thiele-Small parameters</li>
-                        <li><strong>Testing & Validation:</strong> Performed frequency response analysis and THD measurements using oscilloscope and audio analyzer</li>
+                        <li><strong>YOLO Object Detection:</strong> Trained custom model with synthetic data (random backgrounds and distractors) for robust fruit detection</li>
+                        <li><strong>Extended Kalman Filter:</strong> Optimized EKF for reliable localization through automated parameter sweeps</li>
+                        <li><strong>Ray-Casting Navigation:</strong> Implemented obstacle avoidance algorithm for safe autonomous navigation</li>
+                        <li><strong>State Machine Integration:</strong> Combined perception, localization, and navigation into unified autonomous system</li>
                     </ul>
                     <h3>Technical Stack:</h3>
-                    <p class="tech-stack">KiCAD, SolidWorks, Circuit Analysis, Audio Engineering, Soldering, PCB Manufacturing</p>
-                    <h3>Results:</h3>
-                    <p>Achieved flat frequency response (±3dB 50Hz-20kHz) with <0.1% THD at typical listening levels. Total system cost under $100, demonstrating cost-effective design.</p>
+                    <p class="tech-stack">Python, SLAM, YOLO, Extended Kalman Filter, Ray-Casting, Autonomous Navigation, State Machines</p>
                 </div>
             </article>
 
-            <!-- Project 10: CNC Machine -->
-            <article class="project-card">
+            <!-- Project 12: Robot Building Competitions -->
+            <article class="project-card" data-category="robotics">
                 <div class="project-header">
-                    <h2>Custom Built CNC Machine</h2>
-                    <span class="project-tag">Hardware</span>
-                    <span class="project-tag">Embedded Systems</span>
+                    <h2>Robot Building Competitions (3× Winner)</h2>
+                    <span class="project-tag">Competition</span>
+                    <span class="project-tag">Rapid Prototyping</span>
                 </div>
                 <div class="project-content">
+                    <p class="project-meta">Monash University | 100+ participants | 2023, 2024, 2025</p>
                     <p class="project-description">
-                        Designed and constructed a 3-axis CNC machine for precision machining of mechanical parts and PCBs.
-                        This hands-on project combined mechanical design, electronics, and embedded programming to create
-                        a functional manufacturing tool from scratch.
+                        Annual 2-day robotics hackathons requiring complete design-build-test cycle from scratch under tight time constraints.
                     </p>
-                    <h3>Key Features:</h3>
+                    <h3>Competition Results:</h3>
                     <ul>
-                        <li><strong>Mechanical Design:</strong> Designed rigid frame with linear rails and ball screws for precision motion control</li>
-                        <li><strong>Motion Control:</strong> Implemented G-code interpreter on Arduino with stepper motor drivers for accurate 3-axis positioning</li>
-                        <li><strong>Electronics:</strong> Built custom controller board with isolated stepper drivers and limit switches for safety</li>
-                        <li><strong>Software:</strong> Developed toolpath generation software with CAM integration for converting designs to machine instructions</li>
-                        <li><strong>Precision:</strong> Achieved ±0.05mm repeatability through careful calibration and mechanical tuning</li>
+                        <li><strong>1st Place (August 2025):</strong> Remote-controlled robot optimized for obstacle course racing with speed and maneuverability focus</li>
+                        <li><strong>3rd Place (August 2024):</strong> Remote-controlled robot designed for soccer-style competitive game requiring precision control and strategy</li>
+                        <li><strong>2nd Place (August 2023):</strong> Autonomous maze-navigating robot with sensor-based pathfinding algorithms</li>
+                    </ul>
+                    <h3>Skills Demonstrated:</h3>
+                    <ul>
+                        <li>Rapid mechanical design and fabrication under pressure</li>
+                        <li>Electronics integration and motor control</li>
+                        <li>Programming for autonomous and manual control modes</li>
+                        <li>Competition strategy and optimization</li>
                     </ul>
                     <h3>Technical Stack:</h3>
-                    <p class="tech-stack">SolidWorks, Arduino, C++, Stepper Motors, G-code, CAM Software, Mechanical Design</p>
+                    <p class="tech-stack">Arduino, C, Motor Control, Ultrasonic/IR Sensors, Mechanical Design, Rapid Prototyping</p>
                 </div>
             </article>
+
+            <!-- Project 13: Terminal APAC Competition -->
+            <article class="project-card" data-category="robotics">
+                <div class="project-header">
+                    <h2>Terminal Asia Pacific Regional Competition</h2>
+                    <span class="project-tag">AI Algorithms</span>
+                    <span class="project-tag">Competition</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-meta">AI Tower Defense Challenge | Solo Competitor | October 2023</p>
+                    <p class="project-description">
+                        <strong>Achievement:</strong> Placed 5th out of 33 teams as solo competitor in competitive AI programming challenge.
+                    </p>
+                    <h3>Challenge:</h3>
+                    <ul>
+                        <li>Developed real-time strategy algorithms for AI-based tower defense scenario</li>
+                        <li>Optimized decision-making under competitive time constraints</li>
+                        <li>Solo development and debugging throughout competition</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">Python, Algorithm Optimization, Real-Time Systems, Competitive Programming</p>
+                </div>
+            </article>
+
+            <!-- ACADEMIC COURSEWORK PROJECTS -->
+
+            <!-- Project 14: Automation Project -->
+            <article class="project-card" data-category="coursework">
+                <div class="project-header">
+                    <h2>Hybrid Rocket Ground Station - Design Methods Course</h2>
+                    <span class="project-tag">System Engineering</span>
+                    <span class="project-tag">MATLAB/Simulink</span>
+                </div>
+                <div class="project-content">
+                    <p class="project-meta">University Course: Design Methods | Team of 5</p>
+                    <p class="project-description">
+                        End-to-end system design project covering complete engineering lifecycle from concept through tested hardware for hybrid rocket ground station.
+                    </p>
+                    <h3>Project Scope:</h3>
+                    <ul>
+                        <li>Complete CAD modeling of ground station equipment</li>
+                        <li>Hardware integration of sensors, actuators, and controllers</li>
+                        <li>Control logic implementation for automated sequences using MATLAB/Simulink</li>
+                        <li>Full system testing under realistic conditions</li>
+                        <li>Safety procedures and operational documentation</li>
+                    </ul>
+                    <h3>Learning Outcomes:</h3>
+                    <ul>
+                        <li>Requirements definition and validation methodology</li>
+                        <li>System integration challenges in complex mechatronic systems</li>
+                        <li>Testing, validation, and documentation practices</li>
+                    </ul>
+                    <h3>Technical Stack:</h3>
+                    <p class="tech-stack">MATLAB, Simulink, CAD, Arduino, System Engineering, Requirements Management</p>
+                </div>
+            </article>
+
         </div>
     </main>
 
