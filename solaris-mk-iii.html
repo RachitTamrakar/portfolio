@@ -167,5 +167,15 @@
     <footer>
         <p>&copy; 2024 Rachit Tamrakar. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Smart back navigation based on referrer
+        const backLink = document.querySelector('.back-link');
+        const referrer = document.referrer;
+        if (referrer.includes('index.html') || referrer.endsWith('/')) {
+            backLink.href = 'index.html';
+            backLink.textContent = '← Back to Home';
+        }
+    </script>
 </body>
 </html>
