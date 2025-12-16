@@ -33,9 +33,14 @@ body {
     top: 0;
     z-index: 1000;
     border-bottom: 2px solid var(--primary-color);
+    transition: transform 0.3s ease-in-out;
 }
 
-.nav-container {
+.navbar-hidden {
+    transform: translateY(-100%);
+}
+
+.nav-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1rem 2rem;
@@ -44,19 +49,24 @@ body {
     align-items: center;
 }
 
-.nav-logo {
+.logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.nav-menu {
+.logo:hover {
+    color: var(--secondary-color);
+}
+
+.nav-links {
     display: flex;
-    list-style: none;
     gap: 2rem;
 }
 
-.nav-menu a {
+.nav-links a {
     text-decoration: none;
     color: var(--text-secondary);
     font-weight: 500;
@@ -65,12 +75,12 @@ body {
     transition: all 0.3s ease;
 }
 
-.nav-menu a:hover {
+.nav-links a:hover {
     color: var(--primary-color);
     background-color: var(--bg-secondary);
 }
 
-.nav-menu a.active {
+.nav-links a.active {
     color: var(--primary-color);
     background-color: var(--bg-secondary);
 }
@@ -454,15 +464,21 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
+    .nav-content {
+        padding: 0.75rem 1rem;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
+
+    .nav-links {
         gap: 1rem;
     }
 
-    .nav-menu {
-        flex-direction: column;
-        gap: 0.5rem;
-        text-align: center;
+    .nav-links a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
     }
 
     .hero-title {
@@ -648,7 +664,7 @@ footer {
         font-size: 0.875rem;
     }
 
-    .nav-container {
+    .nav-content {
         padding: 1rem;
     }
 }
@@ -791,9 +807,9 @@ footer {
 
 /* About Section New */
 .about-section-new {
-    max-width: 900px;
+    max-width: 1400px;
     margin: 4rem auto;
-    padding: 0 2rem;
+    padding: 0 2rem 2rem;
 }
 
 .about-section-new h2 {
@@ -810,20 +826,17 @@ footer {
     margin-bottom: 1.5rem;
 }
 
+.about-section-new .about-text:last-child {
+    margin-bottom: 0;
+}
+
 /* Featured Projects Section */
 .featured-projects-section {
     max-width: 1400px;
-    margin: 4rem auto;
-    padding: 3rem 2rem;
+    margin: 0 auto 3rem auto;
+    padding: 4rem 2rem;
     background-color: var(--bg-primary);
     border-radius: 16px;
-}
-
-.featured-projects-section h2 {
-    font-size: 2.25rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-primary);
-    text-align: center;
 }
 
 .section-subtitle {
@@ -841,12 +854,6 @@ footer {
 
 .section-subtitle a:hover {
     text-decoration: underline;
-}
-
-.featured-projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
 }
 
 .featured-project-card {
@@ -1145,8 +1152,8 @@ footer {
 .page-header-clean {
     text-align: center;
     padding: 3rem 2rem 2rem;
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 1400px;
+    margin: 0 auto 3rem auto;
 }
 
 .page-subtitle-clean {
@@ -1158,7 +1165,7 @@ footer {
 /* Projects sections */
 .projects-section {
     max-width: 1400px;
-    margin: 0 auto;
+    margin: 0 auto 3rem auto;
     padding: 4rem 2rem;
 }
 
@@ -1167,6 +1174,7 @@ footer {
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
+    margin-bottom: 3rem;
     padding: 4rem 2rem;
 }
 
@@ -1194,7 +1202,7 @@ footer {
 .projects-card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem 2rem;
     max-width: 1360px;
     margin: 0 auto;
     justify-items: stretch;
@@ -1330,6 +1338,9 @@ footer {
    RESPONSIVE UPDATES
    ============================================================================ */
 
+@media (max-width: 1024px) {
+}
+
 @media (max-width: 768px) {
     .hero-title-landing {
         font-size: 2.5rem;
@@ -1354,10 +1365,6 @@ footer {
     }
 
     .highlights-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .featured-projects-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1438,7 +1445,10 @@ footer {
         padding: 1.5rem;
     }
 
-    .featured-projects-section,
+    .featured-projects-section {
+        padding: 2.5rem 1rem;
+    }
+
     .experience-snapshot {
         padding: 2rem 1rem;
     }
@@ -1481,7 +1491,7 @@ footer {
         font-size: 0.875rem;
     }
 
-    .nav-container {
+    .nav-content {
         padding: 1rem;
     }
 }
@@ -1490,9 +1500,13 @@ footer {
    CASE STUDY PAGES
    ============================================================================ */
 
+.case-study {
+    margin-top: 3rem;
+}
+
 .case-study-header {
     max-width: 900px;
-    margin: 2rem auto 3rem;
+    margin: 0 auto 3rem;
     padding: 0 2rem;
 }
 
@@ -1502,7 +1516,7 @@ footer {
     font-weight: 600;
     display: inline-flex;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     transition: color 0.3s ease;
 }
 
@@ -1514,20 +1528,23 @@ footer {
 .case-study-header h1 {
     font-size: 2.5rem;
     color: var(--text-primary);
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .case-study-meta {
     font-size: 1.125rem;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+    margin-top: 0.5rem;
 }
 
-.case-study-tags {
+.case-study-tags,
+.project-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
+    margin-bottom: 2rem;
 }
 
 .case-study-tags span {
@@ -1541,7 +1558,7 @@ footer {
 
 .case-study-section {
     max-width: 900px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 4rem;
     padding: 0 2rem;
 }
 
@@ -1550,14 +1567,16 @@ footer {
     max-width: none;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    padding: 3rem calc(50vw - 450px + 2rem);
-    margin-bottom: 3rem;
+    padding: 3.5rem calc(50vw - 450px + 2rem);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
 
 .case-study-section h2 {
     font-size: 2rem;
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
     padding-bottom: 0.5rem;
     border-bottom: 3px solid var(--primary-color);
 }
@@ -1565,14 +1584,15 @@ footer {
 .case-study-section h3 {
     font-size: 1.5rem;
     color: var(--text-primary);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .case-study-section p {
     font-size: 1.125rem;
     line-height: 1.8;
     color: var(--text-secondary);
+    margin-top: 0;
     margin-bottom: 1.5rem;
 }
 
@@ -1745,99 +1765,151 @@ footer {
 }
 
 .case-study-header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    padding: 4rem 2rem;
-    margin-bottom: 0;
+    background: var(--bg-primary);
+    padding: 2rem 2rem 3rem;
+    margin-bottom: 2rem;
+    border-bottom: 4px solid var(--primary-color);
 }
 
 .case-study-header-content {
-    max-width: 1000px;
+    max-width: 850px;
     margin: 0 auto;
 }
 
 .back-link {
-    display: inline-block;
-    color: rgba(255, 255, 255, 0.9);
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-color);
     text-decoration: none;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     font-size: 0.95rem;
+    font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .back-link:hover {
-    color: white;
+    color: var(--secondary-color);
     transform: translateX(-4px);
 }
 
 .case-study-header h1 {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     font-weight: 800;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     line-height: 1.2;
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .case-study-subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    opacity: 0.95;
-    line-height: 1.5;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-weight: 400;
 }
 
 .case-study-meta {
-    font-size: 0.95rem;
-    opacity: 0.9;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.case-study-meta span {
+    display: inline-flex;
+    align-items: center;
 }
 
 .award-banner {
-    background: rgba(255, 255, 255, 0.2);
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    display: inline-block;
-    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #92400e;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.2);
+    border: 2px solid #fbbf24;
+}
+
+.case-study-header .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.case-study-header .project-tags .tag {
+    background: #eff6ff;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
     font-weight: 600;
+    border: 1.5px solid #dbeafe;
+    transition: all 0.2s ease;
+}
+
+.case-study-header .project-tags .tag:hover {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
 }
 
 .case-study-content {
-    max-width: 1000px;
+    max-width: 850px;
     margin: 0 auto;
-    padding: 0 2rem;
 }
 
 .case-study-section {
-    padding: 3rem 0;
+    padding: 3rem 2rem;
 }
 
 .case-study-section.alt-bg {
     background-color: var(--bg-secondary);
-    padding: 3rem 2rem;
-    margin: 3rem -2rem;
+    padding: 3.5rem 2rem;
+    margin: 4rem 0;
     border-radius: 0.5rem;
 }
 
 .case-study-section h2 {
     font-size: 2rem;
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .case-study-section h3 {
     font-size: 1.5rem;
     color: var(--text-primary);
-    margin: 2rem 0 1rem 0;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .case-study-section h4 {
     font-size: 1.1rem;
     color: var(--text-primary);
+    margin-top: 2rem;
     margin-bottom: 0.75rem;
-    margin-top: 0.5rem;
 }
 
 .case-study-section p {
     font-size: 1.1rem;
     color: var(--text-secondary);
+    margin-top: 0;
     margin-bottom: 1.25rem;
     line-height: 1.8;
 }
@@ -1857,7 +1929,7 @@ footer {
     background-color: #fef3c7;
     border-left: 4px solid #f59e0b;
     padding: 1rem 1.5rem;
-    margin-bottom: 2rem;
+    margin: 0 2rem 3rem;
     border-radius: 0.375rem;
 }
 
@@ -1868,7 +1940,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
 }
 
 .challenge-item,
@@ -1887,21 +1959,26 @@ footer {
 .challenge-item h3,
 .spec-item h3 {
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
 }
 
 .challenge-item p,
 .impact-card p,
 .spec-item p,
 .skill-card p {
+    margin-top: 0;
     margin-bottom: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
 }
 
 .tech-details {
     display: grid;
     gap: 1.5rem;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
 }
 
 .tech-detail-card {
@@ -1917,10 +1994,13 @@ footer {
 
 .tech-detail-card h4 {
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
 }
 
 .tech-detail-card p {
+    margin-top: 0;
     margin-bottom: 0;
 }
 
@@ -1929,7 +2009,7 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
 }
 
 .process-step,
@@ -1958,11 +2038,18 @@ footer {
 }
 
 .step-content h4 {
+    margin-top: 0;
     margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--text-primary);
 }
 
 .step-content p {
+    margin-top: 0;
     margin-bottom: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
 }
 
 .challenges-list,
@@ -1974,7 +2061,7 @@ footer {
 .testing-activities {
     display: grid;
     gap: 1.5rem;
-    margin: 2rem 0;
+    margin: 2.5rem 0;
 }
 
 .challenge-solved,
@@ -1998,7 +2085,23 @@ footer {
 .contribution-item h4,
 .activity-item h4 {
     color: var(--primary-color);
+    margin-top: 0;
     margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.challenge-solved p,
+.dev-item p,
+.feature-item p,
+.highlight-item p,
+.safety-item p,
+.contribution-item p,
+.activity-item p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
 }
 
 .impact-icon {
@@ -2009,7 +2112,9 @@ footer {
 .impact-card h4,
 .skill-card h4 {
     color: var(--primary-color);
-    margin-bottom: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
 }
 
 .achievements-list {
@@ -2176,7 +2281,7 @@ footer {
 /* Responsive Design for Case Studies */
 @media (max-width: 768px) {
     .case-study-header {
-        padding: 3rem 1rem;
+        padding: 2rem 1rem 2.5rem;
     }
 
     .case-study-header h1 {
@@ -2187,13 +2292,21 @@ footer {
         font-size: 1.1rem;
     }
 
+    .case-study-section {
+        padding: 2rem 0;
+    }
+
     .case-study-content {
         padding: 0 1rem;
     }
 
     .case-study-section.alt-bg {
-        margin: 2rem -1rem;
-        padding: 2rem 1rem;
+        margin: 3rem 0;
+        padding: 2.5rem 1.5rem;
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 
     .challenge-grid,
