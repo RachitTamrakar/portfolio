@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Navigation and Mapping Robot - Rachit Tamrakar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">Rachit Tamrakar</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="case-study">
+        <header class="case-study-header">
+            <div class="case-study-header-content">
+                <a href="projects.html" class="back-link">← Back to Projects</a>
+                <h1>Fruit Navigation and Mapping Robot</h1>
+                <p class="case-study-subtitle">Autonomous mobile robot combining YOLO object detection, Extended Kalman Filter localization, and full SLAM for environment mapping</p>
+                <div class="case-study-meta">
+                    <span>Monash University - Intelligent Robotics</span>
+                    <span>•</span>
+                    <span>2024</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">YOLO</span>
+                    <span class="tag">OpenCV</span>
+                    <span class="tag">Extended Kalman Filter</span>
+                    <span class="tag">SLAM</span>
+                    <span class="tag">State Machines</span>
+                    <span class="tag">Autonomous Navigation</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="case-study-content">
+            <section class="case-study-section">
+                <h2>The Challenge</h2>
+                <p>The objective was to enable a mobile robot to autonomously map an unknown environment and locate specific fruit objects without any prior knowledge of the space. This required integrating perception, localization, and navigation systems into a cohesive autonomous agent.</p>
+
+                <div class="video-embed-container">
+                    <iframe src="https://www.youtube.com/embed/DxhbGrSirxs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-caption">Complete autonomous navigation demonstration</p>
+                </div>
+
+                <div class="challenge-grid">
+                    <div class="challenge-item">
+                        <h3>Perception</h3>
+                        <p>Detect and classify multiple fruit types in real-time with varying lighting and backgrounds.</p>
+                    </div>
+                    <div class="challenge-item">
+                        <h3>Localization</h3>
+                        <p>Track robot position accurately in unmapped environment using noisy sensor data.</p>
+                    </div>
+                    <div class="challenge-item">
+                        <h3>Navigation</h3>
+                        <p>Plan collision-free paths through unknown obstacles while simultaneously building a map.</p>
+                    </div>
+                    <div class="challenge-item">
+                        <h3>Integration</h3>
+                        <p>Coordinate all subsystems in real-time with robust state machine architecture.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section alt-bg">
+                <h2>Perception System</h2>
+                
+                <h3>Custom YOLO Object Detection</h3>
+                <p>I trained a custom YOLO model specifically for fruit detection in the robot's operating environment. To create a robust training dataset, I generated synthetic images with random backgrounds and distractor objects, improving the model's generalization capability.</p>
+
+                <div class="tech-details">
+                    <div class="tech-detail-card">
+                        <h4>Dataset Creation</h4>
+                        <p>Generated synthetic training images with varied backgrounds, lighting conditions, and distractor objects to improve model robustness. Augmented with real-world images from test environment.</p>
+                    </div>
+                    
+                    <div class="tech-detail-card">
+                        <h4>Model Training</h4>
+                        <p>Trained compact YOLO model optimized for real-time inference on embedded hardware. Balanced accuracy and speed for live autonomous operation.</p>
+                    </div>
+                    
+                    <div class="tech-detail-card">
+                        <h4>Real-Time Detection</h4>
+                        <p>Integrated OpenCV for camera interface and preprocessing. Achieved reliable fruit detection and classification during autonomous navigation.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Localization & Sensor Fusion</h2>
+                
+                <h3>Extended Kalman Filter Implementation</h3>
+                <p>Implemented an Extended Kalman Filter (EKF) for sensor fusion, combining wheel odometry and landmark observations to accurately track the robot's position in the unmapped environment.</p>
+
+                <div class="localization-features">
+                    <div class="feature-item">
+                        <h4>Sensor Fusion</h4>
+                        <p>Combined wheel encoder data with visual landmark detections using EKF framework. Handled nonlinear motion models and sensor noise characteristics.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>Parameter Optimization</h4>
+                        <p>Automated parameter sweeps to tune filter gains and noise models. Optimized for best localization accuracy in test environment.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <h4>Reliable Estimation</h4>
+                        <p>Achieved consistent position tracking even with noisy sensor measurements and wheel slip. EKF provided uncertainty estimates for navigation decisions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section alt-bg">
+                <h2>Navigation & Mapping</h2>
+                
+                <h3>Full SLAM Implementation</h3>
+                <p>Implemented complete Simultaneous Localization and Mapping (SLAM) system, allowing the robot to build a map while simultaneously using that map to localize itself.</p>
+
+                <div class="tech-details">
+                    <div class="tech-detail-card">
+                        <h4>Ray-Casting Navigation</h4>
+                        <p>Implemented ray-casting algorithm for obstacle avoidance and path planning. Robot evaluates multiple potential trajectories in real-time, selecting paths that avoid obstacles while progressing toward goal.</p>
+                    </div>
+                    
+                    <div class="tech-detail-card">
+                        <h4>Map Building</h4>
+                        <p>Incrementally constructed occupancy grid map as robot explored environment. Integrated sensor data to mark free space, obstacles, and unknown regions.</p>
+                    </div>
+                    
+                    <div class="tech-detail-card">
+                        <h4>Autonomous Exploration</h4>
+                        <p>Robot autonomously explored unmapped areas, balancing exploration of unknown space with exploitation of known paths to fruit targets.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>System Integration</h2>
+                
+                <h3>State Machine Architecture</h3>
+                <p>Integrated all subsystems—perception, localization, navigation, and mapping—into a unified state machine architecture that coordinated autonomous operation from start to goal.</p>
+
+                <div class="integration-list">
+                    <div class="integration-step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>Exploration State</h4>
+                            <p>Robot explores environment, building map and searching for fruit targets using SLAM.</p>
+                        </div>
+                    </div>
+                    <div class="integration-step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>Target Detection</h4>
+                            <p>YOLO perception system identifies fruit objects, triggering navigation planning.</p>
+                        </div>
+                    </div>
+                    <div class="integration-step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>Path Planning</h4>
+                            <p>Ray-casting navigation generates collision-free path to target using current map.</p>
+                        </div>
+                    </div>
+                    <div class="integration-step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>Autonomous Execution</h4>
+                            <p>Robot navigates to fruit while continuously updating localization and map.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Real-Time Coordination</h3>
+                <p>All modules operated concurrently with careful data synchronization. State machine handled transitions between exploration, navigation, and target acquisition modes while maintaining system stability.</p>
+            </section>
+
+            <section class="case-study-section alt-bg">
+                <h2>Results & Outcomes</h2>
+                
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <div class="impact-icon">✓</div>
+                        <h4>Successful Autonomy</h4>
+                        <p>Robot successfully mapped unknown environments and autonomously navigated to fruit targets.</p>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon">🎯</div>
+                        <h4>Robust Perception</h4>
+                        <p>YOLO model reliably detected fruit objects under varying lighting and background conditions.</p>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon">📍</div>
+                        <h4>Accurate Localization</h4>
+                        <p>EKF sensor fusion provided reliable position estimates even with noisy measurements.</p>
+                    </div>
+                    
+                    <div class="impact-card">
+                        <div class="impact-icon">🗺️</div>
+                        <h4>Complete Mapping</h4>
+                        <p>SLAM system built accurate maps while simultaneously localizing robot position.</p>
+                    </div>
+                </div>
+
+                <h3>Technical Achievements</h3>
+                <ul class="achievements-list">
+                    <li>Integrated complex perception, localization, and navigation systems into cohesive autonomous agent</li>
+                    <li>Successfully demonstrated full autonomy from unknown environment to goal reaching</li>
+                    <li>Developed robust state machine coordination for real-time multi-module operation</li>
+                    <li>Applied advanced robotics algorithms (YOLO, EKF, SLAM) in practical implementation</li>
+                </ul>
+            </section>
+
+            <section class="case-study-section cta-section">
+                <h2>Interested in my work?</h2>
+                <p>Check out my other projects or get in touch.</p>
+                <div class="cta-buttons">
+                    <a href="projects.html" class="btn-primary">View All Projects</a>
+                    <a href="index.html#contact" class="btn-secondary">Contact Me</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Rachit Tamrakar. All rights reserved.</p>
+    </footer>
+</body>
+</html>

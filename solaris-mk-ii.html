@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solaris Mk II Hybrid Engine & Ground Station - Rachit Tamrakar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="index.html" class="logo">Rachit Tamrakar</a>
+            <div class="nav-links">
+                <a href="index.html#about">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="case-study">
+        <header class="case-study-header">
+            <div class="case-study-header-content">
+                <a href="projects.html" class="back-link">← Back to Projects</a>
+                <h1>Solaris Mk II Hybrid Engine & Ground Station</h1>
+                <p class="case-study-subtitle">4 kN N₂O/paraffin hybrid rocket engine with custom ground station electronics, capacitive sensor, and distributed control system</p>
+                <div class="case-study-meta">
+                    <span>Monash High Powered Rocketry</span>
+                    <span>•</span>
+                    <span>August 2023 - June 2025</span>
+                </div>
+                <div class="award-banner">
+                    🏆 Jim Furfaro Technical Excellence Award (IREC 2025) + 2nd Place Category
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">C</span>
+                    <span class="tag">RS422</span>
+                    <span class="tag">CAN</span>
+                    <span class="tag">MQTT</span>
+                    <span class="tag">LabJack</span>
+                    <span class="tag">STM32</span>
+                    <span class="tag">Raspberry Pi</span>
+                    <span class="tag">Ignition SCADA</span>
+                    <span class="tag">Electrical Design</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="case-study-content">
+            <section class="case-study-section">
+                <h2>Project Overview</h2>
+                <p>The Solaris Mk II was our team's most ambitious electrical and software project, developing a complete ground station control system for a 4 kN thrust N₂O/paraffin hybrid rocket engine. Flown on Project Zenith at IREC 2025 to 12,000 ft in Australia, this system enabled real-time control and monitoring of our propulsion systems.</p>
+                
+                <p>Our work contributed to Monash HPR winning the <strong>Jim Furfaro Award for Technical Excellence</strong> out of 140+ international teams and placing <strong>2nd in category</strong>.</p>
+
+                <div class="video-embed-container">
+                    <iframe src="https://www.youtube.com/embed/duVOAWQd4xQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-caption">Zenith IREC 2025 Launch (12k feet)</p>
+                </div>
+
+                <div class="project-image">
+                    <img src="images/zenith_launch.png" alt="Zenith Launch" onerror="this.style.display='none'">
+                </div>
+            </section>
+
+            <section class="case-study-section alt-bg">
+                <h2>Ground Station Electronics</h2>
+                <p>I designed and built three successive hardware iterations for fueling, ignition, and data logging. Each iteration refined based on test results and operational lessons, culminating in a system capable of 100 kHz data acquisition.</p>
+
+                <h3>Design Evolution</h3>
+                <div class="iteration-gallery">
+                    <div class="iteration-item">
+                        <img src="images/pad_enclosure_iter_1.png" alt="Iteration 1" onerror="this.style.display='none'">
+                        <p>Iteration 1 - Initial prototype</p>
+                    </div>
+                    <div class="iteration-item">
+                        <img src="images/pad_enclosure_iter_2.png" alt="Iteration 2" onerror="this.style.display='none'">
+                        <p>Iteration 2 - Refined layout</p>
+                    </div>
+                    <div class="iteration-item">
+                        <img src="images/pad_enclosure_iter_3.png" alt="Iteration 3" onerror="this.style.display='none'">
+                        <p>Iteration 3 - Final production system</p>
+                    </div>
+                </div>
+
+                <h3>Electrical Cabinet Design</h3>
+                <div class="tech-details">
+                    <div class="tech-detail-card">
+                        <h4>Component Integration</h4>
+                        <p>Designed and constructed complete electrical cabinet with DIN rail mounted components: power supplies, networking hardware, Raspberry Pi, LabJack DAQ, motor drivers, and relays.</p>
+                    </div>
+                    
+                    <div class="tech-detail-card">
+                        <h4>Custom Cabling</h4>
+                        <p>Fabricated custom cable assemblies and connectors for actuators, sensors, and communication lines. All connections designed for reliability under vibration and condensation conditions.</p>
+                    </div>
+                    
+                    <div class="tech-detail-card">
+                        <h4>Industrial Standards</h4>
+                        <p>Applied structured electrical design principles learned from Bosch, ensuring professional-grade assembly and maintenance accessibility.</p>
+                    </div>
+                </div>
+
+                <h3>Control Architecture</h3>
+                <p>Developed distributed control system integrating LabJack DAQs, STM32 microcontrollers, and Raspberry Pi. Communication protocols included RS422, CAN, and MQTT for automated fill, ignition, and abort sequences with real-time monitoring.</p>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Capacitive Propellant Sensor</h2>
+                <p>Led a team of four to design, manufacture, and test a novel capacitive N₂O propellant level sensor. Through careful calibration and shielding, we achieved repeatable measurements with accuracy within <strong>±10 g</strong>, significantly improving safety and precision in propellant tank monitoring.</p>
+
+                <div class="sensor-showcase">
+                    <div class="sensor-image">
+                        <img src="images/cap_fill_assembled.png" alt="Manufactured Capacitive Sensor" onerror="this.style.display='none'">
+                        <p>Manufactured sensor assembly</p>
+                    </div>
+                    <div class="sensor-image">
+                        <img src="images/cap_fill_cal_plot.png" alt="Calibration Plot" onerror="this.style.display='none'">
+                        <p>Calibration curve showing ±10g accuracy</p>
+                    </div>
+                </div>
+
+                <h3>Design & Development</h3>
+                <div class="development-list">
+                    <div class="dev-item">
+                        <h4>Research & Requirements</h4>
+                        <p>Led complete sensor development from concept through production, defining requirements for cryogenic N₂O measurement.</p>
+                    </div>
+                    <div class="dev-item">
+                        <h4>CAD Design</h4>
+                        <p>Designed custom sensing probe element using SolidWorks and Creo, optimizing geometry for signal strength and mechanical integration.</p>
+                    </div>
+                    <div class="dev-item">
+                        <h4>Firmware Development</h4>
+                        <p>Developed STM32 firmware for capacitance measurement and signal processing, implementing noise filtering algorithms.</p>
+                    </div>
+                    <div class="dev-item">
+                        <h4>Calibration</h4>
+                        <p>Created comprehensive calibration methodology with regression-based scripts, achieving ±10g accuracy through iterative testing.</p>
+                    </div>
+                </div>
+
+                <h3>Technical Challenges</h3>
+                <p>Resolved electrical noise issues through strategic shielding design, performed iterative probe design tweaks to improve signal stability, and developed comprehensive calibration procedures for reliable measurements.</p>
+            </section>
+
+            <section class="case-study-section alt-bg">
+                <h2>Software and Communication Stack</h2>
+                <p>I designed and presented the complete software and communication architecture connecting the rocket, engine, and ground station. The system monitored and controlled over 20 signals across the entire propulsion system.</p>
+
+                <div class="software-images">
+                    <div class="software-image">
+                        <img src="images/ugs_simplified_diagram.png" alt="System Architecture Diagram" onerror="this.style.display='none'">
+                        <p>Simplified system architecture</p>
+                    </div>
+                    <div class="software-image">
+                        <img src="images/front_end_main_screen.png" alt="Control Interface" onerror="this.style.display='none'">
+                        <p>Main control page in Ignition SCADA</p>
+                    </div>
+                </div>
+
+                <h3>System Architecture</h3>
+                <div class="tech-details">
+                    <div class="tech-detail-card">
+                        <h4>Backend Control</h4>
+                        <p>Multithreaded Python backend with state machine logic for fill, ignition, and abort procedures. Handles real-time decision making and safety interlocks.</p>
+                    </div>
+                    
+                    <div class="tech-detail-card">
+                        <h4>Operator Interface</h4>
+                        <p>Ignition SCADA interface providing real-time monitoring, telemetry visualization, and manual override capabilities for operators.</p>
+                    </div>
+                    
+                    <div class="tech-detail-card">
+                        <h4>Data Logging</h4>
+                        <p>MQTT-connected database for long-term data logging, with high-rate telemetry recorded locally for detailed post-test analysis.</p>
+                    </div>
+                </div>
+
+                <div class="video-embed-container">
+                    <iframe src="https://www.youtube.com/embed/98cL1cdTau0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-caption">Solaris Mk II Hotfire Test</p>
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>IREC 2025 Competition Experience</h2>
+                
+                <h3>Testing Operations</h3>
+                <p>I operated the engine from the control station during hot-fire and cold-flow testing, quickly debugging anomalies under pressure while coordinating with the pad team. Monitored telemetry and diagnosed communication issues in real-time, refining control behavior based on test results.</p>
+
+                <h3>Competition Day</h3>
+                <div class="competition-highlights">
+                    <div class="highlight-item">
+                        <h4>Technical Presentation</h4>
+                        <p>Co-presented control and telemetry architecture at podium session. Our presentation directly contributed to winning the Jim Furfaro Award for Technical Excellence.</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <h4>Launch Operations</h4>
+                        <p>Responsible for launch pad setup and engine system integration. Performed pre-launch valve and sensor checks under time pressure.</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <h4>Crisis Management</h4>
+                        <p>When the propellant sensor failed the night before launch, I stayed up debugging with the propulsion lead. Our successful troubleshooting led to flawless operation the next morning and a successful launch.</p>
+                    </div>
+                </div>
+
+                <div class="video-embed-container">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7399159028670631938?compact=1" frameborder="0" allowfullscreen></iframe>
+                    <p class="video-caption">LinkedIn Project Showcase</p>
+                </div>
+
+                <div class="video-embed-container">
+                    <iframe src="https://www.youtube.com/embed/3C_ozpW7En4?start=22810" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-caption">IREC 2025 Presentation (control systems section)</p>
+                </div>
+
+                <h3>Safety & Reliability</h3>
+                <p>Implemented comprehensive safety interlocks and fault-tolerant design throughout the system. Redundant control systems protected high-consequence operations, and the entire system was designed for safe operation in a safety-critical test environment.</p>
+            </section>
+
+            <section class="case-study-section cta-section">
+                <h2>Interested in my work?</h2>
+                <p>Check out my other projects or get in touch.</p>
+                <div class="cta-buttons">
+                    <a href="projects.html" class="btn-primary">View All Projects</a>
+                    <a href="index.html#contact" class="btn-secondary">Contact Me</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Rachit Tamrakar. All rights reserved.</p>
+    </footer>
+</body>
+</html>
