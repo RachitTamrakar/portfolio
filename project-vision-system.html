@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Station Vision System - Rachit Tamrakar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Rachit Tamrakar</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="case-study-header">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+            <h1>Multi-Station Vision Inspection System</h1>
+            <p class="case-study-meta">Lead Developer • Bosch Australia Manufacturing Solutions • March 2024 - Present</p>
+            <div class="case-study-tags">
+                <span>C#/.NET</span>
+                <span>WPF</span>
+                <span>HALCON</span>
+                <span>ProfiNet</span>
+                <span>SQL Server</span>
+                <span>Multithreading</span>
+            </div>
+        </section>
+
+        <section class="case-study-section">
+            <div class="case-study-image">
+                <img src="images/vision_system.png" alt="Multi-Station Vision System">
+                <p class="image-caption">Vision inspection station with multiple camera views</p>
+            </div>
+        </section>
+
+        <section class="case-study-section">
+            <h2>Overview</h2>
+            <div class="highlight-box">
+                <p><strong>Impact:</strong> Built production vision system for $8M biodegradable packaging line with 40+ cameras across 6 stations operating at 0.6s cycle time</p>
+            </div>
+            <p>As an intern, I was tasked with developing the first large-scale vision inspection system ever built by the department. With no internal templates or previous examples to reference, I learned C# from scratch and designed a multithreaded architecture that became the department's blueprint for future vision systems.</p>
+            <p>The system now runs reliably in production, validating product quality across an entire manufacturing line with surgical-grade precision.</p>
+        </section>
+
+        <section class="case-study-section alt-bg">
+            <h2>The Challenge</h2>
+            <p>This project presented several unique challenges:</p>
+            <ul class="feature-list">
+                <li><strong>First of Its Kind:</strong> No internal templates, no previous examples—had to architect from scratch</li>
+                <li><strong>Learning Curve:</strong> Had to learn C# while simultaneously designing and building the system</li>
+                <li><strong>Scale & Performance:</strong> 40+ cameras across 6 stations with sub-second cycle time requirements</li>
+                <li><strong>Real-Time Coordination:</strong> Synchronize with Siemens PLCs using ProfiNet fieldbus communication</li>
+                <li><strong>Production Reliability:</strong> System must run 24/7 in manufacturing environment with automatic recovery from failures</li>
+            </ul>
+        </section>
+
+        <section class="case-study-section">
+            <h2>Technical Architecture</h2>
+            
+            <h3>System Design</h3>
+            <p>Built a single unified C# application using multithreaded WPF architecture to manage all 6 inspection stations:</p>
+            <ul class="technical-list">
+                <li><strong>Camera Integration:</strong> 4-12 cameras per station (40+ total) using HALCON vision library</li>
+                <li><strong>Asynchronous Pipeline:</strong> Parallel image acquisition and processing to meet 0.6s cycle time</li>
+                <li><strong>PLC Communication:</strong> Designed handshake protocol for ProfiNet communication with Siemens PLCs</li>
+                <li><strong>Data Persistence:</strong> SQL Server Express logging for complete product traceability</li>
+                <li><strong>Configuration Management:</strong> Config files to manage per-station differences from single codebase</li>
+            </ul>
+
+            <h3>Development Process</h3>
+            <p>Built incrementally to manage complexity and validate each subsystem:</p>
+            <ol class="technical-list">
+                <li>Dummy test harness for development without hardware dependencies</li>
+                <li>Camera interfaces with basic image acquisition</li>
+                <li>Vision inspection algorithms using HALCON</li>
+                <li>SQL logging system for traceability</li>
+                <li>PLC integration with custom C# wrapper for Hilscher cifX fieldbus card</li>
+                <li>Final integration and performance optimization</li>
+            </ol>
+
+            <h3>Custom Fieldbus Integration</h3>
+            <p>Wrote C# wrapper for Hilscher cifX fieldbus card to enable ProfiNet communication:</p>
+            <ul class="technical-list">
+                <li>Sketched handshake sequences in flowcharts before coding</li>
+                <li>Collaborated with automation engineers to refine communication protocols</li>
+                <li>Implemented robust error handling and reconnect logic</li>
+            </ul>
+        </section>
+
+        <section class="case-study-section alt-bg">
+            <h2>Technical Decisions & Problem Solving</h2>
+            
+            <h3>Architecture Redesign</h3>
+            <p>Early multithreading design suffered from race conditions that caused intermittent failures. This required a complete architecture redesign to properly isolate shared resources and implement thread-safe communication patterns.</p>
+
+            <h3>Unified vs Split Architecture</h3>
+            <p>Initially split the system into separate GUI and inspection applications, but this limited operator adjustability. I redesigned to a unified interface that allowed operators to modify inspection parameters on the fly while maintaining the separation of concerns in the code structure.</p>
+
+            <h3>Performance Optimization</h3>
+            <p>When two stations failed to meet strict cycle time requirements, I refactored major code sections to:</p>
+            <ul class="technical-list">
+                <li>Optimize image processing pipelines using HALCON's parallel processing capabilities</li>
+                <li>Reduce memory allocations in tight loops</li>
+                <li>Implement asynchronous I/O for camera and PLC communication</li>
+                <li>Profile and eliminate bottlenecks in the inspection algorithms</li>
+            </ul>
+
+            <h3>Network Configuration</h3>
+            <p>Resolved complex networking issues that plagued early testing:</p>
+            <ul class="technical-list">
+                <li>Managed multiple NICs for camera and PLC networks</li>
+                <li>Configured DHCP settings to prevent IP conflicts</li>
+                <li>Diagnosed and resolved packet collisions causing dropped frames</li>
+                <li>Implemented automatic reconnection logic for cameras and fieldbus devices</li>
+            </ul>
+
+            <h3>Mid-Project Feature Addition</h3>
+            <p>When the customer requested SQL logging mid-project, I designed and integrated a complete traceability system without disrupting the existing architecture or delaying the delivery schedule.</p>
+        </section>
+
+        <section class="case-study-section">
+            <h2>Results & Impact</h2>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <h3>✅ Production Deployment</h3>
+                    <p>System running reliably in 24/7 manufacturing environment</p>
+                </div>
+                <div class="result-item">
+                    <h3>📐 Department Blueprint</h3>
+                    <p>Architecture became template for future vision systems</p>
+                </div>
+                <div class="result-item">
+                    <h3>🔄 Code Reuse</h3>
+                    <p>Classes and patterns reused by other engineers</p>
+                </div>
+                <div class="result-item">
+                    <h3>⚡ 0.6s Cycle Time</h3>
+                    <p>Achieved sub-second inspection across 40+ cameras</p>
+                </div>
+            </div>
+
+            <h3>Customer Demonstration</h3>
+            <p>Successfully demonstrated the live system to the customer in a workshop environment, showing real-time inspection capabilities and the operator interface. The demonstration built customer confidence in the solution and validated the technical approach.</p>
+
+            <h3>Technical Legacy</h3>
+            <p>As an intern, delivered a complex, customer-critical system that:</p>
+            <ul class="technical-list">
+                <li>Established design patterns for multithreaded vision systems in the department</li>
+                <li>Created reusable components for camera integration, PLC communication, and data logging</li>
+                <li>Demonstrated that structured software engineering practices could be applied to industrial automation</li>
+                <li>Proved that rapid learning combined with systematic development could deliver production-grade systems</li>
+            </ul>
+        </section>
+
+        <section class="case-study-section alt-bg">
+            <h2>Key Takeaways</h2>
+            <ul class="feature-list">
+                <li><strong>Learn by Building:</strong> Mastered C# and .NET by tackling a real production system with clear requirements and deadlines</li>
+                <li><strong>Architecture Matters:</strong> Early investment in proper multithreaded architecture prevented technical debt and enabled later optimizations</li>
+                <li><strong>Incremental Development:</strong> Building subsystems independently and testing thoroughly at each stage managed complexity effectively</li>
+                <li><strong>Customer Focus:</strong> Mid-project requirement changes are inevitable—flexible architecture and clear communication enable adaptation</li>
+                <li><strong>Production Reliability:</strong> Automatic reconnection, error handling, and graceful degradation are essential for 24/7 manufacturing systems</li>
+            </ul>
+        </section>
+
+        <section class="case-study-section">
+            <div class="case-study-nav">
+                <a href="project-solaris-mk2.html" class="btn-secondary">← Previous Project</a>
+                <a href="project-digital-twin.html" class="btn-primary">Next Project →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Rachit Tamrakar. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Twin Simulation - Rachit Tamrakar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="nav-logo">Rachit Tamrakar</h1>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="case-study-header">
+            <a href="projects.html" class="back-link">← Back to Projects</a>
+            <h1>Digital Twin Simulation for Robotic Palletizer</h1>
+            <p class="case-study-meta">Simulation Engineer • Bosch Australia Manufacturing Solutions • Team of 3 • 2024</p>
+            <div class="case-study-tags">
+                <span>Siemens NX</span>
+                <span>Python</span>
+                <span>TIA Portal</span>
+                <span>Digital Twin</span>
+                <span>Automation</span>
+                <span>VBA</span>
+            </div>
+        </section>
+
+        <section class="case-study-section">
+            <div class="case-study-image">
+                <img src="images/front_end_main_screen.png" alt="Digital Twin Simulation Interface">
+                <p class="image-caption">NX Mechatronics Concept Designer simulation interface</p>
+            </div>
+        </section>
+
+        <section class="case-study-section">
+            <h2>Overview</h2>
+            <div class="highlight-box">
+                <p><strong>Impact:</strong> Built physics-based digital twin with 2000+ I/O points for $15M+ palletizing line, enabling virtual commissioning and cutting development time by 50%</p>
+            </div>
+            <p>Developed a high-fidelity digital twin of a robotic palletizer system to enable Software-in-the-Loop testing of new features without halting production operations. The simulation accurately models thousands of dynamic components and I/O points, allowing engineers to validate PLC code changes in a virtual environment before deploying to the physical line.</p>
+        </section>
+
+        <section class="case-study-section alt-bg">
+            <h2>The Challenge</h2>
+            <p>Testing new features on a $15M+ production line presents significant challenges:</p>
+            <ul class="feature-list">
+                <li><strong>Production Downtime:</strong> Every hour of testing halts revenue-generating operations</li>
+                <li><strong>Risk Management:</strong> Untested PLC code changes could damage expensive equipment</li>
+                <li><strong>Complex Interactions:</strong> Robotic palletizers involve intricate coordination between robots, conveyors, sensors, and safety systems</li>
+                <li><strong>Scale:</strong> 2000+ I/O points across multiple PLCs and control systems</li>
+                <li><strong>Time Pressure:</strong> Customer deadlines require rapid feature validation and deployment</li>
+            </ul>
+        </section>
+
+        <section class="case-study-section">
+            <h2>Technical Implementation</h2>
+            
+            <h3>Physics-Based Modeling</h3>
+            <p>Built high-fidelity NX models with accurate physics simulation:</p>
+            <ul class="technical-list">
+                <li>Thousands of dynamic components with realistic kinematics and collision detection</li>
+                <li>Robot arm motion including joint constraints and inverse kinematics</li>
+                <li>Conveyor systems with material flow and product handling</li>
+                <li>Sensor emulation matching real-world detection behavior</li>
+                <li>Safety system interactions and interlock logic</li>
+            </ul>
+
+            <h3>I/O Configuration Automation</h3>
+            <p>Developed automation tools to manage the complexity of 2000+ I/O points:</p>
+            <ul class="technical-list">
+                <li>Python scripts to parse PLC symbol tables and generate I/O mappings</li>
+                <li>Excel VBA tools to configure NX Mechatronics Concept Designer from spreadsheet data</li>
+                <li>Automated verification to ensure simulation I/O matches real hardware configuration</li>
+                <li>Reduced manual configuration time from weeks to hours</li>
+            </ul>
+
+            <h3>PLC Integration</h3>
+            <p>Connected simulation to real PLC code for Software-in-the-Loop testing:</p>
+            <ul class="technical-list">
+                <li>Integration with Siemens TIA Portal for direct PLC code testing</li>
+                <li>Real-time I/O exchange between simulation and PLC runtime</li>
+                <li>Cycle-accurate timing to match production environment behavior</li>
+                <li>Support for online PLC code changes during simulation</li>
+            </ul>
+        </section>
+
+        <section class="case-study-section alt-bg">
+            <h2>Development Process & Problem Solving</h2>
+            
+            <h3>Modeling Strategy</h3>
+            <p>Worked collaboratively in a team of 3 to divide modeling responsibilities:</p>
+            <ul class="technical-list">
+                <li>Decomposed system into subsystems (robot, conveyors, safety, peripherals)</li>
+                <li>Defined clear interfaces between subsystems for parallel development</li>
+                <li>Regular integration sessions to validate subsystem interactions</li>
+                <li>Iterative refinement based on testing with real PLC code</li>
+            </ul>
+
+            <h3>Validation Approach</h3>
+            <p>Ensured simulation accuracy through systematic validation:</p>
+            <ul class="technical-list">
+                <li>Compared simulation behavior to video recordings of real system</li>
+                <li>Validated timing sequences against production data logs</li>
+                <li>Tested edge cases and fault conditions that are risky to test on real hardware</li>
+                <li>Incorporated feedback from controls engineers using the simulation</li>
+            </ul>
+
+            <h3>Configuration Management Challenge</h3>
+            <p>Managing 2000+ I/O points manually was error-prone and time-consuming. I developed Python and VBA automation tools that:</p>
+            <ul class="technical-list">
+                <li>Extracted I/O definitions directly from PLC symbol tables</li>
+                <li>Generated NX configuration files automatically</li>
+                <li>Validated that every real I/O point had a corresponding simulation element</li>
+                <li>Enabled rapid reconfiguration when PLC code changed</li>
+            </ul>
+        </section>
+
+        <section class="case-study-section">
+            <h2>Results & Impact</h2>
+            
+            <div class="results-grid">
+                <div class="result-item">
+                    <h3>⏱️ 50% Time Reduction</h3>
+                    <p>Cut feature development time approximately in half</p>
+                </div>
+                <div class="result-item">
+                    <h3>⚡ 2× Faster Testing</h3>
+                    <p>Reduced test preparation time by 2×</p>
+                </div>
+                <div class="result-item">
+                    <h3>🔧 Virtual Commissioning</h3>
+                    <p>Enabled Software-in-the-Loop testing without production downtime</p>
+                </div>
+                <div class="result-item">
+                    <h3>🎯 2000+ I/O Points</h3>
+                    <p>Comprehensive simulation of entire palletizer system</p>
+                </div>
+            </div>
+
+            <h3>Business Value</h3>
+            <p>The digital twin provided tangible business benefits:</p>
+            <ul class="technical-list">
+                <li><strong>Reduced Risk:</strong> Catch PLC code errors in simulation before they damage real equipment</li>
+                <li><strong>Faster Development:</strong> Engineers can iterate and test continuously without scheduling production downtime</li>
+                <li><strong>Cost Savings:</strong> Every avoided hour of production downtime saves thousands in lost revenue</li>
+                <li><strong>Knowledge Transfer:</strong> New engineers can learn the system safely in simulation</li>
+                <li><strong>Customer Confidence:</strong> Demonstrate new features to customers before deployment</li>
+            </ul>
+
+            <h3>Technical Achievement</h3>
+            <p>Successfully modeled one of the most complex automation systems in the facility:</p>
+            <ul class="technical-list">
+                <li>Accurate physics simulation of multi-robot coordination</li>
+                <li>Realistic timing and behavior matching production environment</li>
+                <li>Automation tools that made the simulation maintainable as the real system evolved</li>
+                <li>Proven value through successful virtual commissioning of multiple feature releases</li>
+            </ul>
+        </section>
+
+        <section class="case-study-section alt-bg">
+            <h2>Key Takeaways</h2>
+            <ul class="feature-list">
+                <li><strong>Automation is Essential:</strong> Managing 2000+ I/O points manually is infeasible—automation tools are critical for maintainability</li>
+                <li><strong>Validation Matters:</strong> A digital twin is only valuable if it accurately represents reality—systematic validation is essential</li>
+                <li><strong>Decomposition Strategy:</strong> Breaking complex systems into subsystems enabled parallel development and manageable complexity</li>
+                <li><strong>Business Impact:</strong> The value of simulation is measured in reduced risk and faster development, not just technical capability</li>
+                <li><strong>Collaboration:</strong> Working effectively in a team of 3 required clear interfaces, regular integration, and open communication</li>
+            </ul>
+        </section>
+
+        <section class="case-study-section">
+            <div class="case-study-nav">
+                <a href="project-vision-system.html" class="btn-secondary">← Previous Project</a>
+                <a href="project-yolo-detection.html" class="btn-primary">Next Project →</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Rachit Tamrakar. All rights reserved.</p>
+    </footer>
+</body>
+</html>
