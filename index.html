@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rachit Tamrakar - Portfolio</title>
+    <title>Rachit Tamrakar - Mechatronics Engineer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,195 +11,271 @@
         <div class="nav-container">
             <h1 class="nav-logo">Rachit Tamrakar</h1>
             <ul class="nav-menu">
-                <li><a href="index.html" class="active">About</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
             </ul>
         </div>
     </nav>
 
     <main class="container">
-        <section class="hero">
-            <div class="hero-content">
-                <h1 class="hero-title">Rachit Tamrakar</h1>
-                <p class="hero-subtitle">Mechatronics Engineering Student</p>
-                <div class="hero-contact">
-                    <p><a href="mailto:tamrakar.rachit2004@gmail.com">tamrakar.rachit2004@gmail.com</a></p>
-                    <p>(425) 574-2708</p>
-                    <p><a href="https://linkedin.com/in/rachit-tamrakar" target="_blank">linkedin.com/in/rachit-tamrakar</a></p>
+        <!-- Hero Section -->
+        <section class="hero-landing">
+            <div class="hero-content-landing">
+                <h1 class="hero-title-landing">Rachit Tamrakar</h1>
+                <p class="hero-subtitle-landing">Mechatronics Engineer | Embedded Systems | Computer Vision</p>
+                <p class="hero-description">
+                    Building hardware-software solutions for real-time control, robotics, and industrial automation. 
+                    From hybrid rocket engines to multi-million dollar vision systems.
+                </p>
+                <div class="hero-cta">
+                    <a href="projects.html" class="btn-primary">View Projects</a>
+                    <a href="resume.pdf" class="btn-secondary" download>Download Resume</a>
+                    <a href="mailto:tamrakar.rachit2004@gmail.com" class="btn-secondary">Contact Me</a>
+                </div>
+                <div class="hero-links">
+                    <a href="https://linkedin.com/in/rachit-tamrakar" target="_blank">LinkedIn</a>
+                    <span>•</span>
+                    <a href="mailto:tamrakar.rachit2004@gmail.com">Email</a>
                 </div>
             </div>
         </section>
 
-        <section class="about-section">
+        <!-- Quick Highlights -->
+        <section class="highlights-section">
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3>Jim Furfaro Award Winner</h3>
+                    <p>Technical Excellence Award at IREC 2025 (140+ teams) for hybrid rocket propulsion system</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>Bosch Engineer</h3>
+                    <p>Vision, Robotics & Simulations at BAMS - $8M+ machine vision projects</p>
+                </div>
+                <div class="highlight-card">
+                    <h3>High Distinction</h3>
+                    <p>Mechatronics @ Monash University (3.64 GPA) - Dean's Honours List 2022 & 2023</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section-new">
             <h2>About Me</h2>
             <p class="about-text">
-                Mechatronics student with a strong background in building and integrating embedded systems, electronics, and control
-                software. Developed reliable hardware-software solutions for engineering projects involving real-time control, testing, and
-                data acquisition. Quick to learn new tools and technologies, and comfortable working across technical domains in
-                fast-paced, collaborative environments.
+                I'm a Mechatronics Engineering student with hands-on experience spanning industrial automation, aerospace propulsion, 
+                and robotics. My work ranges from developing real-time control systems for hybrid rocket engines to building computer 
+                vision applications for manufacturing at Bosch.
+            </p>
+            <p class="about-text">
+                I thrive at the intersection of hardware and software—whether it's designing PCBs, programming microcontrollers, 
+                implementing AI models, or architecting SCADA systems. I'm passionate about solving complex technical challenges 
+                and bringing ideas from concept to tested, flight-proven hardware.
             </p>
         </section>
 
-        <section class="education-section">
-            <h2>Education</h2>
-            <div class="education-card">
-                <h3>Monash University</h3>
-                <p class="degree">Bachelor of Engineering - Mechatronics (Honours)</p>
-                <p class="date">February 2022 - November 2026</p>
-                <p class="gpa">High Distinction (83.714 WAM / 3.64 GPA)</p>
-                <p class="gpa">Dean's Honours List (2022 & 2023)</p>
+        <!-- Featured Projects Preview -->
+        <section class="featured-projects-section">
+            <h2>Featured Work</h2>
+            <p class="section-subtitle">Highlights from my portfolio - <a href="projects.html">view all projects →</a></p>
+            
+            <div class="featured-projects-grid">
+                <!-- Solaris Mk II -->
+                <article class="featured-project-card">
+                    <div class="featured-project-image">
+                        <img src="images/zenith_launch.png" alt="Project Zenith Launch" onerror="this.style.display='none'">
+                    </div>
+                    <div class="featured-project-content">
+                        <h3>Solaris Mk II Hybrid Engine</h3>
+                        <p class="featured-project-meta">Controls Lead • Monash HPR • 2023-2025</p>
+                        <p class="featured-project-desc">
+                            Won Jim Furfaro Award at IREC 2025 for 4kN hybrid rocket engine with custom ground station electronics, 
+                            SCADA interface, and real-time telemetry system. Flown to 12,000 ft.
+                        </p>
+                        <div class="featured-project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">STM32</span>
+                            <span class="tag">MQTT</span>
+                            <span class="tag">Award Winner</span>
+                        </div>
+                        <a href="projects.html#solaris-mk2" class="project-link">Learn More →</a>
+                    </div>
+                </article>
+
+                <!-- Bosch Vision System -->
+                <article class="featured-project-card">
+                    <div class="featured-project-image">
+                        <img src="images/vision_system.png" alt="Vision System" onerror="this.style.display='none'">
+                    </div>
+                    <div class="featured-project-content">
+                        <h3>Multi-Camera Vision System</h3>
+                        <p class="featured-project-meta">Vision Engineer • Bosch BAMS • 2024-Present</p>
+                        <p class="featured-project-desc">
+                            Developed .NET-based machine vision application with 40+ cameras, real-time PLC communication, 
+                            AI model training, and SQL integration for $8M+ manufacturing project.
+                        </p>
+                        <div class="featured-project-tags">
+                            <span class="tag">C#/.NET</span>
+                            <span class="tag">HALCON</span>
+                            <span class="tag">PLC</span>
+                            <span class="tag">ProfiNet</span>
+                        </div>
+                        <a href="projects.html#vision-system" class="project-link">Learn More →</a>
+                    </div>
+                </article>
+
+                <!-- YOLO Detection -->
+                <article class="featured-project-card">
+                    <div class="featured-project-image">
+                        <img src="images/water_bottle_yolo.png" alt="YOLO Detection" onerror="this.style.display='none'">
+                    </div>
+                    <div class="featured-project-content">
+                        <h3>YOLO Object Detection System</h3>
+                        <p class="featured-project-meta">Computer Vision Engineer • Bosch BAMS • 2024</p>
+                        <p class="featured-project-desc">
+                            Real-time object detection with custom YOLOv8 training pipeline, automated labeling workflows, 
+                            and production deployment for manufacturing quality control.
+                        </p>
+                        <div class="featured-project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">YOLO</span>
+                            <span class="tag">Computer Vision</span>
+                        </div>
+                        <a href="projects.html#yolo-detection" class="project-link">Learn More →</a>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <section class="experience-section">
-            <h2>Experience</h2>
+        <!-- Skills Overview -->
+        <section class="skills-section-new">
+            <h2>Technical Expertise</h2>
+            <div class="skills-categories">
+                <div class="skill-category-new">
+                    <h3>Programming</h3>
+                    <div class="skill-tags">
+                        <span>C/C++</span>
+                        <span>C#</span>
+                        <span>Python</span>
+                        <span>MATLAB</span>
+                        <span>SQL</span>
+                        <span>VBA</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category-new">
+                    <h3>Computer Vision & AI</h3>
+                    <div class="skill-tags">
+                        <span>HALCON</span>
+                        <span>OpenCV</span>
+                        <span>PyTorch</span>
+                        <span>TensorFlow</span>
+                        <span>YOLO</span>
+                    </div>
+                </div>
 
-            <div class="experience-card">
-                <div class="exp-header">
+                <div class="skill-category-new">
+                    <h3>Embedded & Hardware</h3>
+                    <div class="skill-tags">
+                        <span>STM32</span>
+                        <span>Arduino</span>
+                        <span>Altium Designer</span>
+                        <span>PCB Design</span>
+                        <span>Real-time Systems</span>
+                    </div>
+                </div>
+
+                <div class="skill-category-new">
+                    <h3>Industrial Automation</h3>
+                    <div class="skill-tags">
+                        <span>Siemens TIA Portal</span>
+                        <span>ProfiNet</span>
+                        <span>Ignition SCADA</span>
+                        <span>PLC Programming</span>
+                    </div>
+                </div>
+
+                <div class="skill-category-new">
+                    <h3>CAD & Design</h3>
+                    <div class="skill-tags">
+                        <span>Siemens NX</span>
+                        <span>SolidWorks</span>
+                        <span>Fusion 360</span>
+                        <span>3D Printing</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Snapshot -->
+        <section class="experience-snapshot">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-card-new">
+                <div class="exp-header-new">
                     <div>
                         <h3>Bosch Australia Manufacturing Solutions (BAMS)</h3>
-                        <p class="position">Undergraduate Vision, Robotics and Simulations Engineer</p>
+                        <p class="position-new">Undergraduate Vision, Robotics and Simulations Engineer</p>
                     </div>
-                    <p class="date">March 2024 - Present</p>
+                    <p class="date-new">March 2024 - Present</p>
                 </div>
-                <ul class="exp-details">
-                    <li>Led research and development of advanced computer vision systems for anomaly detection, including design of training workflows tailored to manufacturing environments</li>
-                    <li>Engineered a novel image stitching algorithm, replacing a commercial solution and delivering significant cost savings and performance improvements</li>
-                    <li>Developed a pioneering .NET-based machine vision application integrating real-time PLC communication, multi-camera image acquisition (40+), AI model training, SQL database, and custom HMI for a project valued at >$8 million</li>
-                    <li>Implemented large-scale 3D plant simulations in Siemens NX Mechatronics Concept Designer, incorporating thousands of I/O points using bespoke automation tools built in Excel and Python</li>
+                <ul class="exp-highlights">
+                    <li>Leading R&D for computer vision systems in manufacturing environments</li>
+                    <li>Developed $8M+ .NET vision application with 40+ cameras and real-time PLC integration</li>
+                    <li>Engineered custom image stitching algorithm replacing commercial solutions</li>
                 </ul>
             </div>
 
-            <div class="experience-card">
-                <div class="exp-header">
+            <div class="experience-card-new">
+                <div class="exp-header-new">
                     <div>
-                        <h3>Monash High Powered Rocketry (Monash HPR)</h3>
-                        <p class="position">Avionics Vice Lead / Engineer</p>
+                        <h3>Monash High Powered Rocketry</h3>
+                        <p class="position-new">Avionics Vice Lead / Controls Engineer</p>
                     </div>
-                    <p class="date">August 2023 - Present</p>
+                    <p class="date-new">August 2023 - Present</p>
                 </div>
-                <ul class="exp-details">
-                    <li>Developing helium-boosted liquid oxygen feed systems for a high-altitude rocket targeting 100,000 ft apogee</li>
-                    <li>Designed, developed, and tested electronics for Solaris Mk II – Monash HPR's flagship student-developed hybrid engine powering Project Zenith, the team's 2025 IREC entry</li>
-                    <li>Contributed to winning the Jim Furfaro Technical Excellence Award from over 140 teams and 2nd place in category</li>
-                    <li>Presented avionics and GSE architecture of Solaris Mk II to IREC judges, directly supporting the team's award-winning submission</li>
-                    <li>Supported assembly and hot-fire campaign of Solaris Mk III, a 12 kN LOX–paraffin hybrid engine, at Race2Space UK-based propulsion competition</li>
-                    <li>Led design and testing of advanced ground station equipment (GSE) enabling real-time control, telemetry, and fault detection for Solaris Mk II</li>
-                    <li>Developed novel subsystems for hybrid propulsion, including high-voltage ignitors and capacitive propellant sensors</li>
-                    <li>Supported management of 20+ person Avionics team delivering 7+ concurrent projects, spanning engine controllers, deployment systems, and high-performance dataloggers</li>
+                <ul class="exp-highlights">
+                    <li>Won Jim Furfaro Technical Excellence Award at IREC 2025 (140+ teams)</li>
+                    <li>Designed flight-proven electronics and ground station for 4kN hybrid engine</li>
+                    <li>Leading development of LOX feed systems for 100,000 ft altitude target</li>
                 </ul>
             </div>
 
-            <div class="experience-card">
-                <div class="exp-header">
-                    <div>
-                        <h3>Connect Education</h3>
-                        <p class="position">Year 12 Physics and Maths Presenter</p>
-                    </div>
-                    <p class="date">September 2022 - March 2024</p>
-                </div>
-                <ul class="exp-details">
-                    <li>Delivered engaging Year 12 Physics tutoring in small-group settings and authored detailed weekly revision materials as part of selective VCE preparation program</li>
-                    <li>Presented VCE Physics and Mathematical Methods revision workshops to 25 school cohorts across Victoria, tailoring content to each school's needs</li>
-                    <li>Demonstrated strong communication and public speaking skills by breaking down complex topics and adapting explanations for varied learning levels</li>
-                </ul>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="resume.pdf" class="btn-secondary" download style="display: inline-block;">
+                    Download Full Resume for Complete Experience
+                </a>
             </div>
         </section>
 
-        <section class="skills-section">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <ul>
-                        <li>C/C++</li>
-                        <li>C#</li>
-                        <li>Python</li>
-                        <li>MATLAB & Simulink</li>
-                        <li>VBA</li>
-                        <li>SQL</li>
-                    </ul>
+        <!-- Education -->
+        <section class="education-section-new">
+            <h2>Education</h2>
+            <div class="education-card-new">
+                <div class="education-header">
+                    <div>
+                        <h3>Monash University</h3>
+                        <p class="degree-new">Bachelor of Engineering (Honours) - Mechatronics</p>
+                    </div>
+                    <p class="date-new">Feb 2022 - Nov 2026</p>
                 </div>
-                <div class="skill-category">
-                    <h3>Computer Vision & AI</h3>
-                    <ul>
-                        <li>HALCON</li>
-                        <li>OpenCV</li>
-                        <li>PyTorch</li>
-                        <li>TensorFlow</li>
-                        <li>YOLO</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Hardware & CAD</h3>
-                    <ul>
-                        <li>Altium Designer</li>
-                        <li>STM32 Cube IDE</li>
-                        <li>Siemens NX</li>
-                        <li>SolidWorks</li>
-                        <li>Fusion 360</li>
-                        <li>Arduino</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Industrial & Other</h3>
-                    <ul>
-                        <li>Siemens TIA Portal</li>
-                        <li>Ignition</li>
-                        <li>VMware/VirtualBox</li>
-                        <li>LaTeX</li>
-                        <li>3D Printing</li>
-                    </ul>
+                <div class="education-details">
+                    <span class="education-highlight">High Distinction Average (83.7 WAM / 3.64 GPA)</span>
+                    <span class="education-highlight">Dean's Honours List 2022 & 2023</span>
                 </div>
             </div>
         </section>
 
-        <section class="experience-section">
-            <h2>Awards & Competitions</h2>
-
-            <div class="experience-card">
-                <div class="exp-header">
-                    <div>
-                        <h3>Jim Furfaro Technical Excellence Award</h3>
-                        <p class="position">Intercollegiate Rocket Engineering Competition (IREC)</p>
-                    </div>
-                    <p class="date">June 2025</p>
-                </div>
-                <ul class="exp-details">
-                    <li>Awarded to Monash HPR from over 140 competing teams for outstanding technical achievement</li>
-                    <li>Also placed 2nd in competition category with Project Zenith rocket</li>
-                </ul>
-            </div>
-
-            <div class="experience-card">
-                <div class="exp-header">
-                    <div>
-                        <h3>Robot Building Competition</h3>
-                        <p class="position">Monash University (100+ participants)</p>
-                    </div>
-                    <p class="date">2023, 2024, 2025</p>
-                </div>
-                <ul class="exp-details">
-                    <li>1st Place (August 2025) - Remote-controlled robot in obstacle course race</li>
-                    <li>3rd Place (August 2024) - Remote-controlled robot for soccer-style game</li>
-                    <li>2nd Place (August 2023) - Autonomous maze-navigating robot</li>
-                </ul>
-            </div>
-
-            <div class="experience-card">
-                <div class="exp-header">
-                    <div>
-                        <h3>Terminal Asia Pacific Regional Competition</h3>
-                        <p class="position">AI-based Tower Defense Challenge</p>
-                    </div>
-                    <p class="date">October 2023</p>
-                </div>
-                <ul class="exp-details">
-                    <li>Placed 5th out of 33 teams as solo competitor</li>
-                    <li>Developed real-time strategy algorithms for competitive AI challenge</li>
-                </ul>
+        <!-- Call to Action -->
+        <section class="cta-section">
+            <h2>Let's Work Together</h2>
+            <p>I'm open to full-time opportunities in aerospace, robotics, and industrial automation.</p>
+            <div class="cta-buttons">
+                <a href="mailto:tamrakar.rachit2004@gmail.com" class="btn-primary">Get in Touch</a>
+                <a href="projects.html" class="btn-secondary">Explore My Work</a>
             </div>
         </section>
+
     </main>
 
     <footer>
