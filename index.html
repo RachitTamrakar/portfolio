@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rachit Tamrakar - Mechatronics Engineer</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="projects-data.js"></script>
+    <script src="render-projects.js"></script>
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <h1 class="nav-logo">Rachit Tamrakar</h1>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-            </ul>
+        <div class="nav-content">
+            <a href="index.html" class="logo">Rachit Tamrakar</a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="projects.html">Projects</a>
+            </div>
         </div>
     </nav>
 
@@ -40,24 +42,6 @@
             </div>
         </section>
 
-        <!-- Quick Highlights -->
-        <section class="highlights-section">
-            <div class="highlights-grid">
-                <div class="highlight-card">
-                    <h3>Jim Furfaro Award Winner</h3>
-                    <p>Technical Excellence Award at IREC 2025 (140+ teams) for hybrid rocket propulsion system</p>
-                </div>
-                <div class="highlight-card">
-                    <h3>Bosch Engineer</h3>
-                    <p>Vision, Robotics & Simulations at BAMS - $8M+ machine vision projects</p>
-                </div>
-                <div class="highlight-card">
-                    <h3>High Distinction</h3>
-                    <p>Mechatronics @ Monash University (3.64 GPA) - Dean's Honours List 2022 & 2023</p>
-                </div>
-            </div>
-        </section>
-
         <!-- About Section -->
         <section class="about-section-new">
             <h2>About Me</h2>
@@ -74,77 +58,8 @@
         </section>
 
         <!-- Featured Projects Preview -->
-        <section class="featured-projects-section">
-            <h2>Featured Work</h2>
-            <p class="section-subtitle">Highlights from my portfolio - <a href="projects.html">view all projects →</a></p>
-            
-            <div class="featured-projects-grid">
-                <!-- Solaris Mk II -->
-                <a href="solaris-mk-ii.html" class="featured-project-card has-page">
-                    <div class="featured-project-image">
-                        <img src="images/zenith_launch.png" alt="Project Zenith Launch" onerror="this.style.display='none'">
-                    </div>
-                    <div class="featured-project-content">
-                        <h3>Solaris Mk II Hybrid Engine</h3>
-                        <p class="featured-project-meta">Controls Lead • Monash HPR • 2023-2025</p>
-                        <p class="featured-project-desc">
-                            Won Jim Furfaro Award at IREC 2025 for 4kN hybrid rocket engine with custom ground station electronics, 
-                            SCADA interface, and real-time telemetry system. Flown to 12,000 ft.
-                        </p>
-                        <div class="featured-project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">STM32</span>
-                            <span class="tag">MQTT</span>
-                            <span class="tag">Award Winner</span>
-                        </div>
-                        <span class="project-link">Learn More →</span>
-                    </div>
-                </a>
-
-                <!-- Bosch Vision System -->
-                <a href="vision-inspection-system.html" class="featured-project-card has-page">
-                    <div class="featured-project-image">
-                        <img src="images/vision_system.png" alt="Vision System" onerror="this.style.display='none'">
-                    </div>
-                    <div class="featured-project-content">
-                        <h3>Multi-Camera Vision System</h3>
-                        <p class="featured-project-meta">Vision Engineer • Bosch BAMS • 2024-Present</p>
-                        <p class="featured-project-desc">
-                            Developed .NET-based machine vision application with 40+ cameras, real-time PLC communication, 
-                            AI model training, and SQL integration for $8M+ manufacturing project.
-                        </p>
-                        <div class="featured-project-tags">
-                            <span class="tag">C#/.NET</span>
-                            <span class="tag">HALCON</span>
-                            <span class="tag">PLC</span>
-                            <span class="tag">ProfiNet</span>
-                        </div>
-                        <span class="project-link">Learn More →</span>
-                    </div>
-                </a>
-
-                <!-- YOLO Detection -->
-                <article class="featured-project-card">
-                    <div class="featured-project-image">
-                        <img src="images/water_bottle_yolo.png" alt="YOLO Detection" onerror="this.style.display='none'">
-                    </div>
-                    <div class="featured-project-content">
-                        <h3>YOLO Object Detection System</h3>
-                        <p class="featured-project-meta">Computer Vision Engineer • Bosch BAMS • 2024</p>
-                        <p class="featured-project-desc">
-                            Real-time object detection with custom YOLOv8 training pipeline, automated labeling workflows, 
-                            and production deployment for manufacturing quality control.
-                        </p>
-                        <div class="featured-project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">PyTorch</span>
-                            <span class="tag">YOLO</span>
-                            <span class="tag">Computer Vision</span>
-                        </div>
-                        <a href="projects.html#yolo-detection" class="project-link">Learn More →</a>
-                    </div>
-                </article>
-            </div>
+        <section class="featured-projects-section" id="featured-projects-container">
+            <!-- Projects rendered by render-projects.js -->
         </section>
 
         <!-- Skills Overview -->
@@ -207,79 +122,36 @@
             </div>
         </section>
 
-        <!-- Experience Snapshot -->
-        <section class="experience-snapshot">
-            <h2>Professional Experience</h2>
-            
-            <div class="experience-card-new">
-                <div class="exp-header-new">
-                    <div>
-                        <h3>Bosch Australia Manufacturing Solutions (BAMS)</h3>
-                        <p class="position-new">Undergraduate Vision, Robotics and Simulations Engineer</p>
-                    </div>
-                    <p class="date-new">March 2024 - Present</p>
-                </div>
-                <ul class="exp-highlights">
-                    <li>Leading R&D for computer vision systems in manufacturing environments</li>
-                    <li>Developed $8M+ .NET vision application with 40+ cameras and real-time PLC integration</li>
-                    <li>Engineered custom image stitching algorithm replacing commercial solutions</li>
-                </ul>
-            </div>
-
-            <div class="experience-card-new">
-                <div class="exp-header-new">
-                    <div>
-                        <h3>Monash High Powered Rocketry</h3>
-                        <p class="position-new">Avionics Vice Lead / Controls Engineer</p>
-                    </div>
-                    <p class="date-new">August 2023 - Present</p>
-                </div>
-                <ul class="exp-highlights">
-                    <li>Won Jim Furfaro Technical Excellence Award at IREC 2025 (140+ teams)</li>
-                    <li>Designed flight-proven electronics and ground station for 4kN hybrid engine</li>
-                    <li>Leading development of LOX feed systems for 100,000 ft altitude target</li>
-                </ul>
-            </div>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="resume.pdf" class="btn-secondary" download style="display: inline-block;">
-                    Download Full Resume for Complete Experience
-                </a>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section class="education-section-new">
-            <h2>Education</h2>
-            <div class="education-card-new">
-                <div class="education-header">
-                    <div>
-                        <h3>Monash University</h3>
-                        <p class="degree-new">Bachelor of Engineering (Honours) - Mechatronics</p>
-                    </div>
-                    <p class="date-new">Feb 2022 - Nov 2026</p>
-                </div>
-                <div class="education-details">
-                    <span class="education-highlight">High Distinction Average (83.7 WAM / 3.64 GPA)</span>
-                    <span class="education-highlight">Dean's Honours List 2022 & 2023</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Call to Action -->
-        <section class="cta-section">
-            <h2>Let's Work Together</h2>
-            <p>I'm open to full-time opportunities in aerospace, robotics, and industrial automation.</p>
-            <div class="cta-buttons">
-                <a href="mailto:tamrakar.rachit2004@gmail.com" class="btn-primary">Get in Touch</a>
-                <a href="projects.html" class="btn-secondary">Explore My Work</a>
-            </div>
-        </section>
-
     </main>
 
     <footer>
         <p>&copy; 2024 Rachit Tamrakar. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Navbar follows scroll
+        let lastScroll = 0;
+        let navbarOffset = 0;
+        const navbar = document.querySelector('.navbar');
+        const navbarHeight = navbar.offsetHeight;
+        const scrollThreshold = 10;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= scrollThreshold) {
+                navbarOffset = 0;
+                navbar.style.transform = `translateY(0)`;
+                lastScroll = currentScroll;
+                return;
+            }
+            
+            const scrollDelta = currentScroll - lastScroll;
+            navbarOffset = Math.max(-navbarHeight, Math.min(0, navbarOffset - scrollDelta));
+            
+            navbar.style.transform = `translateY(${navbarOffset}px)`;
+            lastScroll = currentScroll;
+        });
+    </script>
 </body>
 </html>

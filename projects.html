@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Rachit Tamrakar</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="projects-data.js"></script>
+    <script src="render-projects.js"></script>
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-container">
-            <h1 class="nav-logo">Rachit Tamrakar</h1>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html" class="active">Projects</a></li>
-            </ul>
+        <div class="nav-content">
+            <a href="index.html" class="logo">Rachit Tamrakar</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="projects.html" class="active">Projects</a>
+            </div>
         </div>
     </nav>
 
@@ -23,257 +25,41 @@
             <p class="page-subtitle-clean">Technical work spanning industrial automation, aerospace propulsion, robotics, and AI</p>
         </section>
 
-        <!-- FEATURED PROJECTS -->
-        <section class="projects-section featured-section">
-            <h2 class="section-title">Featured Work</h2>
-            <div class="projects-card-grid">
-                
-                <!-- Multi-Station Vision System -->
-                <a href="vision-inspection-system.html" class="project-card-compact has-page">
-                    <div class="project-card-image">
-                        <img src="images/vision_system.png" alt="Vision System" onerror="this.style.display='none'">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Multi-Station Vision Inspection System</h3>
-                        <p class="impact-line">Built production system for $8M line with 40+ cameras achieving sub-second cycle times</p>
-                        <p class="project-meta-compact">Bosch Australia • 2024-Present</p>
-                        <div class="project-tags-compact">
-                            <span>C#/.NET</span>
-                            <span>HALCON</span>
-                            <span>ProfiNet</span>
-                            <span>SQL</span>
-                            <span>Multithreading</span>
-                        </div>
-                        <span class="project-link-compact">View case study →</span>
-                    </div>
-                </a>
-
-                <!-- Solaris Mk II -->
-                <a href="solaris-mk-ii.html" class="project-card-compact has-page">
-                    <div class="project-card-image">
-                        <img src="images/zenith_launch.png" alt="Project Zenith Launch" onerror="this.style.display='none'">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Solaris Mk II Hybrid Engine & Ground Station</h3>
-                        <p class="impact-line">Won Jim Furfaro Award at IREC 2025 for 4kN hybrid engine with complete ground station electronics</p>
-                        <p class="project-meta-compact">Monash HPR • 2023-2025</p>
-                        <div class="project-tags-compact">
-                            <span>Python</span>
-                            <span>STM32</span>
-                            <span>MQTT</span>
-                            <span>RS422</span>
-                            <span>SCADA</span>
-                        </div>
-                        <span class="project-link-compact">View case study →</span>
-                    </div>
-                </a>
-
-                <!-- Fruit Robot -->
-                <a href="autonomous-fruit-robot.html" class="project-card-compact has-page">
-                    <div class="project-card-image">
-                        <div class="placeholder-image">Robot</div>
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Fruit Navigation & Mapping Robot</h3>
-                        <p class="impact-line">Autonomous robot using YOLO detection, EKF SLAM, and ray-casting navigation in unknown environments</p>
-                        <p class="project-meta-compact">Monash University • 2024</p>
-                        <div class="project-tags-compact">
-                            <span>Python</span>
-                            <span>YOLO</span>
-                            <span>EKF SLAM</span>
-                            <span>OpenCV</span>
-                        </div>
-                        <span class="project-link-compact">View case study →</span>
-                    </div>
-                </a>
-
-                <!-- Arc-Pyro -->
-                <a href="arc-pyro-ignitor.html" class="project-card-compact has-page">
-                    <div class="project-card-image">
-                        <img src="images/arc_pyro_bench.png" alt="Arc-Pyro Ignitor" onerror="this.style.display='none'">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Arc-Pyro High Voltage Ignitor</h3>
-                        <p class="impact-line">14 kV ignition system with comprehensive safety interlocks for ABS pyrolysis</p>
-                        <p class="project-meta-compact">Monash HPR • 2024</p>
-                        <div class="project-tags-compact">
-                            <span>High Voltage</span>
-                            <span>Electrical Safety</span>
-                            <span>CAD</span>
-                        </div>
-                        <span class="project-link-compact">View case study →</span>
-                    </div>
-                </a>
-
-                <!-- Solaris Mk III -->
-                <a href="solaris-mk-iii.html" class="project-card-compact has-page">
-                    <div class="project-card-image">
-                        <img src="images/solaris_showcase.png" alt="Solaris Mk III" onerror="this.style.display='none'">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Solaris Mk III Support</h3>
-                        <p class="impact-line">12 kN LOX-Paraffin engine for Race2Space UK competition</p>
-                        <p class="project-meta-compact">Monash HPR • 2024-2025</p>
-                        <div class="project-tags-compact">
-                            <span>LOX</span>
-                            <span>Hybrid Propulsion</span>
-                            <span>Testing</span>
-                        </div>
-                        <span class="project-link-compact">View case study →</span>
-                    </div>
-                </a>
-
-            </div>
-        </section>
-
-        <!-- INDUSTRIAL AUTOMATION & COMPUTER VISION -->
-        <section class="projects-section alt-bg">
-            <h2 class="section-title">Industrial Automation & Computer Vision</h2>
-            <div class="projects-card-grid">
-                
-                <!-- YOLO Detection -->
-                <article class="project-card-compact">
-                    <div class="project-card-image">
-                        <img src="images/water_bottle_yolo.png" alt="YOLO Detection" onerror="this.style.display='none'">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Real-Time YOLO Object Detection</h3>
-                        <p class="impact-line">High-reliability vision system for surgical-grade product detection with automated ML pipeline cutting training time 2×</p>
-                        <p class="project-meta-compact">Bosch Australia • 2024</p>
-                        <div class="project-tags-compact">
-                            <span>Python</span>
-                            <span>PyTorch</span>
-                            <span>YOLO</span>
-                            <span>OpenCV</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Digital Twin -->
-                <article class="project-card-compact">
-                    <div class="project-card-image">
-                        <div class="placeholder-image">Sim</div>
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Digital Twin Simulation</h3>
-                        <p class="impact-line">Physics-based palletizer simulation reducing development time by ~50%</p>
-                        <p class="project-meta-compact">Bosch Australia • 2024</p>
-                        <div class="project-tags-compact">
-                            <span>Siemens NX</span>
-                            <span>Python</span>
-                            <span>Excel VBA</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Image Stitching -->
-                <article class="project-card-compact">
-                    <div class="project-card-image">
-                        <div class="placeholder-image">CV</div>
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Novel Image Stitching Algorithm</h3>
-                        <p class="impact-line">Proprietary solution replacing commercial software with improved performance and cost savings</p>
-                        <p class="project-meta-compact">Bosch Australia • 2024</p>
-                        <div class="project-tags-compact">
-                            <span>C#</span>
-                            <span>Computer Vision</span>
-                            <span>Image Processing</span>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- ROBOTICS & COMPETITIONS -->
-        <section class="projects-section">
-            <h2 class="section-title">Robotics & Competitions</h2>
-            <div class="projects-card-grid">
-                
-                <!-- Robot Competitions -->
-                <article class="project-card-compact">
-                    <div class="project-card-image">
-                        <div class="placeholder-image">Robot</div>
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Robot Building Competitions</h3>
-                        <p class="impact-line">3 years of podium finishes: 1st place (2025), 3rd place (2024), 2nd place (2023) in 100+ participant field</p>
-                        <p class="project-meta-compact">Monash University • 2023-2025</p>
-                        <div class="project-tags-compact">
-                            <span>Arduino</span>
-                            <span>Motor Control</span>
-                            <span>Rapid Prototyping</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Terminal AI -->
-                <article class="project-card-compact">
-                    <div class="project-card-image">
-                        <div class="placeholder-image">AI</div>
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Terminal APAC Competition</h3>
-                        <p class="impact-line">5th of 33 teams in AI tower defense strategy challenge</p>
-                        <p class="project-meta-compact">Terminal (Citadel) • 2023</p>
-                        <div class="project-tags-compact">
-                            <span>Python</span>
-                            <span>Algorithms</span>
-                            <span>Real-time Systems</span>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- ROCKETRY PROJECTS -->
-        <section class="projects-section alt-bg">
-            <h2 class="section-title">Rocketry Projects</h2>
-            <div class="projects-card-grid">
-                
-                <!-- Fill Station -->
-                <article class="project-card-compact">
-                    <div class="project-card-image">
-                        <img src="images/hobby_fill_station.png" alt="Fill Station" onerror="this.style.display='none'">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Hobby-Grade Hybrid Engine Fill Station</h3>
-                        <p class="impact-line">Low-cost N₂O fill station with LoRa wireless remote operation and safety monitoring</p>
-                        <p class="project-meta-compact">Monash HPR / Design Methods • 2023</p>
-                        <div class="project-tags-compact">
-                            <span>Fluid Systems</span>
-                            <span>LoRa</span>
-                            <span>Arduino</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Chameleon Logger -->
-                <article class="project-card-compact">
-                    <div class="project-card-image">
-                        <img src="images/chamelion_launch.png" alt="Chameleon Flight" onerror="this.style.display='none'">
-                    </div>
-                    <div class="project-card-body">
-                        <h3>Arduino Flight Data Logger</h3>
-                        <p class="impact-line">1 kHz data logger successfully flown to 1,200 ft on Chameleon rocket</p>
-                        <p class="project-meta-compact">Monash HPR • 2023</p>
-                        <div class="project-tags-compact">
-                            <span>Arduino</span>
-                            <span>Embedded C</span>
-                            <span>Data Logging</span>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
+        <!-- ALL PROJECTS SECTIONS -->
+        <div id="all-projects-container">
+            <!-- Projects rendered by render-projects.js -->
+        </div>
 
     </main>
 
     <footer>
         <p>&copy; 2024 Rachit Tamrakar. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Navbar follows scroll
+        let lastScroll = 0;
+        let navbarOffset = 0;
+        const navbar = document.querySelector('.navbar');
+        const navbarHeight = navbar.offsetHeight;
+        const scrollThreshold = 10;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= scrollThreshold) {
+                navbarOffset = 0;
+                navbar.style.transform = `translateY(0)`;
+                lastScroll = currentScroll;
+                return;
+            }
+            
+            const scrollDelta = currentScroll - lastScroll;
+            navbarOffset = Math.max(-navbarHeight, Math.min(0, navbarOffset - scrollDelta));
+            
+            navbar.style.transform = `translateY(${navbarOffset}px)`;
+            lastScroll = currentScroll;
+        });
+    </script>
 </body>
 </html>
