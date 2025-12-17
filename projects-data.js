@@ -4,7 +4,7 @@ const PROJECTS = {
         id: 'vision-system',
         title: 'Multi-Station Vision Inspection System',
         organization: 'Bosch Australia',
-        timeframe: '2024-Present',
+        timeframe: '2024-2025',
         impact: 'Built production system for $8M line with 40+ cameras achieving sub-second cycle times',
         tags: ['C#/.NET', 'HALCON', 'ProfiNet', 'SQL'],
         image: 'images/vision_system.png',
@@ -19,7 +19,7 @@ const PROJECTS = {
         title: 'Solaris Mk II Hybrid Engine & Ground Station',
         organization: 'Monash HPR',
         timeframe: '2023-2025',
-        impact: 'Won Jim Furfaro Award at IREC 2025 for 4kN hybrid rocket engine with custom ground station',
+        impact: 'Avionics Vice Lead for propulsion controls & test readiness; award-winning 4kN hybrid engine ground station at IREC 2025',
         tags: ['Python', 'STM32', 'MQTT', 'Award Winner'],
         image: 'images/zenith_launch.png',
         imageAlt: 'Project Zenith Launch',
@@ -32,7 +32,7 @@ const PROJECTS = {
         id: 'fruit-robot',
         title: 'Fruit Navigation & Mapping Robot',
         organization: 'Monash University',
-        timeframe: '2024',
+        timeframe: '2025',
         impact: 'Autonomous robot using YOLO detection, EKF SLAM, and ray-casting navigation in unknown environments',
         tags: ['Python', 'YOLO', 'EKF SLAM', 'OpenCV'],
         image: null,
@@ -51,7 +51,7 @@ const PROJECTS = {
         tags: ['Python', 'PyTorch', 'YOLO', 'OpenCV'],
         image: 'images/water_bottle_yolo.png',
         imageAlt: 'YOLO Detection',
-        tier: 'featured',
+        tier: 'supporting',
         categories: ['industrial']
     },
     
@@ -64,8 +64,21 @@ const PROJECTS = {
         tags: ['Siemens NX', 'Python', 'Excel VBA'],
         image: null,
         placeholder: 'Sim',
-        tier: 'featured',
+        tier: 'supporting',
         categories: ['industrial']
+    },
+    
+    heliumLOX: {
+        id: 'helium-lox',
+        title: 'Helium-Boosted LOX Feed System',
+        organization: 'Monash HPR',
+        timeframe: '2023-Present',
+        impact: 'Contributing to high-altitude rocket development with helium-boosted liquid oxygen feed system targeting 100,000 ft apogee',
+        tags: ['LOX', 'Feed Systems', 'Helium Pressurization'],
+        image: null,
+        placeholder: 'LOX',
+        tier: 'supporting',
+        categories: ['rocketry']
     },
     
     imageStitching: {
@@ -77,7 +90,7 @@ const PROJECTS = {
         tags: ['C#', 'Computer Vision', 'Image Processing'],
         image: null,
         placeholder: 'CV',
-        tier: 'featured',
+        tier: 'supporting',
         categories: ['industrial']
     },
     
@@ -85,13 +98,13 @@ const PROJECTS = {
         id: 'arc-pyro',
         title: 'Arc-Pyro High Voltage Ignitor',
         organization: 'Monash HPR',
-        timeframe: '2024',
+        timeframe: '2025',
         impact: '14 kV ignition system with comprehensive safety interlocks for ABS pyrolysis',
         tags: ['High Voltage', 'Electrical Safety', 'CAD'],
         image: 'images/arc_pyro_bench.png',
         imageAlt: 'Arc-Pyro Ignitor',
         link: 'arc-pyro-ignitor.html',
-        tier: 'featured',
+        tier: 'notable',
         categories: ['rocketry']
     },
     
@@ -99,13 +112,13 @@ const PROJECTS = {
         id: 'solaris-mk3',
         title: 'Solaris Mk III Support',
         organization: 'Monash HPR',
-        timeframe: '2024-2025',
+        timeframe: '2025',
         impact: '12 kN LOX-Paraffin engine for Race2Space UK competition',
         tags: ['LOX', 'Hybrid Propulsion', 'Testing'],
         image: 'images/solaris_showcase.png',
         imageAlt: 'Solaris Mk III',
         link: 'solaris-mk-iii.html',
-        tier: 'featured',
+        tier: 'notable',
         categories: ['rocketry']
     },
     
@@ -113,7 +126,7 @@ const PROJECTS = {
         id: 'fill-station',
         title: 'Hobby-Grade Hybrid Engine Fill Station',
         organization: 'Monash HPR / Design Methods',
-        timeframe: '2023',
+        timeframe: '2025',
         impact: 'Low-cost N₂O fill station with LoRa wireless remote operation and safety monitoring',
         tags: ['Fluid Systems', 'LoRa', 'Arduino'],
         image: 'images/hobby_fill_station.png',
@@ -153,12 +166,25 @@ const PROJECTS = {
         title: 'Terminal APAC Competition',
         organization: 'Terminal (Citadel)',
         timeframe: '2023',
-        impact: '5th of 33 teams in AI tower defense strategy challenge',
+        impact: '5th out of 100+ participants in AI tower defense strategy challenge',
         tags: ['Python', 'Algorithms', 'Real-time Systems'],
         image: null,
         placeholder: 'AI',
         tier: 'supporting',
         categories: ['robotics']
+    },
+    
+    avionicsAdvisor: {
+        id: 'avionics-advisor',
+        title: 'Avionics Advisor',
+        organization: 'Monash HPR',
+        timeframe: '2025-Present',
+        impact: 'Architecture review, debug support, and test planning mentorship for next-generation avionics team',
+        tags: ['Mentoring', 'Architecture', 'Reliability'],
+        image: null,
+        placeholder: 'Advisory',
+        tier: 'supporting',
+        categories: ['rocketry']
     }
 };
 

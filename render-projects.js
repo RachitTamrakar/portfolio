@@ -72,8 +72,8 @@
      * Renders projects for the index page (featured only)
      */
     window.renderIndexProjects = function() {
-        const featuredProjects = Object.values(PROJECTS)
-            .filter(p => p.categories.includes('featured'));
+        const featuredProjects = sortProjectsForDisplay(Object.values(PROJECTS)
+            .filter(p => p.categories.includes('featured')));
         
         const container = document.getElementById('featured-projects-container');
         if (!container) return;
@@ -92,6 +92,32 @@
     };
 
     /**
+     * Helper: parse the most-relevant year from a project's timeframe string
+     * Returns 0 if no year found.
+     */
+    function parseProjectYear(timeframe) {
+        if (!timeframe || typeof timeframe !== 'string') return 0;
+        const years = timeframe.match(/\d{4}/g);
+        if (!years) return 0;
+        return Math.max(...years.map(y => parseInt(y, 10)));
+    }
+
+    /**
+     * Helper: sort projects so that projects with their own page (`link`) come first,
+     * then by most-recent year (descending).
+     */
+    function sortProjectsForDisplay(projects) {
+        return projects.sort((a, b) => {
+            const aHasLink = !!a.link;
+            const bHasLink = !!b.link;
+            if (aHasLink !== bHasLink) return aHasLink ? -1 : 1;
+            const ay = parseProjectYear(a.timeframe);
+            const by = parseProjectYear(b.timeframe);
+            return by - ay; // most recent first
+        });
+    }
+
+    /**
      * Renders all projects organized by category for projects page
      */
     window.renderAllProjects = function() {
@@ -101,31 +127,31 @@
         const sections = [];
         
         // Featured section
-        const featuredProjects = Object.values(PROJECTS)
-            .filter(p => p.categories.includes('featured'));
+        const featuredProjects = sortProjectsForDisplay(Object.values(PROJECTS)
+            .filter(p => p.categories.includes('featured')));
         sections.push(renderCategorySection('featured', featuredProjects));
         
         // Industrial section
-        const industrialProjects = Object.values(PROJECTS)
-            .filter(p => p.categories.includes('industrial') && !p.categories.includes('featured'));
+        const industrialProjects = sortProjectsForDisplay(Object.values(PROJECTS)
+            .filter(p => p.categories.includes('industrial') && !p.categories.includes('featured')));
         // Add vision system with extra tags for industrial section
         const visionWithExtraTags = {...PROJECTS.visionSystem, tags: [...PROJECTS.visionSystem.tags, 'Multithreading']};
         industrialProjects.unshift(visionWithExtraTags);
         sections.push(renderCategorySection('industrial', industrialProjects));
         
         // Rocketry section
-        const rocketryProjects = Object.values(PROJECTS)
-            .filter(p => p.categories.includes('rocketry') && !p.categories.includes('featured'));
+        const rocketryProjects = sortProjectsForDisplay(Object.values(PROJECTS)
+            .filter(p => p.categories.includes('rocketry') && !p.categories.includes('featured')));
         // Add Solaris Mk II with extra tags for rocketry section
         const solarisMk2WithExtraTags = {...PROJECTS.solarisMk2, 
-            impact: 'Won Jim Furfaro Award at IREC 2025 for 4kN hybrid engine with complete ground station electronics',
+            impact: 'Avionics Vice Lead for propulsion controls & test readiness; award-winning 4kN hybrid engine ground station at IREC 2025',
             tags: ['Python', 'STM32', 'MQTT', 'RS422', 'SCADA']};
         rocketryProjects.unshift(solarisMk2WithExtraTags);
         sections.push(renderCategorySection('rocketry', rocketryProjects));
         
         // Robotics section
-        const roboticsProjects = Object.values(PROJECTS)
-            .filter(p => p.categories.includes('robotics') && !p.categories.includes('featured'));
+        const roboticsProjects = sortProjectsForDisplay(Object.values(PROJECTS)
+            .filter(p => p.categories.includes('robotics') && !p.categories.includes('featured')));
         roboticsProjects.unshift(PROJECTS.fruitRobot);
         sections.push(renderCategorySection('robotics', roboticsProjects));
         
