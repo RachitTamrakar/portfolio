@@ -2465,3 +2465,270 @@ body.home .about-mini-links {
         font-size: 2rem;
     }
 }
+
+/* ============================
+   ABOUT PAGE STYLES (LAYOUT 1: PROOF-FIRST BIO)
+   ============================ */
+
+body.about .about-header {
+    background-color: var(--bg-primary);
+    padding: 3rem 0 2rem;
+    text-align: center;
+}
+
+body.about .about-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+body.about .about-intro {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* Bio Section */
+body.about .about-bio-section {
+    background-color: var(--bg-secondary);
+    padding: 3rem 0;
+}
+
+body.about .bio-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+body.about .bio-photo img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+}
+
+body.about .bio-facts h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+body.about .facts-list {
+    list-style: none;
+    padding: 0;
+}
+
+body.about .facts-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+body.about .facts-list li:last-child {
+    border-bottom: none;
+}
+
+/* Proof Strip */
+body.about .proof-strip-section {
+    background-color: var(--bg-primary);
+    padding: 3rem 0;
+}
+
+body.about .proof-tiles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+body.about .proof-tile {
+    text-align: center;
+}
+
+body.about .proof-tile img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.about .proof-tile img:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+body.about .proof-caption {
+    margin-top: 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* How I Work Section */
+body.about .about-work-section {
+    background-color: var(--bg-secondary);
+    padding: 3rem 0;
+}
+
+body.about .about-work-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+body.about .work-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+body.about .work-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+body.about .work-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Photo Gallery */
+body.about .about-gallery-section {
+    background-color: var(--bg-primary);
+    padding: 3rem 0;
+}
+
+body.about .about-gallery-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+body.about .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+body.about .gallery-tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+}
+
+body.about .gallery-tile img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+body.about .gallery-tile:hover img {
+    transform: scale(1.05);
+}
+
+body.about .gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* CTA Section */
+body.about .about-cta-section {
+    background-color: var(--bg-secondary);
+    padding: 3rem 0 4rem;
+}
+
+body.about .cta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+body.about .cta-card {
+    background-color: var(--bg-primary);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.about .cta-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow-hover);
+}
+
+body.about .cta-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+body.about .cta-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body.about .bio-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    body.about .proof-tiles {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    body.about .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    body.about .cta-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    body.about .about-header h1 {
+        font-size: 2rem;
+    }
+
+    body.about .about-intro {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body.about .proof-tiles {
+        grid-template-columns: 1fr;
+    }
+
+    body.about .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
