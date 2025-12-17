@@ -2324,3 +2324,144 @@ footer {
         font-size: 1rem;
     }
 }
+/* ============================================
+   HOMEPAGE COMBINED LAYOUT
+   ============================================ */
+
+/* Full-Bleed Hero */
+body.home .hero-fullbleed {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    max-height: 900px;
+    background-image: url('images/mk2_hotfire.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2px;
+}
+
+body.home .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+}
+
+body.home .hero-content-center {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+body.home .hero-content-center h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+body.home .hero-tagline {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    line-height: 1.6;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+body.home .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* About Mini-Block */
+body.home .about-mini {
+    padding: 3rem 0;
+    background-color: var(--bg-secondary);
+}
+
+body.home .about-mini-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+body.home .about-mini-photo img {
+    width: 100%;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+}
+
+body.home .about-mini-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+body.home .about-mini-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+body.home .about-mini-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    body.home .hero-fullbleed {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    body.home .hero-content-center h1 {
+        font-size: 2.5rem;
+    }
+
+    body.home .hero-tagline {
+        font-size: 1rem;
+    }
+
+    body.home .hero-ctas {
+        flex-direction: column;
+    }
+
+    body.home .about-mini-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    body.home .about-mini-photo {
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    body.home .about-mini-text {
+        text-align: center;
+    }
+
+    body.home .about-mini-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    body.home .hero-content-center h1 {
+        font-size: 2rem;
+    }
+}

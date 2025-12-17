@@ -8,7 +8,7 @@
     <script src="projects-data.js"></script>
     <script src="render-projects.js"></script>
 </head>
-<body>
+<body class="home">
     <nav class="navbar">
         <div class="nav-content">
             <a href="index.html" class="logo">Rachit Tamrakar</a>
@@ -19,99 +19,42 @@
         </div>
     </nav>
 
-    <main class="container">
-        <!-- Hero Section -->
-        <section class="hero-landing">
-            <div class="hero-content-landing">
-                <h1 class="hero-title-landing">Rachit Tamrakar</h1>
-                <p class="hero-subtitle-landing">Avionics Vice Lead (Solaris Mk II) • Bosch Manufacturing Automation • IREC 2025 Award Winner</p>
-                <p class="hero-description">
-                    Engineer experienced in owning test-critical hardware–software systems—from avionics ground stations for award-winning hybrid rockets to production vision systems on $8M manufacturing lines. Proven track record architecting, testing, and deploying real-time control systems where failure is not an option.
-                </p>
-                <div class="hero-cta">
+    <main>
+        <!-- Full-Bleed Hero with Background Image -->
+        <section class="hero-fullbleed">
+            <div class="hero-overlay"></div>
+            <div class="hero-content-center">
+                <h1>Rachit Tamrakar</h1>
+                <p class="hero-tagline">Mechatronics engineer · Production vision systems · Avionics & test hardware</p>
+                <div class="hero-ctas">
                     <a href="projects.html" class="btn-primary">View Projects</a>
-                    <a href="RachitTamrakarResume.pdf" class="btn-secondary" download>Download Resume</a>
-                    <a href="mailto:tamrakar.rachit2004@gmail.com" class="btn-secondary">Contact Me</a>
-                </div>
-                <div class="hero-links">
-                    <a href="https://linkedin.com/in/rachit-tamrakar" target="_blank">LinkedIn</a>
-                    <span>•</span>
-                    <a href="mailto:tamrakar.rachit2004@gmail.com">Email</a>
+                    <a href="RachitTamrakarResume.pdf" class="btn-secondary" download>Resume</a>
                 </div>
             </div>
         </section>
 
+        <!-- Featured Projects -->
+        <section class="container">
+            <div class="featured-projects-section" id="featured-projects-container">
+                <!-- Projects rendered by render-projects.js -->
+            </div>
+        </section>
+
         <!-- About Section -->
-        <section class="about-section-new">
-            <h2>About Me</h2>
-            <p class="about-text">
-                Mechatronics Engineering student with a focus on systems where reliability matters: avionics test infrastructure, industrial vision inspection, and propulsion controls. My strongest work sits at the intersection of real-time embedded systems and production-scale deployments—whether that's architecting avionics ground stations for engine testing or building vision systems trusted on high-speed manufacturing lines.
-            </p>
-            <p class="about-text">
-                I own full-stack responsibility: PCB design, firmware (C/C++, Python), test planning, and system integration. Most comfortable when there's hardware risk, tight timing constraints, and clear success criteria. Recent work includes Avionics Vice Lead for IREC 2025 award-winning hybrid rocket and developing production vision systems on Bosch's $8M automation line.
-            </p>
-        </section>
-
-        <!-- Featured Projects Preview -->
-        <section class="featured-projects-section" id="featured-projects-container">
-            <!-- Projects rendered by render-projects.js -->
-        </section>
-
-        <!-- Skills Overview -->
-        <section class="skills-section-new">
-            <h2>Technical Expertise</h2>
-            <div class="skills-categories">
-                <div class="skill-category-new">
-                    <h3>Programming</h3>
-                    <div class="skill-tags">
-                        <span>C/C++</span>
-                        <span>C#</span>
-                        <span>Python</span>
-                        <span>MATLAB</span>
-                        <span>SQL</span>
-                        <span>VBA</span>
+        <section class="about-mini">
+            <div class="container">
+                <div class="about-mini-grid">
+                    <div class="about-mini-photo">
+                        <img src="images/vl_headshot.JPG" alt="Working in engineering lab" onerror="this.style.display='none'">
                     </div>
-                </div>
-                
-                <div class="skill-category-new">
-                    <h3>Computer Vision & AI</h3>
-                    <div class="skill-tags">
-                        <span>HALCON</span>
-                        <span>OpenCV</span>
-                        <span>PyTorch</span>
-                        <span>TensorFlow</span>
-                        <span>YOLO</span>
-                    </div>
-                </div>
-
-                <div class="skill-category-new">
-                    <h3>Embedded & Hardware</h3>
-                    <div class="skill-tags">
-                        <span>STM32</span>
-                        <span>Arduino</span>
-                        <span>Altium Designer</span>
-                        <span>PCB Design</span>
-                        <span>Real-time Systems</span>
-                    </div>
-                </div>
-
-                <div class="skill-category-new">
-                    <h3>Industrial Automation</h3>
-                    <div class="skill-tags">
-                        <span>Siemens TIA Portal</span>
-                        <span>ProfiNet</span>
-                        <span>Ignition SCADA</span>
-                        <span>PLC Programming</span>
-                    </div>
-                </div>
-
-                <div class="skill-category-new">
-                    <h3>CAD & Design</h3>
-                    <div class="skill-tags">
-                        <span>Siemens NX</span>
-                        <span>SolidWorks</span>
-                        <span>Fusion 360</span>
-                        <span>3D Printing</span>
+                    <div class="about-mini-text">
+                        <h2>About</h2>
+                        <p>Mechatronics engineering student specializing in test-critical hardware-software systems. Recent work includes avionics ground stations for IREC 2025 award-winning hybrid rocket and production vision systems on industrial automation lines. Experienced in PCB design, firmware development, and real-time embedded systems.</p>
+                        <div class="about-mini-links">
+                            <a href="https://linkedin.com/in/rachit-tamrakar" target="_blank" class="text-link">LinkedIn</a>
+                            <span class="separator">·</span>
+                            <a href="mailto:tamrakar.rachit2004@gmail.com" class="text-link">Email</a>
+                        </div>
                     </div>
                 </div>
             </div>
