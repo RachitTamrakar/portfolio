@@ -2555,12 +2555,6 @@ body.about .proof-tile img {
     object-fit: cover;
     border-radius: 0.5rem;
     box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-body.about .proof-tile img:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--card-shadow-hover);
 }
 
 body.about .proof-caption {
