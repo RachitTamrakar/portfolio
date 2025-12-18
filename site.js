@@ -1,6 +1,96 @@
 (function() {
     'use strict';
 
+    // Single source of truth for navigation structure.
+    const NAV_MODEL = {
+        brand: { href: 'index.html', label: 'Rachit Tamrakar' },
+        links: [
+            { href: 'index.html', label: 'Home' },
+            { href: 'about.html', label: 'About' },
+            { href: 'RachitTamrakarResume.pdf', label: 'Resume', extraClass: 'nav-cta' },
+            { href: 'projects.html', label: 'All Projects' },
+        ],
+        groups: [
+            {
+                key: 'industrial',
+                label: 'Industrial Automation & Computer Vision',
+                href: 'industrial.html',
+                items: [
+                    { href: 'vision-inspection-system.html', label: 'Multi-Station Vision Inspection System' },
+                ],
+            },
+            {
+                key: 'rocketry',
+                label: 'Rocketry & Propulsion',
+                href: 'rocketry.html',
+                items: [
+                    { href: 'solaris-mk-ii.html', label: 'Solaris Mk II Hybrid Engine & Ground Station' },
+                    { href: 'solaris-mk-iii.html', label: 'Solaris Mk III Support' },
+                    { href: 'arc-pyro-ignitor.html', label: 'Arc-Pyro High Voltage Ignitor' },
+                ],
+            },
+            {
+                key: 'robotics',
+                label: 'Robotics & Competitions',
+                href: 'robotics.html',
+                items: [
+                    { href: 'autonomous-fruit-robot.html', label: 'Fruit Navigation & Mapping Robot' },
+                ],
+            },
+        ],
+        contact: { href: 'mailto:tamrakar.rachit2004@gmail.com', label: 'Contact' },
+    };
+
+    /**
+     * Inject a single, consistent side nav into pages that provide a mount point.
+     */
+    function renderSideNav() {
+        if (document.querySelector('.side-nav')) return;
+
+        const mount = document.querySelector('[data-nav-root]');
+        if (!mount) return;
+
+        const primaryLinks = NAV_MODEL.links.map(link => {
+            const extraClass = link.extraClass ? ` ${link.extraClass}` : '';
+            return `<a href="${link.href}" class="nav-link${extraClass}">${link.label}</a>`;
+        }).join('\n            ');
+
+        const groupedLinks = NAV_MODEL.groups.map(group => {
+            const submenu = group.items.map(item =>
+                `<a href="${item.href}" class="nav-sublink">${item.label}</a>`
+            ).join('\n                    ');
+
+            return `
+            <div class="nav-group open" data-group="${group.key}">
+                <div class="nav-group-head">
+                    <a href="${group.href}" class="nav-group-link">${group.label}</a>
+                    <button class="nav-group-toggle" type="button" aria-label="Toggle submenu" aria-expanded="true">
+                        <span class="chevron">&#9656;</span>
+                    </button>
+                </div>
+                <div class="nav-submenu">
+                    ${submenu}
+                </div>
+            </div>`;
+        }).join('');
+
+        const navMarkup = `
+        <aside class="side-nav">
+            <div class="side-nav-brand">
+                <a href="${NAV_MODEL.brand.href}" class="logo">${NAV_MODEL.brand.label}</a>
+            </div>
+            <div class="side-nav-links">
+                ${primaryLinks}
+                ${groupedLinks}
+                <a href="${NAV_MODEL.contact.href}" class="nav-link nav-cta">${NAV_MODEL.contact.label}</a>
+            </div>
+        </aside>
+        <div class="nav-overlay" aria-hidden="true"></div>`;
+
+        mount.insertAdjacentHTML('beforebegin', navMarkup);
+        mount.remove();
+    }
+
     /**
      * Mark the active link in the side navigation based on the current path.
      */
@@ -184,6 +274,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+        renderSideNav();
         setActiveNavLinks();
         initNavGroups();
         initMobileNav();
