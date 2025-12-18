@@ -6,22 +6,68 @@
     <title>Arc-Pyro High Voltage Ignitor - Rachit Tamrakar</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <nav class="navbar">
-        <div class="nav-content">
+<body class="case-study">
+
+    <button class="nav-mobile-toggle" type="button" aria-expanded="false" aria-label="Open navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="page-shell">
+        
+    <aside class="side-nav">
+        <div class="side-nav-brand">
             <a href="index.html" class="logo">Rachit Tamrakar</a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="projects.html">Projects</a>
-                <a href="about.html">About</a>
-            </div>
         </div>
-    </nav>
+        <div class="side-nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="RachitTamrakarResume.pdf" class="nav-link nav-cta">Resume</a>
+            <a href="projects.html" class="nav-link">All Projects</a>
+            <div class="nav-group open" data-group="industrial">
+                <div class="nav-group-head">
+                    <a href="industrial.html" class="nav-group-link">Industrial Automation &amp; Computer Vision</a>
+                    <button class="nav-group-toggle" type="button" aria-label="Toggle submenu" aria-expanded="true">
+                        <span class="chevron">&#9656;</span>
+                    </button>
+                </div>
+                <div class="nav-submenu">
+                    <a href="vision-inspection-system.html" class="nav-sublink">Multi-Station Vision Inspection System</a>
+                </div>
+            </div>
+            <div class="nav-group open" data-group="rocketry">
+                <div class="nav-group-head">
+                    <a href="rocketry.html" class="nav-group-link">Rocketry &amp; Propulsion</a>
+                    <button class="nav-group-toggle" type="button" aria-label="Toggle submenu" aria-expanded="true">
+                        <span class="chevron">&#9656;</span>
+                    </button>
+                </div>
+                <div class="nav-submenu">
+                    <a href="solaris-mk-ii.html" class="nav-sublink">Solaris Mk II Hybrid Engine &amp; Ground Station</a>
+                    <a href="solaris-mk-iii.html" class="nav-sublink">Solaris Mk III Support</a>
+                    <a href="arc-pyro-ignitor.html" class="nav-sublink">Arc-Pyro High Voltage Ignitor</a>
+                </div>
+            </div>
+            <div class="nav-group open" data-group="robotics">
+                <div class="nav-group-head">
+                    <a href="robotics.html" class="nav-group-link">Robotics &amp; Competitions</a>
+                    <button class="nav-group-toggle" type="button" aria-label="Toggle submenu" aria-expanded="true">
+                        <span class="chevron">&#9656;</span>
+                    </button>
+                </div>
+                <div class="nav-submenu">
+                    <a href="autonomous-fruit-robot.html" class="nav-sublink">Fruit Navigation &amp; Mapping Robot</a>
+                </div>
+            </div>
+            <a href="mailto:tamrakar.rachit2004@gmail.com" class="nav-link nav-cta">Contact</a>
+        </div>
+    </aside>
+    <div class="nav-overlay" aria-hidden="true"></div>
+
+        <div class="page-content">
 
     <main class="case-study">
         <header class="case-study-header">
             <div class="case-study-header-content">
-                <a href="projects.html" class="back-link">← Back to Projects</a>
+                <a href="projects.html" class="back-link">Back to Projects</a>
                 <h1>Arc-Pyro High Voltage Ignitor</h1>
                 <p class="case-study-subtitle">Novel 14 kV ignition system designed to pyrolyze 3D printed ABS puck for hybrid rocket engine ignition</p>
                 <div class="case-study-meta">
@@ -184,17 +230,20 @@
         </div>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Rachit Tamrakar. All rights reserved.</p>
-    </footer>
+            <footer>
+                <p>Contact: <a href="mailto:tamrakar.rachit2004@gmail.com">tamrakar.rachit2004@gmail.com</a></p>
+            </footer>
+        </div>
+    </div>
 
+    <script src="site.js"></script>
     <script>
         // Smart back navigation based on referrer
         const backLink = document.querySelector('.back-link');
         const referrer = document.referrer;
-        if (referrer.includes('index.html') || referrer.endsWith('/')) {
+        if (backLink && (referrer.includes('index.html') || referrer.endsWith('/'))) {
             backLink.href = 'index.html';
-            backLink.textContent = '← Back to Home';
+            backLink.textContent = 'Back to Home';
         }
     </script>
 </body>
