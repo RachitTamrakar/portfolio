@@ -172,16 +172,40 @@
         container.innerHTML = sections.join('\n');
     };
 
+    /**
+     * Render a single category page (e.g., industrial / rocketry / robotics)
+     * @param {string} categoryKey - category identifier
+     */
+    window.renderCategoryProjects = function(categoryKey) {
+        const container = document.getElementById('category-projects-container');
+        if (!container || !CATEGORIES[categoryKey]) return;
+
+        const projectsForCategory = sortProjectsForDisplay(Object.values(PROJECTS)
+            .filter(p => p.categories.includes(categoryKey)));
+
+        if (projectsForCategory.length === 0) {
+            container.innerHTML = '<p class="empty-state">Projects coming soon.</p>';
+            return;
+        }
+
+        container.innerHTML = renderCategorySection(categoryKey, projectsForCategory);
+    };
+
     // Auto-render on page load
     document.addEventListener('DOMContentLoaded', function() {
         const hasFeaturedContainer = document.getElementById('featured-projects-container');
         const hasAllProjectsContainer = document.getElementById('all-projects-container');
+        const categoryContainer = document.getElementById('category-projects-container');
+        const categoryKey = categoryContainer ? categoryContainer.dataset.category : null;
 
         if (hasFeaturedContainer) {
             renderIndexProjects();
         }
         if (hasAllProjectsContainer) {
             renderAllProjects();
+        }
+        if (categoryKey) {
+            renderCategoryProjects(categoryKey);
         }
         if (document.querySelector('.carousel')) {
             setTimeout(initializeCarousels, 0);
