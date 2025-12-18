@@ -13,9 +13,24 @@
         const linkClass = hasLink ? ' has-page' : '';
         const linkAttr = hasLink ? `href="${project.link}"` : '';
         
-        const imageHtml = project.image 
-            ? `<img src="${project.image}" alt="${project.imageAlt}" onerror="this.style.display='none'">`
-            : `<div class="placeholder-image">${project.placeholder}</div>`;
+        // Build responsive image markup using srcset / sizes / loading
+        function buildImageHtml(p) {
+            if (!p.image) return `<div class="placeholder-image">${p.placeholder || ''}</div>`;
+            const src = p.image;
+            const extMatch = src.match(/\.([a-zA-Z0-9]+)$/);
+            const ext = extMatch ? extMatch[1] : 'png';
+            const base = src.replace(/\.[^.]+$/, '');
+            const widths = Array.isArray(p.imageWidths) ? p.imageWidths : [1600, 1024, 640];
+            const sizes = p.imageSizes || '(max-width:600px) 100vw, 33vw';
+            const loading = p.loading || 'lazy';
+            const srcset = widths.map(w => `${base}-w${w}.${ext} ${w}w`).join(', ');
+            // choose a sensible default src (middle width)
+            const mid = widths[Math.floor(widths.length / 2)];
+            const fallback = `${base}-w${mid}.${ext}`;
+            return `<img src="${fallback}" srcset="${srcset}" sizes="${sizes}" alt="${p.imageAlt || ''}" loading="${loading}" onerror="this.style.display='none'">`;
+        }
+
+        const imageHtml = buildImageHtml(project);
         
         const tagsHtml = project.tags
             .map(tag => `<span>${tag}</span>`)
@@ -100,10 +115,12 @@
             .join('\n');
         
         container.innerHTML = `
-            <h2>Featured Work</h2>
-            <div class="projects-card-grid">
-                ${projectsHtml}
-            </div>`;
+            <section class="featured-projects-section">
+                <h2 class="section-title">Featured Work</h2>
+                <div class="projects-card-grid">
+                    ${projectsHtml}
+                </div>
+            </section>`;
     };
 
     /**

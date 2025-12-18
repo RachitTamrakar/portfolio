@@ -22,6 +22,10 @@ const PROJECTS = {
         impact: 'Avionics Vice Lead—owned test-critical ground station and propulsion controls for Jim Furfaro Award-winning 4kN hybrid engine',
         tags: ['Python', 'STM32', 'MQTT', 'Award Winner'],
         image: 'images/zenith_launch.png',
+        // Prefer larger variants for the Solaris hero — load eagerly
+        imageWidths: [2400, 1600, 800],
+        imageSizes: '(min-width:1024px) 800px, 100vw',
+        loading: 'eager',
         imageAlt: 'Project Zenith Launch',
         link: 'solaris-mk-ii.html',
         tier: 'flagship',
@@ -203,7 +207,7 @@ const CATEGORIES = {
         altBg: false
     },
     robotics: {
-        title: 'Robotics',
+        title: 'Robotics & Competitions',
         altBg: true
     }
 };

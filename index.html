@@ -21,9 +21,13 @@
     </nav>
 
     <main>
-        <!-- Full-Bleed Hero with Background Image -->
-        <section class="hero-fullbleed">
+        <!-- Full-Bleed Hero with responsive background image -->
+        <section class="hero-fullbleed" style="background-image:none;">
             <div class="hero-overlay"></div>
+            <!-- Responsive hero image (loads eagerly) -->
+            <picture aria-hidden="true" class="hero-picture">
+                <img class="hero-bg" src="images/mk2_hotfire-w800.png" srcset="images/mk2_hotfire-w1600.png 1600w, images/mk2_hotfire-w1024.png 1024w, images/mk2_hotfire-w800.png 800w" sizes="100vw" alt="Solaris Mk II test fire" loading="eager" onerror="this.style.display='none'">
+            </picture>
             <div class="hero-content-center">
                 <h1>Rachit Tamrakar</h1>
                 <p class="hero-tagline">Mechatronics & Robotics Student &middot; Computer Vision Systems &middot; Aerospace Avionics/Test Engineering</p>
@@ -71,5 +75,12 @@
             lastScroll = currentScroll;
         });
     </script>
+    <style>
+        /* Small overrides to position responsive hero image to cover the full-bleed section */
+        .hero-fullbleed { position: relative; }
+        .hero-fullbleed .hero-picture { position: absolute; inset: 0; z-index: 0; }
+        .hero-fullbleed .hero-bg { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .hero-fullbleed .hero-content-center { position: relative; z-index: 1; }
+    </style>
 </body>
 </html>
