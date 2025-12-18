@@ -2491,10 +2491,12 @@ body.home .hero-overlay {
 body.home .hero-content-center {
     position: relative;
     z-index: 1;
-    text-align: center;
     color: white;
-    max-width: var(--width-text);
+    width: 100%;
+    max-width: var(--width-wide);
+    margin: 0 auto;
     padding: var(--spacing-xl);
+    text-align: left;
 }
 
 body.home .hero-content-center h1 {
@@ -2515,7 +2517,8 @@ body.home .hero-tagline {
 body.home .hero-ctas {
     display: flex;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 
@@ -2568,12 +2571,19 @@ body.home .about-mini-links {
         font-size: 2.5rem;
     }
 
+    body.home .hero-content-center {
+        text-align: center;
+        padding: var(--spacing-lg);
+    }
+
     body.home .hero-tagline {
         font-size: 1rem;
     }
 
     body.home .hero-ctas {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     body.home .about-mini-grid {
@@ -2605,10 +2615,18 @@ body.home .about-mini-links {
    ABOUT PAGE STYLES (LAYOUT 1: PROOF-FIRST BIO)
    ============================ */
 
+body.about main {
+    padding: 0 var(--spacing-xl) var(--spacing-xl);
+}
+
 body.about .about-header {
     background-color: var(--bg-primary);
-    padding: var(--spacing-2xl) 0 var(--spacing-xl);
+    padding: var(--spacing-2xl) var(--spacing-xl);
     text-align: center;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    max-width: var(--width-wide);
+    margin: 0 auto var(--spacing-xl);
 }
 
 body.about .about-header h1 {
@@ -2620,7 +2638,7 @@ body.about .about-header h1 {
 
 body.about .about-intro {
     max-width: var(--width-text);
-    margin: 0 auto;
+    margin: var(--spacing-base) auto 0;
     font-size: 1.125rem;
     line-height: 1.7;
     color: var(--text-secondary);
@@ -2628,8 +2646,12 @@ body.about .about-intro {
 
 /* Bio Section */
 body.about .about-bio-section {
-    background-color: var(--bg-secondary);
-    padding: var(--spacing-2xl) 0;
+    background-color: var(--bg-primary);
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    margin: 0 auto var(--spacing-xl);
+    max-width: var(--width-wide);
 }
 
 body.about .bio-grid {
@@ -2652,6 +2674,11 @@ body.about .bio-facts h3 {
     margin-bottom: 1rem;
 }
 
+body.about .bio-facts .section-title {
+    text-align: left;
+    margin-bottom: var(--spacing-lg);
+}
+
 body.about .facts-list {
     list-style: none;
     padding: 0;
@@ -2671,7 +2698,11 @@ body.about .facts-list li:last-child {
 /* Proof Strip */
 body.about .proof-strip-section {
     background-color: var(--bg-primary);
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    margin: 0 auto var(--spacing-xl);
+    max-width: var(--width-wide);
 }
 
 body.about .proof-tiles {
@@ -2702,7 +2733,11 @@ body.about .proof-caption {
 /* How I Work Section */
 body.about .about-work-section {
     background-color: var(--bg-secondary);
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    margin: 0 auto var(--spacing-xl);
+    max-width: var(--width-wide);
 }
 
 body.about .about-work-section h2 {
@@ -2732,7 +2767,11 @@ body.about .work-content p:last-child {
 /* Photo Gallery */
 body.about .about-gallery-section {
     background-color: var(--bg-primary);
-    padding: var(--spacing-2xl) 0;
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    margin: 0 auto var(--spacing-xl);
+    max-width: var(--width-wide);
 }
 
 body.about .about-gallery-section h2 {
@@ -2783,15 +2822,18 @@ body.about .gallery-caption {
 /* CTA Section */
 body.about .about-cta-section {
     background-color: var(--bg-secondary);
-    padding: var(--spacing-2xl) 0 var(--spacing-3xl);
+    padding: var(--spacing-xl);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    margin: 0 auto var(--spacing-xl);
+    max-width: var(--width-wide);
 }
 
 body.about .cta-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    max-width: var(--width-text);
-    margin: 0 auto;
+    max-width: none;
 }
 
 body.about .cta-card {
