@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics &amp; Competitions - Rachit Tamrakar</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="projects-data.js"></script>
+    <script src="render-projects.js"></script>
+</head>
+<body class="projects category-robotics">
+
+    <button class="nav-mobile-toggle" type="button" aria-expanded="false" aria-label="Open navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="page-shell">
+        
+    <aside class="side-nav">
+        <div class="side-nav-brand">
+            <a href="index.html" class="logo">Rachit Tamrakar</a>
+        </div>
+        <div class="side-nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="RachitTamrakarResume.pdf" class="nav-link nav-cta">Resume</a>
+            <a href="projects.html" class="nav-link">All Projects</a>
+            <div class="nav-group open" data-group="industrial">
+                <div class="nav-group-head">
+                    <a href="industrial.html" class="nav-group-link">Industrial Automation &amp; Computer Vision</a>
+                    <button class="nav-group-toggle" type="button" aria-label="Toggle submenu" aria-expanded="true">
+                        <span class="chevron">&#9656;</span>
+                    </button>
+                </div>
+                <div class="nav-submenu">
+                    <a href="vision-inspection-system.html" class="nav-sublink">Multi-Station Vision Inspection System</a>
+                </div>
+            </div>
+            <div class="nav-group open" data-group="rocketry">
+                <div class="nav-group-head">
+                    <a href="rocketry.html" class="nav-group-link">Rocketry &amp; Propulsion</a>
+                    <button class="nav-group-toggle" type="button" aria-label="Toggle submenu" aria-expanded="true">
+                        <span class="chevron">&#9656;</span>
+                    </button>
+                </div>
+                <div class="nav-submenu">
+                    <a href="solaris-mk-ii.html" class="nav-sublink">Solaris Mk II Hybrid Engine &amp; Ground Station</a>
+                    <a href="solaris-mk-iii.html" class="nav-sublink">Solaris Mk III Support</a>
+                    <a href="arc-pyro-ignitor.html" class="nav-sublink">Arc-Pyro High Voltage Ignitor</a>
+                </div>
+            </div>
+            <div class="nav-group open" data-group="robotics">
+                <div class="nav-group-head">
+                    <a href="robotics.html" class="nav-group-link">Robotics &amp; Competitions</a>
+                    <button class="nav-group-toggle" type="button" aria-label="Toggle submenu" aria-expanded="true">
+                        <span class="chevron">&#9656;</span>
+                    </button>
+                </div>
+                <div class="nav-submenu">
+                    <a href="autonomous-fruit-robot.html" class="nav-sublink">Fruit Navigation &amp; Mapping Robot</a>
+                </div>
+            </div>
+            <a href="mailto:tamrakar.rachit2004@gmail.com" class="nav-link nav-cta">Contact</a>
+        </div>
+    </aside>
+    <div class="nav-overlay" aria-hidden="true"></div>
+
+        <div class="page-content">
+            <main>
+                <section class="page-header-clean">
+                    <h1>Robotics &amp; Competitions</h1>
+                    <p class="page-subtitle-clean">
+                        Autonomy, perception, and control projects that were built fast, stress-tested in competition, and tuned for repeatability under time limits.
+                    </p>
+                </section>
+
+                <div id="category-projects-container" data-category="robotics">
+                    <!-- Projects rendered by render-projects.js -->
+                </div>
+            </main>
+
+            <footer>
+                <p>Contact: <a href="mailto:tamrakar.rachit2004@gmail.com">tamrakar.rachit2004@gmail.com</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="site.js"></script>
+</body>
+</html>
