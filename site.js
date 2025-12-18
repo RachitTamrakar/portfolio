@@ -7,7 +7,7 @@
         links: [
             { href: 'index.html', label: 'Home' },
             { href: 'about.html', label: 'About' },
-            { href: 'RachitTamrakarResume.pdf', label: 'Resume', extraClass: 'nav-cta' },
+            { href: 'resume.html', label: 'Resume', extraClass: 'nav-cta' },
             { href: 'projects.html', label: 'All Projects' },
         ],
         groups: [
