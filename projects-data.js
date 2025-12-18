@@ -199,11 +199,11 @@ const CATEGORIES = {
         altBg: true
     },
     rocketry: {
-        title: 'Rocketry Projects',
+        title: 'Rocketry & Propulsion',
         altBg: false
     },
     robotics: {
-        title: 'Robotics & Automation',
+        title: 'Robotics',
         altBg: true
     }
 };
