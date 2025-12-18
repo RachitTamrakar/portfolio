@@ -18,15 +18,15 @@
     --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     
     /* Spacing System */
-    --spacing-xs: 0.375rem;  /* 6px - tiny elements like small tags */
-    --spacing-sm: 0.5rem;    /* 8px - compact spacing */
-    --spacing-md: 0.75rem;   /* 12px - standard small spacing */
-    --spacing-base: 1rem;    /* 16px - base unit */
-    --spacing-lg: 1.5rem;    /* 24px - comfortable spacing */
-    --spacing-xl: 2rem;      /* 32px - generous spacing */
-    --spacing-2xl: 3rem;     /* 48px - large sections */
-    --spacing-3xl: 4rem;     /* 64px - extra large sections */
-    --spacing-4xl: 6rem;     /* 96px - hero sections */
+    --spacing-xs: 0.25rem;   /* 4px - tiny elements like small tags */
+    --spacing-sm: 0.375rem;  /* 6px - compact spacing */
+    --spacing-md: 0.5rem;    /* 8px - standard small spacing */
+    --spacing-base: 0.75rem; /* 12px - base unit */
+    --spacing-lg: 1rem;      /* 16px - comfortable spacing */
+    --spacing-xl: 1.25rem;   /* 20px - generous spacing */
+    --spacing-2xl: 1.75rem;  /* 28px - large sections */
+    --spacing-3xl: 2.5rem;   /* 40px - extra large sections */
+    --spacing-4xl: 3.5rem;   /* 56px - hero sections */
     
     /* Max-Width System */
     --width-text: 800px;     /* Reading-optimized text content */
@@ -68,7 +68,7 @@ body::-webkit-scrollbar {
 .nav-content {
     max-width: var(--width-content);
     margin: 0 auto;
-    padding: var(--spacing-base) var(--spacing-xl);
+    padding: var(--spacing-sm) var(--spacing-lg);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -123,14 +123,14 @@ body::-webkit-scrollbar {
 .side-nav {
     background: var(--bg-primary);
     border-right: 1px solid var(--border-color);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
     position: sticky;
     top: 0;
     height: 100vh;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-base);
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -346,7 +346,7 @@ body::-webkit-scrollbar {
     min-height: 100vh;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    padding: 0 var(--spacing-2xl);
+    padding: 0 var(--spacing-xl);
 }
 
 .page-content::-webkit-scrollbar {
@@ -464,17 +464,17 @@ body::-webkit-scrollbar {
 .container {
     max-width: var(--width-content);
     margin: 0 auto;
-    padding: var(--spacing-xl);
+    padding: var(--spacing-base);
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: var(--spacing-3xl) var(--spacing-xl);
+    padding: var(--spacing-2xl) var(--spacing-lg);
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: white;
     border-radius: 0.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: var(--spacing-2xl);
 }
 
 .hero-title {
@@ -523,7 +523,7 @@ body::-webkit-scrollbar {
 /* Page Header */
 .page-header {
     text-align: center;
-    padding: var(--spacing-xl) 0 var(--spacing-2xl);
+    padding: var(--spacing-lg) 0 var(--spacing-xl);
 }
 
 .page-header h1 {
@@ -543,8 +543,8 @@ body::-webkit-scrollbar {
 /* Sections */
 section {
     background-color: var(--bg-primary);
-    padding: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
     border-radius: 0.5rem;
     box-shadow: var(--card-shadow);
 }
@@ -575,7 +575,7 @@ section h3 {
 
 /* Education Card */
 .education-card {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-base);
     background-color: var(--bg-secondary);
     border-radius: 0.5rem;
     border-left: 4px solid var(--primary-color);
@@ -613,11 +613,11 @@ section h3 {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    gap: var(--spacing-lg);
 }
 
 .skill-category {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-base);
     background-color: var(--bg-secondary);
     border-radius: 0.5rem;
     border-top: 3px solid var(--primary-color);
@@ -645,8 +645,8 @@ section h3 {
 
 /* Experience Cards */
 .experience-card {
-    padding: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-base);
+    margin-bottom: var(--spacing-base);
     background-color: var(--bg-secondary);
     border-radius: 0.5rem;
     border-left: 4px solid var(--primary-color);
@@ -722,13 +722,13 @@ section h3 {
 /* Projects Grid */
 .projects-grid {
     display: grid;
-    gap: 2rem;
+    gap: var(--spacing-lg);
 }
 
 .project-card {
     background-color: var(--bg-primary);
     border-radius: 0.5rem;
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
     box-shadow: var(--card-shadow);
     border-left: 4px solid var(--primary-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -833,8 +833,8 @@ footer {
     background-color: var(--text-primary);
     color: white;
     text-align: center;
-    padding: var(--spacing-xl);
-    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
 }
 
 /* Improve contrast and readability for footer text and links */
@@ -897,9 +897,8 @@ footer p a {
     }
 
     section {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-base);
     }
-
     section h2 {
         font-size: 1.5rem;
     }
@@ -933,13 +932,13 @@ footer p a {
 .project-filters {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin: 2rem 0;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-lg) 0;
     flex-wrap: wrap;
 }
 
 .filter-btn {
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-base);
     border: 2px solid var(--primary-color);
     background-color: var(--bg-primary);
     color: var(--primary-color);
@@ -1009,8 +1008,8 @@ footer p a {
 
 /* Project Statistics Section */
 .project-stats {
-    margin-top: var(--spacing-3xl);
-    padding: var(--spacing-2xl) var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl) var(--spacing-lg);
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     border-radius: 0.5rem;
     color: white;
@@ -1025,14 +1024,14 @@ footer p a {
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+    gap: var(--spacing-lg);
     max-width: var(--width-text);
     margin: 0 auto;
 }
 
 .stat-card {
     background: rgba(255, 255, 255, 0.1);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-base);
     border-radius: 0.5rem;
     backdrop-filter: blur(10px);
 }
@@ -1050,7 +1049,7 @@ footer p a {
 
 @media (max-width: 480px) {
     .hero {
-        padding: var(--spacing-xl) var(--spacing-base);
+        padding: var(--spacing-lg) var(--spacing-sm);
     }
 
     .hero-title {
@@ -1080,7 +1079,7 @@ footer p a {
 .hero-landing {
     background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
     color: white;
-    padding: var(--spacing-4xl) var(--spacing-xl);
+    padding: var(--spacing-3xl) var(--spacing-lg);
     text-align: center;
 }
 
@@ -1173,7 +1172,7 @@ footer p a {
 
 /* Highlights Section */
 .highlights-section {
-    padding: var(--spacing-2xl) var(--spacing-xl);
+    padding: var(--spacing-xl) var(--spacing-lg);
     background-color: var(--bg-primary);
 }
 
@@ -1182,12 +1181,12 @@ footer p a {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: var(--spacing-lg);
 }
 
 .highlight-card {
     background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-base);
     border-radius: 12px;
     border-left: 4px solid var(--primary-color);
     transition: transform 0.3s ease;
@@ -1211,8 +1210,8 @@ footer p a {
 /* About Section New */
 .about-section-new {
     max-width: var(--width-wide);
-    margin: var(--spacing-3xl) auto;
-    padding: 0 var(--spacing-xl) var(--spacing-xl);
+    margin: var(--spacing-2xl) auto;
+    padding: 0 var(--spacing-lg) var(--spacing-lg);
 }
 
 .about-section-new h2 {
@@ -1236,8 +1235,8 @@ footer p a {
 /* Featured Projects Section */
 .featured-projects-section {
     max-width: var(--width-wide);
-    margin: 0 auto var(--spacing-2xl) auto;
-    padding: var(--spacing-xl) var(--spacing-xl);
+    margin: 0 auto var(--spacing-xl) auto;
+    padding: var(--spacing-lg) var(--spacing-lg);
     background-color: var(--bg-primary);
     border-radius: 16px;
     box-shadow: var(--card-shadow);
@@ -1246,8 +1245,8 @@ footer p a {
 .featured-projects-section h2 {
     font-size: 2rem;
     color: var(--text-primary);
-    margin-bottom: var(--spacing-xl);
-    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
     border-bottom: 3px solid var(--primary-color);
     display: block;
     text-align: center;
@@ -1284,7 +1283,7 @@ footer p a {
 }
 
 .featured-project-content {
-    padding: var(--spacing-base) var(--spacing-lg) var(--spacing-base);
+    padding: var(--spacing-sm) var(--spacing-base) var(--spacing-sm);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -1340,8 +1339,8 @@ footer p a {
 /* Skills Section New */
 .skills-section-new {
     max-width: var(--width-wide);
-    margin: var(--spacing-3xl) auto;
-    padding: var(--spacing-2xl) var(--spacing-xl);
+    margin: var(--spacing-2xl) auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
 }
 
 .skills-section-new h2 {
@@ -1354,12 +1353,12 @@ footer p a {
 .skills-categories {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: var(--spacing-lg);
 }
 
 .skill-category-new {
     background-color: var(--bg-primary);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-base);
     border-radius: 12px;
     box-shadow: var(--card-shadow);
 }
@@ -1388,8 +1387,8 @@ footer p a {
 /* Experience Snapshot */
 .experience-snapshot {
     max-width: var(--width-content);
-    margin: var(--spacing-3xl) auto;
-    padding: var(--spacing-2xl) var(--spacing-xl);
+    margin: var(--spacing-2xl) auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
     background-color: var(--bg-primary);
     border-radius: 16px;
 }
@@ -1403,9 +1402,9 @@ footer p a {
 
 .experience-card-new {
     background-color: var(--bg-secondary);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-base);
     border-radius: 12px;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-lg);
     border-left: 4px solid var(--primary-color);
 }
 
@@ -1449,8 +1448,8 @@ footer p a {
 /* Education Section New */
 .education-section-new {
     max-width: var(--width-content);
-    margin: var(--spacing-3xl) auto;
-    padding: 0 var(--spacing-xl);
+    margin: var(--spacing-2xl) auto;
+    padding: 0 var(--spacing-lg);
 }
 
 .education-section-new h2 {
@@ -1462,7 +1461,7 @@ footer p a {
 
 .education-card-new {
     background-color: var(--bg-primary);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-base);
     border-radius: 12px;
     box-shadow: var(--card-shadow);
 }
@@ -1507,8 +1506,8 @@ footer p a {
 /* Call to Action Section */
 .cta-section {
     max-width: var(--width-text);
-    margin: var(--spacing-3xl) auto;
-    padding: var(--spacing-3xl) var(--spacing-xl);
+    margin: var(--spacing-2xl) auto;
+    padding: var(--spacing-2xl) var(--spacing-lg);
     text-align: center;
     background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
     border-radius: 16px;
@@ -1540,9 +1539,9 @@ footer p a {
 /* Clean page header */
 .page-header-clean {
     text-align: center;
-    padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-xl);
+    padding: var(--spacing-xl) var(--spacing-lg) var(--spacing-base);
     max-width: var(--width-wide);
-    margin: 0 auto var(--spacing-xl) auto;
+    margin: 0 auto var(--spacing-base) auto;
     background-color: var(--bg-primary);
     border-radius: 16px;
     box-shadow: var(--card-shadow);
@@ -1557,8 +1556,8 @@ footer p a {
 /* Projects sections */
 .projects-section {
     max-width: var(--width-wide);
-    margin: 0 auto var(--spacing-xl) auto;
-    padding: var(--spacing-xl);
+    margin: 0 auto var(--spacing-base) auto;
+    padding: var(--spacing-lg);
     background-color: var(--bg-primary);
     border-radius: 16px;
     box-shadow: var(--card-shadow);
@@ -1588,8 +1587,8 @@ footer p a {
 .section-title {
     font-size: 2rem;
     color: var(--text-primary);
-    margin-bottom: var(--spacing-xl);
-    padding-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
     border-bottom: 3px solid var(--primary-color);
     display: block;
     text-align: center;
@@ -1612,13 +1611,13 @@ footer p a {
 
 .carousel-track {
     display: flex;
-    gap: 2rem;
+    gap: var(--spacing-lg);
     transition: transform 0.5s ease-in-out;
 }
 
 .carousel-track .project-card-compact,
 .carousel-track .featured-project-card {
-    flex: 0 0 calc((100% - 4rem) / 3);
+    flex: 0 0 calc((100% - 2rem) / 3);
     min-width: 0;
 }
 
@@ -1665,7 +1664,7 @@ footer p a {
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-base);
 }
 
 .carousel-dot {
@@ -1702,7 +1701,7 @@ footer p a {
 @media (max-width: 1024px) {
     .carousel-track .project-card-compact,
     .carousel-track .featured-project-card {
-        flex: 0 0 calc((100% - 2rem) / 2);
+        flex: 0 0 calc((100% - var(--spacing-lg)) / 2);
     }
 }
 
@@ -1727,7 +1726,7 @@ footer p a {
 .projects-card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+    gap: var(--spacing-lg);
     align-items: stretch;
     /* Make rows equal height so cards stretch uniformly */
     grid-auto-rows: 1fr;
@@ -1787,7 +1786,7 @@ footer p a {
 }
 
 .project-card-body {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-base);
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -1940,14 +1939,13 @@ footer p a {
     }
 
     .projects-section {
-        padding: var(--spacing-2xl) var(--spacing-base);
+        padding: var(--spacing-lg) var(--spacing-sm);
     }
 
     .projects-section.alt-bg {
-        padding-left: var(--spacing-base);
-        padding-right: var(--spacing-base);
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
     }
-
     .section-title {
         font-size: 1.75rem;
     }
@@ -1977,29 +1975,23 @@ footer p a {
     }
 
     .highlight-card {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-base);
     }
-
     .featured-projects-section {
-        padding: 2.5rem var(--spacing-base);
+        padding: var(--spacing-lg) var(--spacing-sm);
     }
-
     .experience-snapshot {
-        padding: var(--spacing-xl) var(--spacing-base);
+        padding: var(--spacing-base) var(--spacing-sm);
     }
-
     .cta-section {
-        padding: var(--spacing-2xl) var(--spacing-lg);
+        padding: var(--spacing-lg) var(--spacing-base);
     }
-
     .page-header-clean {
-        padding: var(--spacing-xl) var(--spacing-base) var(--spacing-base);
+        padding: var(--spacing-base) var(--spacing-sm) var(--spacing-sm);
     }
-
     .projects-section {
-        padding: 2.5rem var(--spacing-base);
+        padding: var(--spacing-lg) var(--spacing-sm);
     }
-
     .section-title {
         font-size: 1.5rem;
     }
@@ -2037,10 +2029,10 @@ footer p a {
 
 .highlight-box {
     background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-base);
     border-radius: 12px;
     border-left: 4px solid var(--primary-color);
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-lg);
 }
 
 .highlight-box p {
@@ -2087,13 +2079,13 @@ footer p a {
 .results-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
 }
 
 .result-item {
     background-color: #eff6ff;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-base);
     border-radius: 12px;
     text-align: center;
     border: 2px solid var(--primary-color);
@@ -2116,7 +2108,7 @@ footer p a {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    margin-top: 3rem;
+    margin-top: var(--spacing-2xl);
 }
 
 @media (max-width: 768px) {
@@ -2195,14 +2187,14 @@ footer p a {
 /* Case Study Pages */
 main.case-study {
     /* Rely on the shared page-content padding so margins align across pages */
-    padding: 0 0 var(--spacing-2xl);
+    padding: 0 0 var(--spacing-xl);
     margin: 0;
 }
 
 .case-study-header {
     background: var(--bg-primary);
-    padding: var(--spacing-2xl) var(--spacing-xl);
-    margin: 0 auto var(--spacing-xl);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    margin: 0 auto var(--spacing-base);
     border-radius: 16px;
     box-shadow: var(--card-shadow);
     max-width: var(--width-wide);
@@ -2300,13 +2292,13 @@ main.case-study {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-base);
 }
 
 .case-study-section {
     width: 100%;
     background-color: var(--bg-primary);
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
     border-radius: 16px;
     box-shadow: var(--card-shadow);
     margin: 0 auto;
@@ -2332,7 +2324,7 @@ main.case-study {
     font-size: 2rem;
     color: var(--text-primary);
     margin-top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-lg);
     padding-bottom: 0.5rem;
     border-bottom: 3px solid var(--primary-color);
 }
@@ -2340,27 +2332,27 @@ main.case-study {
 .case-study-section h3 {
     font-size: 1.5rem;
     color: var(--text-primary);
-    margin-top: 2.5rem;
-    margin-bottom: 1.25rem;
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-base);
 }
 
 .case-study-section h4 {
     font-size: 1.1rem;
     color: var(--text-primary);
-    margin-top: 2rem;
-    margin-bottom: 0.75rem;
+    margin-top: var(--spacing-base);
+    margin-bottom: var(--spacing-sm);
 }
 
 .case-study-section p {
     font-size: 1.1rem;
     color: var(--text-secondary);
     margin-top: 0;
-    margin-bottom: 1.25rem;
+    margin-bottom: var(--spacing-base);
     line-height: 1.8;
 }
 
 .case-study-section ul {
-    margin: 1rem 0 1.5rem 1.5rem;
+    margin: var(--spacing-sm) 0 var(--spacing-base) var(--spacing-lg);
 }
 
 .case-study-section li {
@@ -2373,7 +2365,7 @@ main.case-study {
 .confidentiality-notice {
     background-color: #fef3c7;
     border-left: 4px solid #f59e0b;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-base);
     margin: 0;
     border-radius: 12px;
     box-shadow: var(--card-shadow);
@@ -2385,8 +2377,8 @@ main.case-study {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin: 2.5rem 0;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
 }
 
 .challenge-item,
@@ -2394,7 +2386,7 @@ main.case-study {
 .spec-item,
 .skill-card {
     background: white;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-base);
     border-radius: 0.5rem;
     box-shadow: var(--card-shadow);
     display: flex;
@@ -2423,13 +2415,13 @@ main.case-study {
 
 .tech-details {
     display: grid;
-    gap: 1.5rem;
-    margin: 2.5rem 0;
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
 }
 
 .tech-detail-card {
     background: white;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-base);
     border-radius: 0.5rem;
     box-shadow: var(--card-shadow);
     border-left: 4px solid var(--primary-color);
@@ -2454,8 +2446,8 @@ main.case-study {
 .integration-list {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin: 2.5rem 0;
+    gap: var(--spacing-base);
+    margin: var(--spacing-lg) 0;
 }
 
 .process-step,
