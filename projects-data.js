@@ -23,7 +23,8 @@ const PROJECTS = {
         tags: ['Python', 'STM32', 'MQTT', 'Award Winner'],
         image: 'images/zenith_launch.png',
         // Prefer larger variants for the Solaris hero - load eagerly
-        imageWidths: [2400, 1600, 800],
+        // Use available generated widths to avoid 404s
+        imageWidths: [1600, 1024, 800],
         imageSizes: '(min-width:1024px) 800px, 100vw',
         loading: 'eager',
         imageAlt: 'Project Zenith Launch',
