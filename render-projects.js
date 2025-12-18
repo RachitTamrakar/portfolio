@@ -43,7 +43,7 @@
     }
 
     /**
-     * Renders a category section with projects
+     * Renders a category section with projects in a carousel
      * @param {string} categoryKey - Category identifier
      * @param {Array} projects - Array of project objects
      * @returns {string} HTML string for the entire section
@@ -59,12 +59,29 @@
             .map(project => renderProjectCard(project))
             .join('\n');
         
+        const carouselId = `carousel-${categoryKey}`;
+        
         return `
         <section class="${sectionClass}">
             <h2 class="section-title">${category.title}</h2>
-            <div class="projects-card-grid">
-                ${projectsHtml}
+            <div class="carousel-container">
+                <button class="carousel-btn carousel-prev" data-carousel="${carouselId}" aria-label="Previous">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="carousel" id="${carouselId}">
+                    <div class="carousel-track">
+                        ${projectsHtml}
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-next" data-carousel="${carouselId}" aria-label="Next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
             </div>
+            <div class="carousel-dots" data-carousel="${carouselId}"></div>
         </section>`;
     }
 
@@ -78,14 +95,12 @@
         const container = document.getElementById('featured-projects-container');
         if (!container) return;
         
-        const subtitle = '<p class="section-subtitle">Highlights from my portfolio - <a href="projects.html">view all projects →</a></p>';
         const projectsHtml = featuredProjects
             .map(project => renderProjectCard(project))
             .join('\n');
         
         container.innerHTML = `
             <h2>Featured Work</h2>
-            ${subtitle}
             <div class="projects-card-grid">
                 ${projectsHtml}
             </div>`;
@@ -126,33 +141,19 @@
         
         const sections = [];
         
-        // Featured section
-        const featuredProjects = sortProjectsForDisplay(Object.values(PROJECTS)
-            .filter(p => p.categories.includes('featured')));
-        sections.push(renderCategorySection('featured', featuredProjects));
-        
         // Industrial section
         const industrialProjects = sortProjectsForDisplay(Object.values(PROJECTS)
-            .filter(p => p.categories.includes('industrial') && !p.categories.includes('featured')));
-        // Add vision system with extra tags for industrial section
-        const visionWithExtraTags = {...PROJECTS.visionSystem, tags: [...PROJECTS.visionSystem.tags, 'Multithreading']};
-        industrialProjects.unshift(visionWithExtraTags);
+            .filter(p => p.categories.includes('industrial')));
         sections.push(renderCategorySection('industrial', industrialProjects));
         
         // Rocketry section
         const rocketryProjects = sortProjectsForDisplay(Object.values(PROJECTS)
-            .filter(p => p.categories.includes('rocketry') && !p.categories.includes('featured')));
-        // Add Solaris Mk II with extra tags for rocketry section
-        const solarisMk2WithExtraTags = {...PROJECTS.solarisMk2, 
-            impact: 'Avionics Vice Lead for propulsion controls & test readiness; award-winning 4kN hybrid engine ground station at IREC 2025',
-            tags: ['Python', 'STM32', 'MQTT', 'RS422', 'SCADA']};
-        rocketryProjects.unshift(solarisMk2WithExtraTags);
+            .filter(p => p.categories.includes('rocketry')));
         sections.push(renderCategorySection('rocketry', rocketryProjects));
         
         // Robotics section
         const roboticsProjects = sortProjectsForDisplay(Object.values(PROJECTS)
-            .filter(p => p.categories.includes('robotics') && !p.categories.includes('featured')));
-        roboticsProjects.unshift(PROJECTS.fruitRobot);
+            .filter(p => p.categories.includes('robotics')));
         sections.push(renderCategorySection('robotics', roboticsProjects));
         
         container.innerHTML = sections.join('\n');
@@ -162,9 +163,177 @@
     document.addEventListener('DOMContentLoaded', function() {
         if (document.getElementById('featured-projects-container')) {
             renderIndexProjects();
+            initializeCarousel('featured-projects-container');
         }
         if (document.getElementById('all-projects-container')) {
             renderAllProjects();
+            initializeCarousels();
         }
     });
+
+    /**
+     * Initialize all carousels on the page
+     */
+    function initializeCarousels() {
+        const carousels = document.querySelectorAll('.carousel');
+        carousels.forEach(carousel => {
+            const id = carousel.id;
+            const track = carousel.querySelector('.carousel-track');
+            const slides = track.querySelectorAll('.project-card-compact, .featured-project-card');
+            const prevBtn = document.querySelector(`[data-carousel="${id}"].carousel-prev`);
+            const nextBtn = document.querySelector(`[data-carousel="${id}"].carousel-next`);
+            const dotsContainer = document.querySelector(`.carousel-dots[data-carousel="${id}"]`);
+            
+            if (slides.length === 0) return;
+            
+            let currentIndex = 0;
+            let slidesPerView = getSlidesPerView();
+            let maxIndex = Math.max(0, slides.length - slidesPerView);
+            
+            function getSlidesPerView() {
+                if (window.innerWidth < 768) return 1;
+                if (window.innerWidth < 1024) return 2;
+                return 3;
+            }
+            
+            // Create all dots once
+            const dotsWrapper = document.createElement('div');
+            dotsWrapper.style.position = 'relative';
+            dotsWrapper.style.display = 'flex';
+            dotsWrapper.style.gap = '0.5rem';
+            dotsWrapper.style.alignItems = 'center';
+            
+            for (let i = 0; i < slides.length; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('carousel-dot');
+                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                dot.setAttribute('data-index', i);
+                dot.addEventListener('click', () => {
+                    let targetIndex;
+                    if (i < currentIndex) {
+                        targetIndex = i;
+                    } else if (i >= currentIndex + slidesPerView) {
+                        targetIndex = i - slidesPerView + 1;
+                    } else {
+                        return; // Already visible
+                    }
+                    targetIndex = Math.max(0, Math.min(targetIndex, maxIndex));
+                    goToSlide(targetIndex);
+                });
+                dotsWrapper.appendChild(dot);
+            }
+            
+            // Create active oval overlay
+            const activeOval = document.createElement('div');
+            activeOval.classList.add('carousel-dot-active');
+            dotsWrapper.appendChild(activeOval);
+            
+            dotsContainer.appendChild(dotsWrapper);
+            
+            function updateCarousel() {
+                slidesPerView = getSlidesPerView();
+                maxIndex = Math.max(0, slides.length - slidesPerView);
+                
+                const slideWidth = slides[0].offsetWidth;
+                const gap = 32; // 2rem gap
+                const offset = -(currentIndex * (slideWidth + gap));
+                track.style.transform = `translateX(${offset}px)`;
+                
+                // Update dot visibility and oval position
+                const dots = dotsContainer.querySelectorAll('.carousel-dot');
+                const activeOval = dotsContainer.querySelector('.carousel-dot-active');
+                const visibleStart = currentIndex;
+                const visibleEnd = currentIndex + slidesPerView - 1;
+                
+                const dotWidth = 12;
+                const dotGap = 8; // 0.5rem
+                let visibleDotsBeforeOval = 0;
+                
+                dots.forEach((dot, index) => {
+                    const isVisible = index >= visibleStart && index <= visibleEnd;
+                    if (isVisible) {
+                        dot.style.opacity = '0';
+                        dot.style.pointerEvents = 'none';
+                    } else {
+                        dot.style.opacity = '1';
+                        dot.style.pointerEvents = 'auto';
+                        if (index < visibleStart) {
+                            visibleDotsBeforeOval++;
+                        }
+                    }
+                });
+                
+                // Position and size the oval
+                const ovalWidth = (dotWidth * slidesPerView) + (dotGap * (slidesPerView - 1));
+                const leftPosition = visibleDotsBeforeOval * (dotWidth + dotGap);
+                
+                activeOval.style.width = `${ovalWidth}px`;
+                activeOval.style.transform = `translateX(${leftPosition}px)`;
+                
+                // Hide/show buttons
+                if (currentIndex === 0) {
+                    prevBtn.style.visibility = 'hidden';
+                } else {
+                    prevBtn.style.visibility = 'visible';
+                }
+                
+                if (currentIndex >= maxIndex) {
+                    nextBtn.style.visibility = 'hidden';
+                } else {
+                    nextBtn.style.visibility = 'visible';
+                }
+                
+                // Hide dots if all content fits in view
+                if (maxIndex === 0) {
+                    dotsContainer.style.display = 'none';
+                } else {
+                    dotsContainer.style.display = 'flex';
+                }
+            }
+            
+            function goToSlide(index) {
+                currentIndex = Math.max(0, Math.min(index, maxIndex));
+                updateCarousel();
+            }
+            
+            function next() {
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            }
+            
+            function prev() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            }
+            
+            prevBtn.addEventListener('click', prev);
+            nextBtn.addEventListener('click', next);
+            
+            // Handle window resize
+            let resizeTimeout;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    const newSlidesPerView = getSlidesPerView();
+                    const newMaxIndex = Math.max(0, slides.length - newSlidesPerView);
+                    currentIndex = Math.min(currentIndex, newMaxIndex);
+                    updateCarousel();
+                }, 150);
+            });
+            
+            // Initial update
+            updateCarousel();
+        });
+    }
+    
+    /**
+     * Initialize carousel for a specific container
+     */
+    function initializeCarousel(containerId) {
+        setTimeout(initializeCarousels, 0);
+    }
 })();
