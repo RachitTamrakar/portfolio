@@ -36,35 +36,6 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Transparent navbar overlay for homepage */
-body.home .navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: transparent;
-    box-shadow: none;
-    border-bottom: none;
-}
-
-body.home .logo {
-    color: white;
-}
-
-body.home .logo:hover {
-    color: rgba(255, 255, 255, 0.8);
-}
-
-body.home .nav-links a {
-    color: white;
-}
-
-body.home .nav-links a:hover,
-body.home .nav-links a.active {
-    color: white;
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
 .navbar-hidden {
     transform: translateY(-100%);
 }
