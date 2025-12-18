@@ -36,30 +36,6 @@
         <p>&copy; 2024 Rachit Tamrakar. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Navbar follows scroll
-        let lastScroll = 0;
-        let navbarOffset = 0;
-        const navbar = document.querySelector('.navbar');
-        const navbarHeight = navbar.offsetHeight;
-        const scrollThreshold = 10;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            
-            if (currentScroll <= scrollThreshold) {
-                navbarOffset = 0;
-                navbar.style.transform = `translateY(0)`;
-                lastScroll = currentScroll;
-                return;
-            }
-            
-            const scrollDelta = currentScroll - lastScroll;
-            navbarOffset = Math.max(-navbarHeight, Math.min(0, navbarOffset - scrollDelta));
-            
-            navbar.style.transform = `translateY(${navbarOffset}px)`;
-            lastScroll = currentScroll;
-        });
-    </script>
+    <script src="site.js"></script>
 </body>
 </html>

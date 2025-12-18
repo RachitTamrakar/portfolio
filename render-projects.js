@@ -32,12 +32,13 @@
 
         const imageHtml = buildImageHtml(project);
         
-        const tagsHtml = project.tags
+        const tags = Array.isArray(project.tags) ? project.tags : [];
+        const tagsHtml = tags
             .map(tag => `<span>${tag}</span>`)
             .join('\n                            ');
         
         const linkTextHtml = hasLink 
-            ? '<span class="project-link-compact">Learn More →</span>'
+            ? '<span class="project-link-compact">Learn More &rarr;</span>'
             : '';
         
         return `
@@ -47,7 +48,7 @@
                     </div>
                     <div class="project-card-body">
                         <h3>${project.title}</h3>
-                        <p class="project-meta-compact">${project.organization} • ${project.timeframe}</p>
+                        <p class="project-meta-compact">${project.organization} &middot; ${project.timeframe}</p>
                         <p class="impact-line">${project.impact}</p>
                         <div class="project-tags-compact">
                             ${tagsHtml}
@@ -158,33 +159,32 @@
         
         const sections = [];
         
-        // Industrial section
-        const industrialProjects = sortProjectsForDisplay(Object.values(PROJECTS)
-            .filter(p => p.categories.includes('industrial')));
-        sections.push(renderCategorySection('industrial', industrialProjects));
-        
-        // Rocketry section
-        const rocketryProjects = sortProjectsForDisplay(Object.values(PROJECTS)
-            .filter(p => p.categories.includes('rocketry')));
-        sections.push(renderCategorySection('rocketry', rocketryProjects));
-        
-        // Robotics section
-        const roboticsProjects = sortProjectsForDisplay(Object.values(PROJECTS)
-            .filter(p => p.categories.includes('robotics')));
-        sections.push(renderCategorySection('robotics', roboticsProjects));
+        Object.keys(CATEGORIES)
+            .filter(key => key !== 'featured')
+            .forEach(categoryKey => {
+                const projectsForCategory = sortProjectsForDisplay(Object.values(PROJECTS)
+                    .filter(p => p.categories.includes(categoryKey)));
+                
+                if (projectsForCategory.length === 0) return;
+                sections.push(renderCategorySection(categoryKey, projectsForCategory));
+            });
         
         container.innerHTML = sections.join('\n');
     };
 
     // Auto-render on page load
     document.addEventListener('DOMContentLoaded', function() {
-        if (document.getElementById('featured-projects-container')) {
+        const hasFeaturedContainer = document.getElementById('featured-projects-container');
+        const hasAllProjectsContainer = document.getElementById('all-projects-container');
+
+        if (hasFeaturedContainer) {
             renderIndexProjects();
-            initializeCarousel('featured-projects-container');
         }
-        if (document.getElementById('all-projects-container')) {
+        if (hasAllProjectsContainer) {
             renderAllProjects();
-            initializeCarousels();
+        }
+        if (document.querySelector('.carousel')) {
+            setTimeout(initializeCarousels, 0);
         }
     });
 
@@ -247,12 +247,18 @@
             
             dotsContainer.appendChild(dotsWrapper);
             
+            function getTrackGap() {
+                const gapValue = getComputedStyle(track).gap || '0';
+                const parsed = parseFloat(gapValue);
+                return Number.isFinite(parsed) ? parsed : 0;
+            }
+
             function updateCarousel() {
                 slidesPerView = getSlidesPerView();
                 maxIndex = Math.max(0, slides.length - slidesPerView);
                 
                 const slideWidth = slides[0].offsetWidth;
-                const gap = 32; // 2rem gap
+                const gap = getTrackGap();
                 const offset = -(currentIndex * (slideWidth + gap));
                 track.style.transform = `translateX(${offset}px)`;
                 
@@ -347,10 +353,4 @@
         });
     }
     
-    /**
-     * Initialize carousel for a specific container
-     */
-    function initializeCarousel(containerId) {
-        setTimeout(initializeCarousels, 0);
-    }
 })();
