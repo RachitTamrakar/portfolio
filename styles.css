@@ -131,12 +131,26 @@ body::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-base);
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) transparent;
 }
 
 .side-nav::-webkit-scrollbar {
-    display: none;
+    width: 10px;
+}
+
+.side-nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.side-nav::-webkit-scrollbar-thumb {
+    background-color: var(--border-color);
+    border-radius: 999px;
+    border: 3px solid var(--bg-primary);
+}
+
+.side-nav:hover::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
 }
 
 .side-nav-brand .logo {
@@ -2730,8 +2744,8 @@ body.home .hero-fullbleed {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 calc(-1 * var(--spacing-2xl)) var(--spacing-2xl);
-    width: calc(100% + 2 * var(--spacing-2xl));
+    margin: 0 calc(-1 * var(--spacing-xl)) var(--spacing-2xl);
+    width: calc(100% + 2 * var(--spacing-xl));
     padding: 0;
     border-radius: 0;
     box-shadow: none;
@@ -3192,4 +3206,53 @@ body.about .cta-grid {
     body.about .gallery-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Resume viewer: make embedded PDF fill remaining viewport height */
+body.resume .page-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+body.resume main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-base);
+}
+
+body.resume .projects-section {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: stretch;
+    padding: 0; /* container inside will provide padding */
+    background: transparent;
+    box-shadow: none;
+}
+
+body.resume .container {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    padding: var(--spacing-base);
+}
+
+body.resume .resume-viewer {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* allow children to shrink properly */
+}
+
+body.resume .resume-viewer iframe {
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+    border: none;
+}
+
+/* Small tweak: reduce header spacing on resume page so viewer has more room */
+body.resume .page-header-clean {
+    padding: var(--spacing-base) var(--spacing-lg) var(--spacing-sm);
 }
