@@ -205,7 +205,7 @@ const CATEGORIES = {
     },
     rocketry: {
         title: 'Rocketry & Propulsion',
-        altBg: false
+        altBg: true
     },
     robotics: {
         title: 'Robotics & Competitions',
