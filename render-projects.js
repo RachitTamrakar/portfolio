@@ -77,9 +77,15 @@
         
         const carouselId = `carousel-${categoryKey}`;
         
+        // If the page already includes a top-level header (e.g. a category page with
+        // `.page-header-clean h1`), don't repeat the title here. This prevents a
+        // visually duplicate heading when rendering a single-category page.
+        const showSectionHeader = !(document && document.querySelector && document.querySelector('.page-header-clean h1'));
+        const headerHtml = showSectionHeader ? `<h2 class="section-title">${category.title}</h2>` : '';
+
         return `
         <section class="${sectionClass}">
-            <h2 class="section-title">${category.title}</h2>
+            ${headerHtml}
             <div class="carousel-container">
                 <button class="carousel-btn carousel-prev" data-carousel="${carouselId}" aria-label="Previous">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
