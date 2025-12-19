@@ -1550,6 +1550,9 @@ footer p a {
     background-color: var(--bg-primary);
     border-radius: 16px;
     box-shadow: var(--card-shadow);
+    /* allow child visuals (shadows/animations) to extend outside the section */
+    overflow: visible;
+    z-index: 0;
 }
 
 .projects-section.alt-bg {
@@ -1589,19 +1592,44 @@ footer p a {
     display: flex;
     align-items: center;
     gap: var(--spacing-base);
-    margin: 0 auto;
+    /* give breathing room above/below so card shadows/animations aren't clipped */
+    margin: var(--spacing-md) auto;
+    padding-block: var(--spacing-lg);
     max-width: 100%;
+    /* ensure shadows and transforms can render vertically outside the carousel bounds,
+       but hide any horizontal overflow so off-screen tiles aren't visible */
+    overflow-x: hidden;
+    overflow-y: visible;
+    z-index: 0;
 }
 
 .carousel {
-    overflow: hidden;
+    /* keep horizontal overflow hidden for sliding effect but allow vertical
+       overflow so shadows and animated transforms aren't clipped */
+    overflow-x: hidden;
+    overflow-y: visible;
     width: 100%;
+}
+
+/* High-specificity override: ensure carousel containers never clip vertically.
+   Use !important to override any earlier media-query or page-specific rules
+   that accidentally set vertical overflow to `auto` or `hidden`. */
+.carousel-container, .carousel, #carousel-projects-container {
+    overflow-x: hidden !important;
+    overflow-y: visible !important;
+}
+
+/* Ensure category container doesn't clip children */
+#category-projects-container {
+    overflow: visible;
 }
 
 .carousel-track {
     display: flex;
     gap: var(--spacing-lg);
     transition: transform 0.5s ease-in-out;
+    /* add a small vertical gutter so lifted cards/shadows stay inside the track's height */
+    padding-block: var(--spacing-sm);
 }
 
 .carousel-track .project-card-compact,
@@ -1731,6 +1759,17 @@ footer p a {
     flex-direction: column;
 }
 
+/* Make cards rise above neighbors on hover so shadows aren't clipped by siblings */
+.project-card-compact,
+.featured-project-card {
+    position: relative;
+}
+
+.project-card-compact:hover,
+.featured-project-card:hover {
+    z-index: 10;
+}
+
 /* Compact project cards */
 .project-card-compact {
     background-color: var(--bg-primary);
@@ -1743,10 +1782,6 @@ footer p a {
     flex-direction: column;
     text-decoration: none;
     color: inherit;
-}
-
-.project-card-compact:hover {
-    box-shadow: var(--card-shadow-hover);
 }
 
 .project-card-image {
