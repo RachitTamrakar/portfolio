@@ -16,7 +16,7 @@
                 label: 'Industrial Automation & Computer Vision',
                 href: 'industrial.html',
                 items: [
-                    { href: 'vision-inspection-system.html', label: 'Multi-Station Vision Inspection System' },
+                    { href: 'vision-inspection-system.html', label: 'Product Inspection System' },
                 ],
             },
             {
@@ -24,9 +24,9 @@
                 label: 'Rocketry & Propulsion',
                 href: 'rocketry.html',
                 items: [
-                    { href: 'solaris-mk-ii.html', label: 'Solaris Mk II Hybrid Engine & Ground Station' },
-                    { href: 'solaris-mk-iii.html', label: 'Solaris Mk III Support' },
-                    { href: 'arc-pyro-ignitor.html', label: 'Arc-Pyro High Voltage Ignitor' },
+                    { href: 'solaris-mk-ii.html', label: 'Solaris Mk II Control Electronics' },
+                    { href: 'solaris-mk-iii.html', label: 'Solaris Mk III' },
+                    { href: 'arc-pyro-ignitor.html', label: 'High Voltage Ignitor' },
                 ],
             },
             {
@@ -34,7 +34,7 @@
                 label: 'Robotics & Competitions',
                 href: 'robotics.html',
                 items: [
-                    { href: 'autonomous-fruit-robot.html', label: 'Fruit Navigation & Mapping Robot' },
+                    { href: 'autonomous-fruit-robot.html', label: 'SLAM & Perception Robot' },
                 ],
             },
         ],
