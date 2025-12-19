@@ -16,19 +16,24 @@
 
         <div class="page-content">
             <main>
-                <section class="page-header-clean">
-                    <h1>Resume</h1>
-                    <p class="page-subtitle-clean">Embedded PDF viewer — scroll to read. Use the download link if the PDF doesn't load.</p>
-                </section>
+                <div class="container resume-container">
+                    <section class="page-header-clean resume-header">
+                        <h1>Resume</h1>
+                        <div class="resume-actions">
+                            <a class="resume-chip resume-chip-primary" href="RachitTamrakarResume.pdf" download>Download PDF</a>
+                            <a class="resume-chip" href="RachitTamrakarResume.pdf" target="_blank" rel="noopener">Open in new tab</a>
+                            <a class="resume-chip" href="mailto:tamrakar.rachit2004@gmail.com">Email me</a>
+                        </div>
+                    </section>
 
-                <section class="projects-section">
-                    <div class="resume-viewer">
-                        <iframe src="RachitTamrakarResume.pdf" title="Rachit Tamrakar Resume" width="100%" style="border: none;" aria-describedby="resume-fallback"></iframe>
-                        <p id="resume-fallback" style="margin-top:var(--spacing-base); text-align:center;">
-                            If the resume does not display, <a href="RachitTamrakarResume.pdf" download>download the PDF</a> or open it in a new tab.
-                        </p>
-                    </div>
-                </section>
+                    <section class="projects-section resume-panel">
+                        <div class="resume-viewer-card">
+                            <div class="resume-viewer">
+                                <iframe src="RachitTamrakarResume.pdf#toolbar=0" title="Rachit Tamrakar Resume" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </section>
+                </div>
 
             </main>
 
