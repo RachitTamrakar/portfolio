@@ -16,7 +16,7 @@
                 label: 'Industrial Automation & Computer Vision',
                 href: 'industrial.html',
                 items: [
-                    { href: 'vision-inspection-system.html', label: 'Product Inspection System' },
+                    { href: 'vision-inspection-system.html', label: 'High-Speed Inspection System' },
                 ],
             },
             {
@@ -24,10 +24,9 @@
                 label: 'Rocketry & Propulsion',
                 href: 'rocketry.html',
                 items: [
-                    { href: 'solaris-mk-ii.html', label: 'Solaris Mk II Control Electronics' },
-                    { href: 'irec-2025-zenith.html', label: 'IREC 2025 Competition' },
-                    { href: 'solaris-mk-iii.html', label: 'Solaris Mk III' },
-                    { href: 'arc-pyro-ignitor.html', label: 'High Voltage Ignitor' },
+                    { href: 'solaris-mk-ii.html', label: 'Solaris Mk II & GSE Electronics' },
+                    { href: 'arc-pyro-ignitor.html', label: '14 kV High Voltage Ignitor' },
+                    { href: 'solaris-mk-iii.html', label: 'Solaris Mk III Support' },
                 ],
             },
             {
@@ -35,7 +34,8 @@
                 label: 'Robotics & Competitions',
                 href: 'robotics.html',
                 items: [
-                    { href: 'autonomous-fruit-robot.html', label: 'SLAM & Perception Robot' },
+                    { href: 'irec-2025-zenith.html', label: 'IREC 2025: Project Zenith' },
+                    { href: 'autonomous-fruit-robot.html', label: 'Autonomous Fruit Robot' },
                 ],
             },
         ],
