@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IREC 2025 - Project Zenith Competition - Rachit Tamrakar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="case-study">
+
+    <button class="nav-mobile-toggle" type="button" aria-expanded="false" aria-label="Open navigation">
+        <span class="hamburger"></span>
+    </button>
+    <div class="page-shell">
+        <div data-nav-root></div>
+
+        <div class="page-content">
+    <main class="case-study">
+        <header class="case-study-header">
+            <div class="case-study-header-content">
+                <a href="projects.html" class="back-link">Back to Projects</a>
+                <h1>IREC 2025 - Project Zenith Competition</h1>
+                <p class="case-study-subtitle">Leading launch operations, crisis management, and technical presentations for Monash HPR's award-winning rocket at the Intercollegiate Rocket Engineering Competition</p>
+                <div class="case-study-meta">
+                    <span>Monash High Powered Rocketry</span>
+                    <span>•</span>
+                    <span>June 2025</span>
+                </div>
+                <div class="award-banner">
+                    🏆 Jim Furfaro Technical Excellence Award (out of 140+ teams) + 2nd Place Category
+                </div>
+                <div class="project-tags">
+                    <span class="tag">Launch Operations</span>
+                    <span class="tag">Test Readiness</span>
+                    <span class="tag">Crisis Management</span>
+                    <span class="tag">Systems Integration</span>
+                    <span class="tag">Award Winner</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="case-study-content">
+            <section class="case-study-section">
+                <h2>Competition Overview</h2>
+                <p>IREC (Intercollegiate Rocket Engineering Competition) is the world's largest student rocketry competition, bringing together 140+ teams from universities across the globe. Teams design, build, and launch high-powered rockets targeting specific altitude goals while competing in technical excellence categories.</p>
+                
+                <p>At IREC 2025, Monash HPR's Project Zenith won the prestigious <strong>Jim Furfaro Award for Technical Excellence</strong> and placed <strong>2nd in our category</strong>. I served as Avionics Vice Lead responsible for launch operations, system integration, and the final "ready to run" sign-off before engine ignition.</p>
+
+                <div class="project-image">
+                    <img src="images/irec_pad_photo-w1600.png" srcset="images/irec_pad_photo-w1600.png 1600w, images/irec_pad_photo-w1024.png 1024w, images/irec_pad_photo-w800.png 800w, images/irec_pad_photo-w640.png 640w" sizes="100vw" alt="IREC Pad Operations" loading="eager" onerror="this.style.display='none'">
+                    <p class="image-caption">Pad operations during IREC 2025</p>
+                </div>
+
+                <div class="video-embed-container">
+                    <iframe src="https://www.youtube.com/embed/duVOAWQd4xQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-caption">Zenith IREC 2025 Launch to 5,000 ft (previous Australia flights: 12,000 ft)</p>
+                </div>
+            </section>
+
+            <section class="case-study-section alt-bg">
+                <h2>My Role: Avionics Vice Lead - Launch Readiness</h2>
+                <p>As Avionics Vice Lead, I represented the 5-person avionics team in technical meetings and owned propulsion control integration and test readiness. I was the final authority who signed off "ready to run" before any test or launch.</p>
+
+                <h3>Pre-Launch Verification Checklist</h3>
+                <div class="tech-details">
+                    <div class="tech-detail-card">
+                        <h4>Electrical Continuity</h4>
+                        <p>Verified all harness connections, checked for shorts or open circuits, confirmed power distribution to all subsystems.</p>
+                    </div>
+                    
+                    <div class="tech-detail-card">
+                        <h4>Sensor Sanity Checks</h4>
+                        <p>Zeroed pressure transducers, verified thermocouple readings, checked load cell drift, validated sensor plausibility ranges.</p>
+                    </div>
+                    
+                    <div class="tech-detail-card">
+                        <h4>Communications Health</h4>
+                        <p>Brought up and verified stability of CAN bus, RS-422 serial links, and MQTT telemetry. Monitored for dropped packets or timeouts.</p>
+                    </div>
+
+                    <div class="tech-detail-card">
+                        <h4>State Machine Dry Runs</h4>
+                        <p>Executed complete fill/ignite/abort sequences without propellant to verify software logic, timing, and interlocks.</p>
+                    </div>
+                </div>
+
+                <div class="why-matters-box">
+                    <strong>🔑 Why This Matters:</strong> My verification determined whether the engine was safe to run. Lives and expensive hardware depended on catching issues before ignition—there's no room for "probably fine" when dealing with 4 kN of thrust and cryogenic oxidizers.
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Technical Presentation - Jim Furfaro Award Win</h2>
+                <p>Part of IREC's evaluation is a formal podium presentation where teams present their rocket's technical design to a panel of aerospace industry judges. Our presentation directly contributed to winning the Jim Furfaro Technical Excellence Award.</p>
+
+                <h3>My Contribution</h3>
+                <p>I co-presented the control and telemetry architecture section, explaining our distributed system design, communication protocols (CAN/RS-422/MQTT), and safety-critical control logic. I walked judges through our state machine design, sensor fusion approach, and the testing campaign that validated our system.</p>
+
+                <div class="video-embed-container">
+                    <iframe src="https://www.youtube.com/embed/3C_ozpW7En4?start=22810" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-caption">IREC 2025 Presentation (timestamped to control systems section)</p>
+                </div>
+
+                <h3>What the Judges Valued</h3>
+                <div class="competition-highlights">
+                    <div class="highlight-item">
+                        <h4>Technical Depth</h4>
+                        <p>Our ground station wasn't off-the-shelf—we designed custom electronics, wrote firmware, and built integration layers. Judges recognized the engineering rigor.</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <h4>Test-Driven Development</h4>
+                        <p>We demonstrated iterative design improvements based on hot-fire test data, showing how failures informed design evolution.</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <h4>Safety Culture</h4>
+                        <p>Our multi-layered safety interlocks, pre-test verification procedures, and fault-tolerant design showed mature systems engineering thinking.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="case-study-section alt-bg">
+                <h2>Crisis Management: Pre-Launch Sensor Failure</h2>
+                <p>The night before our scheduled launch window, our capacitive propellant sensor—critical for verifying fill levels—started giving erratic readings. This was a potential show-stopper that could scrub our launch.</p>
+
+                <h3>The Problem</h3>
+                <p>During final pad setup checks, the sensor showed noise spikes and inconsistent measurements. We'd never seen this behavior in testing. With limited time and tools in the field, we had to diagnose and fix the issue before morning.</p>
+
+                <h3>Root Cause Analysis</h3>
+                <div class="development-list">
+                    <div class="dev-item">
+                        <h4>Step 1: Isolate Variables</h4>
+                        <p>Swapped cables, checked power supply stability, verified firmware hadn't corrupted. Problem persisted—pointed to electrical noise.</p>
+                    </div>
+                    <div class="dev-item">
+                        <h4>Step 2: Trace Signal Path</h4>
+                        <p>Used oscilloscope to examine sensor output. Saw high-frequency noise coupled into signal lines—likely from nearby motor controllers or RF interference.</p>
+                    </div>
+                    <div class="dev-item">
+                        <h4>Step 3: Field Fix</h4>
+                        <p>Implemented additional shielding on sensor cables, rerouted away from high-current lines, added ferrite beads. Measurements stabilized.</p>
+                    </div>
+                    <div class="dev-item">
+                        <h4>Step 4: Validation</h4>
+                        <p>Ran repeated fill simulations overnight. Sensor held calibration, readings were repeatable. Cleared for launch.</p>
+                    </div>
+                </div>
+
+                <p><strong>Outcome:</strong> System performed flawlessly during launch operations. The sensor provided accurate fill-level readings, enabling safe propellant loading and successful ignition.</p>
+
+                <div class="why-matters-box">
+                    <strong>💡 Lesson Learned:</strong> This experience taught me the importance of environmental testing. Our lab tests didn't replicate the electromagnetic environment of the launch pad. Now I always ask: "What's different about the deployment environment?"
+                </div>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Pre-Launch System Rebuild Decision</h2>
+                <p>During hot-fire testing leading up to IREC, we experienced compounding electrical issues: intermittent connectors, unreliable pyro channels, and inconsistent actuator behavior. Each issue was fixable individually, but the pattern suggested deeper problems.</p>
+
+                <h3>The Call</h3>
+                <p>A propulsion teammate challenged our "incremental fixes" approach. After reviewing test data and failure modes together, I agreed—a complete electrical system rebuild before flight would be safer than hoping individual patches held.</p>
+
+                <h3>Execution Under Pressure</h3>
+                <p>We had days, not weeks. I mobilized 20+ teammates across subsections to execute the overhaul:</p>
+                <ul>
+                    <li>Replaced all connectors with higher-reliability crimped assemblies</li>
+                    <li>Rewired pyro channels with redundant paths and improved shielding</li>
+                    <li>Redesigned actuator wiring harness with strain relief and vibration protection</li>
+                    <li>Implemented comprehensive continuity testing procedures</li>
+                    <li>Validated entire system with end-to-end checkout before travel</li>
+                </ul>
+
+                <p><strong>Result:</strong> The rebuilt system performed nominally during launch. No electrical faults, no anomalies. The decision to rebuild—and the team's execution—directly enabled our successful flight.</p>
+
+                <div class="why-matters-box">
+                    <strong>🎯 Leadership Insight:</strong> This taught me that being a technical lead means knowing when to push back on "good enough" and advocate for doing it right, even when timelines are tight. It also showed me the power of trusting your team—when you give people clear objectives and empower them to execute, they rise to the challenge.
+                </div>
+            </section>
+
+            <section class="case-study-section alt-bg">
+                <h2>Launch Day Operations</h2>
+                <p>Competition day brought its own set of challenges: tight timelines, unfamiliar launch infrastructure, weather delays, and the pressure of a single launch opportunity.</p>
+
+                <h3>Pad Setup & Integration</h3>
+                <div class="tech-details">
+                    <div class="tech-detail-card">
+                        <h4>System Assembly</h4>
+                        <p>Led integration of ground station electronics with launch pad infrastructure. Coordinated with structures and propulsion teams to route cables, mount sensors, and position actuators.</p>
+                    </div>
+                    
+                    <div class="tech-detail-card">
+                        <h4>Pre-Launch Checks</h4>
+                        <p>Executed full verification sequence: valve cycling, pressure transducer zeroing, load cell calibration, communications handshake with rocket avionics.</p>
+                    </div>
+                    
+                    <div class="tech-detail-card">
+                        <h4>Go/No-Go Decision</h4>
+                        <p>Provided final "ready to run" confirmation to launch director after all subsystems reported green. This was my call—and I owned the consequences.</p>
+                    </div>
+                </div>
+
+                <h3>Launch Execution</h3>
+                <p>System operated nominally through the entire sequence: propellant fill, ignition, thrust phase, and flight to 5,000 ft apogee (IREC altitude cap; previous Australia flights reached 12,000 ft). All telemetry was captured successfully, providing valuable data for post-flight analysis.</p>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Key Takeaways</h2>
+                
+                <div class="development-list">
+                    <div class="dev-item">
+                        <h4>Test Readiness is a Discipline</h4>
+                        <p>The "ready to run" checklist wasn't bureaucracy—it was the difference between a successful launch and a catastrophic failure. Disciplined pre-test verification saves hardware and lives.</p>
+                    </div>
+                    
+                    <div class="dev-item">
+                        <h4>Field Engineering Under Pressure</h4>
+                        <p>You can't debug with printf statements when you're on a launch pad with limited tools and time. Systematic troubleshooting, environmental awareness, and creative problem-solving are critical skills.</p>
+                    </div>
+                    
+                    <div class="dev-item">
+                        <h4>Know When to Rebuild vs. Patch</h4>
+                        <p>Incremental fixes can mask systemic problems. Sometimes the right answer is to tear it down and build it right, even if it's painful short-term.</p>
+                    </div>
+                    
+                    <div class="dev-item">
+                        <h4>Technical Communication Wins Awards</h4>
+                        <p>Our presentation clearly explained complex systems to judges with varying backgrounds. Being able to communicate technical work to non-specialists is as important as the engineering itself.</p>
+                    </div>
+                </div>
+
+                <div class="video-embed-container">
+                    <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7399159028670631938?compact=1" frameborder="0" allowfullscreen></iframe>
+                    <p class="video-caption">LinkedIn Project Showcase</p>
+                </div>
+            </section>
+
+            <section class="case-study-section alt-bg">
+                <h2>Impact & Recognition</h2>
+                <p>Monash HPR's success at IREC 2025 wasn't just a competition win—it validated our team's engineering approach and established new standards for student rocketry projects.</p>
+
+                <div class="competition-highlights">
+                    <div class="highlight-item">
+                        <h4>Jim Furfaro Award for Technical Excellence</h4>
+                        <p>Awarded to 1 team out of 140+ international competitors, recognizing the most impressive technical achievement at IREC 2025.</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <h4>2nd Place in Category</h4>
+                        <p>Competitive placement based on flight performance, demonstrating our system's reliability and precision.</p>
+                    </div>
+                    
+                    <div class="highlight-item">
+                        <h4>Team Culture & Capability</h4>
+                        <p>Our success built confidence in the team's ability to execute ambitious projects. The rebuild decision showed that we could overcome adversity and deliver under pressure.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+            <footer>
+                <p>Contact: <a href="mailto:tamrakar.rachit2004@gmail.com">tamrakar.rachit2004@gmail.com</a></p>
+            </footer>
+        </div>
+    </div>
+
+    <script src="site.js"></script>
+    <script>
+        // Smart back navigation based on referrer
+        const backLink = document.querySelector('.back-link');
+        const referrer = document.referrer;
+        if (backLink && (referrer.includes('index.html') || referrer.endsWith('/'))) {
+            backLink.href = 'index.html';
+            backLink.textContent = 'Back to Home';
+        }
+    </script>
+</body>
+</html>

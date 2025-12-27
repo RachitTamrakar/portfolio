@@ -25,6 +25,7 @@
                 href: 'rocketry.html',
                 items: [
                     { href: 'solaris-mk-ii.html', label: 'Solaris Mk II Control Electronics' },
+                    { href: 'irec-2025-zenith.html', label: 'IREC 2025 Competition' },
                     { href: 'solaris-mk-iii.html', label: 'Solaris Mk III' },
                     { href: 'arc-pyro-ignitor.html', label: 'High Voltage Ignitor' },
                 ],
