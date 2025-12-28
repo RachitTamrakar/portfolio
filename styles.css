@@ -1736,11 +1736,17 @@ body.about .bio-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 3rem;
-    align-items: start;
+    align-items: stretch; /* allow columns to match height so photo can fill vertical space */
+}
+
+body.about .bio-photo {
+    display: block;
 }
 
 body.about .bio-photo img {
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* crop while filling vertical space */
     border-radius: 0.5rem;
     box-shadow: var(--card-shadow);
 }
@@ -1776,7 +1782,7 @@ body.about .facts-list li:last-child {
 
 /* Proof Strip */
 body.about .proof-strip-section {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     padding: var(--spacing-xl);
     border-radius: 16px;
     box-shadow: var(--card-shadow);
@@ -1784,19 +1790,27 @@ body.about .proof-strip-section {
     max-width: var(--width-wide);
 }
 
+/* Use a centered flex row so tiles wrap naturally and stay horizontally centered */
 body.about .proof-tiles {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+    align-items: flex-start; /* align top edges so captions line up */
 }
 
 body.about .proof-tile {
     text-align: center;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    flex: 0 0 320px;
 }
 
 body.about .proof-tile img {
     width: 100%;
-    aspect-ratio: 1;
+    height: 200px; /* consistent visual height */
     object-fit: cover;
     border-radius: 0.5rem;
     box-shadow: var(--card-shadow);
@@ -1841,13 +1855,42 @@ body.about .work-content p {
     margin-bottom: 1.5rem;
 }
 
+/* How I Work: two-column layout with text dominant and right-side image (~66/33) */
+body.about .about-work-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* ~66% text, 33% image */
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+body.about .about-work-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: var(--card-shadow);
+}
+
+body.about .about-work-text {
+    /* ensure text column remains readable */
+}
+
+/* Make the intro paragraph span full width above the grid */
+.about-work-intro {
+    max-width: var(--width-wide);
+    margin-bottom: var(--spacing-lg);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
 body.about .work-content p:last-child {
     margin-bottom: 0;
 }
 
 /* CTA Section */
 body.about .about-cta-section {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     padding: var(--spacing-xl);
     border-radius: 16px;
     box-shadow: var(--card-shadow);
@@ -1863,7 +1906,7 @@ body.about .cta-grid {
 }
 
 body.about .cta-card {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     padding: var(--spacing-xl);
     border-radius: 0.5rem;
     box-shadow: var(--card-shadow);
@@ -1909,8 +1952,20 @@ body.about .cta-grid {
     }
 
     body.about .proof-tiles {
-        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
         gap: 1.5rem;
+    }
+
+    body.about .proof-tile {
+        flex: 0 0 calc(50% - 0.75rem);
+    }
+
+    /* Stack the How I Work image below text on small screens */
+    body.about .about-work-grid {
+        grid-template-columns: 1fr;
+    }
+    body.about .about-work-image {
+        order: 2;
     }
 
     body.about .cta-grid {
@@ -1929,7 +1984,12 @@ body.about .cta-grid {
 
 @media (max-width: 480px) {
     body.about .proof-tiles {
-        grid-template-columns: 1fr;
+        justify-content: center;
+        gap: var(--spacing-md);
+    }
+
+    body.about .proof-tile {
+        flex: 0 0 100%;
     }
 }
 
@@ -1967,8 +2027,10 @@ body.resume .container {
     gap: var(--spacing-base);
     flex: 1 1 auto;
     width: 100%;
-    max-width: none;
-    padding: var(--spacing-lg);
+    /* Match other pages: constrain content and center it */
+    max-width: var(--width-content);
+    margin: 0 auto;
+    padding: var(--spacing-base);
 }
 
 /* On large screens, use more horizontal space for the resume viewer */
@@ -2042,8 +2104,9 @@ body.resume .resume-viewer iframe {
 
 /* Use full content width for the resume header */
 body.resume .page-header-clean {
-    width: 100%;
-    max-width: none;
-    padding-left: var(--spacing-xl);
-    padding-right: var(--spacing-xl);
+    /* Keep header consistent with other pages */
+    max-width: var(--width-wide);
+    margin: 0 auto;
+    padding-left: var(--spacing-lg);
+    padding-right: var(--spacing-lg);
 }

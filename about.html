@@ -20,7 +20,7 @@
                 <section class="page-header-clean about-header">
                     <h1>About</h1>
                     <p class="page-subtitle-clean about-intro">
-                        I build and operate hardware software systems in environments where testing exposes real failure modes. My experience spans industrial automation and propulsion test infrastructure, where reliability, timing, and instrumentation quality directly affect outcomes.
+                        This page describes how I work when systems are live, safety-critical, and operated under real constraints. My experience spans production automation, propulsion testing and robotics, where timing and failure handling directly affect outcomes.
                     </p>
                 </section>
 
@@ -28,18 +28,15 @@
                 <section class="projects-section alt-bg about-bio-section">
                     <div class="bio-grid">
                         <div class="bio-photo">
-                            <img src="images/vl_headshot-w800.png" srcset="images/vl_headshot-w1600.png 1600w, images/vl_headshot-w1024.png 1024w, images/vl_headshot-w800.png 800w" sizes="(max-width:600px) 100vw, 200px" alt="Rachit Tamrakar headshot" loading="lazy" onerror="this.style.display='none'">
+                            <img src="images/serp_pad_debugging_2-w800.png" srcset="images/serp_pad_debugging_2-w1600.png 1600w, images/serp_pad_debugging_2-w1024.png 1024w, images/serp_pad_debugging_2-w800.png 800w" sizes="(max-width:600px) 100vw, 200px" alt="Serpentine Field Debugging" loading="lazy" onerror="this.style.display='none'">
                         </div>
                         <div class="bio-facts">
-                            <h2 class="section-title">Snapshot</h2>
+                            <h2 class="section-title">Operating Context</h2>
+                            <p style="margin-bottom: 1rem;">I have worked in environments where systems cannot be paused, idealized, or debugged in isolation.</p>
                             <ul class="facts-list">
-                                <li>Bachelor of Mechatronics Engineering, Monash University</li>
-                                <li>
-                                    Student Vision, Robotics and Simulations Engineer, Bosch Australia Manufacturing Solutions
-                                </li>
-                                <li>
-                                    Former Avionics Vice Lead, Monash High Powered Rocketry
-                                </li>
+                                <li><strong>Industrial automation:</strong> production vision systems integrated with PLCs and networked devices, operating under strict cycle-time and uptime constraints.</li>
+                                <li><strong>Propulsion testing:</strong> avionics and ground systems during cold-flow, hot-fire and launch operations, verifying instrumentation and diagnosing issues under time pressure.</li>
+                                <li><strong>Competitions and field operations:</strong> pad operations and field debugging under live-system constraints, alongside technical presentations of system architecture.</li>
                             </ul>
                         </div>
                     </div>
@@ -49,21 +46,18 @@
                 <section class="projects-section proof-strip-section">
                     <div class="proof-tiles">
                         <div class="proof-tile">
-                            <img src="images/trophy_solo-w800.png" srcset="images/trophy_solo-w1600.png 1600w, images/trophy_solo-w1024.png 1024w, images/trophy_solo-w800.png 800w" sizes="(max-width:600px) 100vw, 25vw" alt="Award ceremony with trophy" loading="lazy" onerror="this.style.display='none'">
-                            <p class="proof-caption">Receiving the Jim Furfaro Award for Technical Excellence and 2nd Place Award at IREC 2025</p>
+                            <img src="images/irec_pad-w800.png" srcset="images/irec_pad-w1600.png 1600w, images/irec_pad-w1024.png 1024w, images/irec_pad-w800.png 800w" sizes="(max-width:600px) 100vw, 25vw" alt="Working at the Pad" loading="lazy" onerror="this.style.display='none'">
+                            <p class="proof-caption"><strong>Field operations:</strong> launch activities during IREC 2025 for a student-built hybrid rocket.</p>
                         </div>
                         <div class="proof-tile">
                             <img src="images/bosch_headshot-w1600.png" srcset="images/bosch_headshot-w1600.png 1600w, images/bosch_headshot-w1024.png 1024w, images/bosch_headshot-w800.png 800w" sizes="(max-width:600px) 100vw, 25vw" alt="Bosch headshot" loading="lazy" onerror="this.style.display='none'">
-                            <p class="proof-caption">Working on production-deployed vision systems for manufacturing lines at Bosch.</p>
+                            <p class="proof-caption"><strong>Production automation:</strong> working on PLC-integrated vision systems deployed on live manufacturing lines at Bosch.</p>
                         </div>
                         <div class="proof-tile">
                             <img src="images/podium_session_talking-w800.png" srcset="images/podium_session_talking-w1600.png 1600w, images/podium_session_talking-w1024.png 1024w, images/podium_session_talking-w800.png 800w" sizes="(max-width:600px) 100vw, 25vw" alt="Presenting technical work" loading="lazy" onerror="this.style.display='none'">
-                            <p class="proof-caption">Podium session presentation of engine and ground systems control architecture at IREC 2025.</p>
+                            <p class="proof-caption"><strong>Technical ownership:</strong> presenting avionics and ground system architecture to judges and industry at IREC 2025.</p>
                         </div>
-                        <div class="proof-tile">
-                            <img src="images/testing_night-w800.png" srcset="images/testing_night-w1600.png 1600w, images/testing_night-w1024.png 1024w, images/testing_night-w800.png 800w" sizes="(max-width:600px) 100vw, 25vw" alt="Hardware testing session" loading="lazy" onerror="this.style.display='none'">
-                            <p class="proof-caption">Hot-fire testing of a student-built hybrid rocket engine.</p>
-                        </div>
+                        
                     </div>
                 </section>
 
@@ -71,18 +65,21 @@
                 <section class="projects-section alt-bg about-work-section">
                     <h2 class="section-title">How I Work</h2>
                     <div class="work-content">
-                        <p>
-                            I approach engineering from a test and operations perspective. I focus on whether a system behaves predictably across repeated runs, under imperfect conditions, and when operated by others.
-                        </p>
-                        <p>
-                            At Bosch, this meant building multithreaded software that tolerated device failures, recovered cleanly, and met strict cycle time requirements on live production equipment. Debugging often spanned software, networking, cameras, and PLC logic, with limited ability to pause or isolate the system.
-                        </p>
-                        <p>
-                            In rocketry, I helped operate avionics and ground systems during cold flow and hot fire testing, verifying instrumentation, monitoring telemetry, and diagnosing issues under time pressure. I also designed and integrated a custom capacitive propellant fill sensor, handling the sensing hardware, embedded firmware, calibration, and integration into automated test sequences. Reliable data was critical, as it directly affected test safety and outcomes.
-                        </p>
-                        <p>
-                            Across both environments, I value clear ownership, structured system design, and documentation that reflects how systems are actually operated. I am comfortable moving between software, electronics, and test operations as needed, and I aim to leave systems in a state where others can operate and extend them with confidence.
-                        </p>
+                        <p class="about-work-intro">I design systems for live operation, repeatability, and predictable behavior under real conditions. My focus is on how a system behaves across repeated runs, with imperfect data, and when operated by others.</p>
+
+                        <div class="about-work-grid">
+                            <div class="about-work-text">
+                                <ul class="facts-list">
+                                    <li>I design systems assuming partial failure, noisy data, and limited ability to pause or isolate components.</li>
+                                    <li>I prioritize instrumentation, observability, and recovery paths over idealized performance.</li>
+                                    <li>I am comfortable moving between software, electronics, and hardware to diagnose issues end-to-end.</li>
+                                    <li>I document systems based on how they are actually operated, so others can run and extend them safely.</li>
+                                </ul>
+                            </div>
+                            <div class="about-work-image">
+                                <img src="images/irec_shear_disconnect-w800.png" srcset="images/irec_shear_disconnect-w1600.png 1600w, images/irec_shear_disconnect-w1024.png 1024w, images/irec_shear_disconnect-w800.png 800w" sizes="(max-width:600px) 100vw, 300px" alt="Pad shear disconnect" loading="lazy" onerror="this.style.display='none'">
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -91,7 +88,7 @@
                     <div class="cta-grid">
                         <a href="projects.html" class="cta-card">
                             <h3>View Projects</h3>
-                            <p>Explore detailed case studies</p>
+                            <p>Detailed case studies and technical breakdowns</p>
                         </a>
                         <a href="resume.html" class="cta-card">
                             <h3>Resume</h3>
