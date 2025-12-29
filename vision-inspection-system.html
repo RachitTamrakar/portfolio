@@ -21,185 +21,66 @@
             <div class="case-study-header-content">
                 <a href="projects.html" class="back-link">Back to Projects</a>
                 <h1>Multi-Station Vision Inspection System</h1>
-                <p class="case-study-subtitle">Unified C# application controlling 40+ cameras across 6 inspection stations on an $8M production line</p>
                 <div class="case-study-meta">
+                    <span>Undergraduate Engineer</span>
+                    <span>|</span>
                     <span>Bosch Australia Manufacturing Solutions</span>
-                    <span>•</span>
+                    <span>|</span>
                     <span>2024-2025</span>
-                </div>
-                <div class="project-tags">
-                    <span class="tag">C#</span>
-                    <span class="tag">.NET</span>
-                    <span class="tag">WPF</span>
-                    <span class="tag">HALCON</span>
-                    <span class="tag">SQL Server</span>
-                    <span class="tag">ProfiNet</span>
-                    <span class="tag">Computer Vision</span>
-                    <span class="tag">Multithreading</span>
                 </div>
             </div>
         </header>
 
         <div class="case-study-content">
             <div class="confidentiality-notice">
-                <strong>⚠️ Confidentiality Notice:</strong> Due to confidentiality, photos and videos cannot be shared. Any photos shown are of similar systems.
+                <strong>Confidentiality Notice:</strong> Due to confidentiality, photos and videos cannot be shared. Any photos shown are of similar systems.
             </div>
 
             <section class="case-study-section">
-                <h2>The Challenge</h2>
-                <p>Developed for an $8M biodegradable packaging production line with no internal templates or departmental precedent to reference. Customer required 100% inline inspection—no sampling—meaning any false negatives directly impact product quality. I had to architect the system from scratch while learning C# in real-time.</p>
-                
-                <div class="challenge-grid">
-                    <div class="challenge-item">
-                        <h3>Scale & Performance</h3>
-                        <p>40+ cameras across 6 inspection stations operating at ~0.6 second cycle time required a highly optimized multithreaded architecture.</p>
-                    </div>
-                    <div class="challenge-item">
-                        <h3>Real-Time Quality</h3>
-                        <p>Customer required real-time quality validation across the entire production line with immediate feedback to operators.</p>
-                    </div>
-                    <div class="challenge-item">
-                        <h3>Learning Curve</h3>
-                        <p>Had to learn C# from scratch while simultaneously building a production-critical system with no departmental precedent.</p>
-                    </div>
-                </div>
+                <h2>System</h2>
+                <ul>
+                    <li>Production machine-vision inspection system deployed on a live biodegradable packaging line</li>
+                    <li>Six inspection stations operating in parallel</li>
+                    <li>Up to 4-12 cameras per station</li>
+                    <li>Approx. one product inspected every ~600 ms</li>
+                    <li>Integrated with PLC-controlled automation equipment</li>
+                    <li>Deployed on an ~$8M production line and currently in use</li>
+                </ul>
             </section>
 
             <section class="case-study-section alt-bg">
-                <h2>Technical Implementation</h2>
-                
-                <h3>System Architecture</h3>
-                <p>Built a single unified C# application using a multithreaded WPF architecture that manages all 6 inspection stations from one codebase. Each station runs 4-12 cameras with independent inspection pipelines.</p>
-                
-                <div class="tech-details">
-                    <div class="tech-detail-card">
-                        <h4>Camera System</h4>
-                        <p>Integrated 40+ cameras using HALCON vision library with asynchronous pipeline design for sub-second cycle times. Each camera operates independently with automatic reconnect logic to handle failures gracefully.</p>
-                    </div>
-                    
-                    <div class="tech-detail-card">
-                        <h4>PLC Integration</h4>
-                        <p>Designed handshake logic for ProfiNet communication with Siemens PLCs. I wrote a custom C# wrapper for the Hilscher cifX fieldbus card, sketching handshake sequences in flowcharts before coding and collaborating with automation engineers to refine protocols.</p>
-                    </div>
-                    
-                    <div class="tech-detail-card">
-                        <h4>Data Management</h4>
-                        <p>Implemented SQL Server Express logging for product traceability across all stations. This feature was added mid-project per customer request, requiring careful integration into the existing pipeline.</p>
-                    </div>
-                    
-                    <div class="tech-detail-card">
-                        <h4>Configuration System</h4>
-                        <p>Used config files to manage per-station differences from a single codebase, enabling one application to control all stations while accommodating unique camera counts and inspection requirements.</p>
-                    </div>
-                </div>
-                
-                <div class="result-box">
-                    <strong>Result:</strong> Met sub-second cycle time requirements. Architecture became the department's blueprint for future vision systems.
-                </div>
+                <h2>Role &amp; Responsibility</h2>
+                <ul>
+                    <li>Primary developer of the vision inspection application</li>
+                    <li>Designed and implemented the core C# inspection application</li>
+                    <li>Built multithreaded software handling camera acquisition, image processing, PLC communication over ProfiNet, and operator user interface</li>
+                    <li>Added SQL logging for inspection measurements and defect traceability</li>
+                    <li>Worked with automation engineers on PLC handshakes and sequencing</li>
+                </ul>
             </section>
 
             <section class="case-study-section">
-                <h2>Development Process</h2>
-                <p>I built the system incrementally, starting with a dummy test harness, then adding camera interfaces, the logging system, and finally PLC integration. This methodical approach allowed me to validate each component before adding complexity.</p>
-                
-                <div class="process-list">
-                    <div class="process-step">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Dummy Test Harness</h4>
-                            <p>Created initial framework to establish multithreading patterns and GUI structure without hardware dependencies.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Camera Interfaces</h4>
-                            <p>Integrated HALCON library and developed asynchronous camera control with automatic reconnect logic.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Logging System</h4>
-                            <p>Added SQL Server Express database integration for product traceability and quality metrics.</p>
-                        </div>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>PLC Integration</h4>
-                            <p>Developed custom fieldbus wrapper and implemented handshake protocols for Siemens ProfiNet communication.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="result-box">
-                    <strong>Result:</strong> Incremental validation enabled zero production downtime during deployment. Each layer tested independently before integration.
-                </div>
+                <h2>Deployment & Impact</h2>
+                <ul>
+                    <li>Commissioned and validated on the production floor</li>
+                    <li>Application remains in production use</li>
+                    <li>Reused internally as a template for future vision systems</li>
+                </ul>
             </section>
 
             <section class="case-study-section alt-bg">
-                <h2>Technical Challenges Overcome</h2>
-                
-                <div class="challenges-list">
-                    <div class="challenge-solved">
-                        <h4>Multithreading Race Conditions</h4>
-                        <p>Early design had race conditions that required a complete architecture redesign. I abandoned the initial GUI/inspection app split in favor of a unified interface that gave operators real-time adjustability.</p>
-                    </div>
-                    
-                    <div class="challenge-solved">
-                        <h4>Cycle Time Requirements</h4>
-                        <p>Refactored major code sections on two stations to meet strict ~0.6 second cycle time requirements. Optimized image processing pipelines and reduced synchronization overhead.</p>
-                    </div>
-                    
-                    <div class="challenge-solved">
-                        <h4>Network Configuration</h4>
-                        <p>Managed NICs, DHCP settings, and resolved packet collisions and dropped frames. Optimized network topology to handle high-bandwidth camera feeds without interference.</p>
-                    </div>
-                    
-                    <div class="challenge-solved">
-                        <h4>Mid-Project Feature Addition</h4>
-                        <p>Customer requested SQL logging capability mid-project. Successfully integrated database layer without disrupting existing inspection pipeline or cycle time.</p>
-                    </div>
+                <h2>Technologies</h2>
+                <div class="project-tags">
+                    <span class="tag">C# (.NET)</span>
+                    <span class="tag">Industrial cameras</span>
+                    <span class="tag">ProfiNet</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Git</span>
                 </div>
             </section>
 
-            <section class="case-study-section">
-                <h2>Impact & Legacy</h2>
-                
-                <div class="impact-grid">
-                    <div class="impact-card">
-                        <div class="impact-icon">✓</div>
-                        <h4>Production Deployment</h4>
-                        <p>System successfully deployed and running reliably in production environment on $8M line.</p>
-                    </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">📐</div>
-                        <h4>Departmental Blueprint</h4>
-                        <p>Architecture became the department's template for future vision systems, establishing best practices.</p>
-                    </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">🔄</div>
-                        <h4>Code Reusability</h4>
-                        <p>Classes and design patterns reused by other engineers across multiple subsequent projects.</p>
-                    </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">🎯</div>
-                        <h4>Customer Satisfaction</h4>
-                        <p>Demonstrated live system to customer in workshop environment, meeting all performance requirements.</p>
-                    </div>
-                </div>
-            </section>
         </div>
     </main>
-
-            <footer>
-                <p>Contact: <a href="mailto:tamrakar.rachit2004@gmail.com">tamrakar.rachit2004@gmail.com</a></p>
-            </footer>
-        </div>
     </div>
 
     <script src="site.js"></script>
