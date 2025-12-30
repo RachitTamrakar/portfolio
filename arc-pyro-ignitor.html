@@ -21,163 +21,82 @@
             <div class="case-study-header-content">
                 <a href="projects.html" class="back-link">Back to Projects</a>
                 <h1>Arc-Pyro High Voltage Ignitor</h1>
-                <p class="case-study-subtitle">Novel 14 kV ignition system designed to pyrolyze 3D printed ABS puck for hybrid rocket engine ignition</p>
                 <div class="case-study-meta">
                     <span>Monash High Powered Rocketry</span>
-                    <span>•</span>
-                    <span>2025</span>
-                </div>
-                <div class="project-tags">
-                    <span class="tag">High Voltage</span>
-                    <span class="tag">Electrical Safety</span>
-                    <span class="tag">CAD</span>
-                    <span class="tag">Power Supply Design</span>
+                    <span>|</span>
+                    <span>Jan 2025 - Mar 2025</span>
                 </div>
             </div>
         </header>
 
-        <div class="case-study-content">
-            <section class="case-study-section">
-                <h2>Project Overview</h2>
-                <p>The Arc-Pyro is a novel ignition system designed to solve a critical challenge in hybrid rocket engines: reliably starting the combustion process. Rather than using traditional pyrotechnic igniters, this system uses a 14 kV arc to pyrolyze a 3D printed ABS puck, generating hot gas to initiate engine combustion.</p>
-
-                <div class="project-image">
-                    <img src="images/arc_pyro_bench-w640.png" srcset="images/arc_pyro_bench-w640.png 640w" sizes="(max-width:600px) 100vw, 33vw" alt="Arc-Pyro bench test setup" loading="lazy" onerror="this.style.display='none'">
-                </div>
-
-                <div class="video-embed-container">
-                    <iframe src="https://www.youtube.com/embed/3deML3HB_xQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <p class="video-caption">Arc-Pyro bench testing demonstration</p>
-                </div>
+        <div class="case-study-content manual-alt">
+            <section class="case-study-section alt-bg">
+                <h2>Problem</h2>
+                <p>Develop a reusable, electrically controlled ignition system for a hybrid rocket engine using high-voltage arc pyrolysis instead of traditional pyrotechnic igniters.</p>
             </section>
+
+            <div class="split-row wide-text">
+                <section class="case-study-section">
+                    <h2>My Work</h2>
+                    <p>Designed and built a bench-tested 14 kV ignition system for hybrid engine testing.</p>
+                    <ul>
+                        <li>Designed a 14 kV high-voltage power system powered from a 12 V battery</li>
+                        <li>Built a portable ignition unit suitable for remote test operation</li>
+                        <li>Implemented hardware interlocks and fail-safe mechanisms for operator safety</li>
+                        <li>Fabricated and assembled the electrical enclosure and wiring</li>
+                        <li>Integrated into ground station electronics for remote operation</li>
+                    </ul>
+                </section>
+                <div class="split-media compact-media">
+                    <img src="images/arc_pyro_bench-w640.png" srcset="images/arc_pyro_bench-w640.png 640w" sizes="(max-width:900px) 100vw, 40vw" alt="Arc-Pyro bench test setup" loading="lazy" onerror="this.style.display='none'">
+                </div>
+            </div>
 
             <section class="case-study-section alt-bg">
-                <h2>The Challenge</h2>
-                <p>Hybrid rocket engines require an initial ignition source to start the combustion process. Traditional pyrotechnic igniters can be unreliable and require careful handling. Our goal was to develop a reusable, electrically-controlled ignition system that could be safely operated remotely.</p>
-
-                <div class="challenge-grid">
-                    <div class="challenge-item">
-                        <h3>High Voltage Safety</h3>
-                        <p>Working with 14 kV requires comprehensive safety design to protect operators from electrical hazards.</p>
-                    </div>
-                    <div class="challenge-item">
-                        <h3>Reliable Ignition</h3>
-                        <p>Arc must consistently pyrolyze ABS material to generate sufficient hot gas for engine ignition.</p>
-                    </div>
-                    <div class="challenge-item">
-                        <h3>Remote Operation</h3>
-                        <p>System must be safely operable from remote control station during engine testing.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="case-study-section alt-bg">
-                <h2>Safety Engineering</h2>
-                <p>Working with 14 kV required comprehensive safety design at multiple levels. I implemented multiple hardware safety interlocks to ensure operator protection during all phases of operation.</p>
-
-                <h3>Multi-Layer Safety System</h3>
-                <div class="safety-features">
-                    <div class="safety-item">
-                        <h4>Cabinet Limit Switches</h4>
-                        <p>Physical interlock switches on electrical cabinet prevent system arming when enclosure is open. Operators cannot access high-voltage components while system is energized.</p>
-                    </div>
-                    
-                    <div class="safety-item">
-                        <h4>Isolation Switches</h4>
-                        <p>Manual isolation switches provide visible disconnection from power source. Lockout/tagout capability ensures safe maintenance procedures.</p>
-                    </div>
-                    
-                    <div class="safety-item">
-                        <h4>Remote Arming</h4>
-                        <p>Multi-step arming sequence requires deliberate operator actions. System cannot be accidentally energized or fired.</p>
-                    </div>
-                    
-                    <div class="safety-item">
-                        <h4>Fail-Safe Design</h4>
-                        <p>All interlocks designed to fail-safe state. Loss of power or control signal immediately disarms system.</p>
-                    </div>
-                </div>
-
-                <h3>Validation Procedures</h3>
-                <p>Conducted comprehensive safety validation before any high-voltage testing. Verified all interlock functionality, tested fail-safe behavior under fault conditions, and established documented safe operating procedures for test campaign.</p>
-            </section>
-
-            <section class="case-study-section">
-                <h2>Technical Implementation</h2>
-                
-                <h3>High Voltage Power Supply System</h3>
-                <p>Designed and built a 14 kV power supply system capable of generating stable arcs for ABS pyrolysis. The system includes voltage regulation, current limiting, and remote control capabilities.</p>
-
-                <div class="tech-details">
-                    <div class="tech-detail-card">
-                        <h4>Power Electronics</h4>
-                        <p>14 kV high-voltage transformer with current limiting protection. Designed for repeated arc strikes without damage to components.</p>
-                    </div>
-                    
-                    <div class="tech-detail-card">
-                        <h4>Arc Chamber</h4>
-                        <p>Custom-designed chamber to contain arc and pyrolyzed material. Optimized electrode geometry for stable arc formation and gas generation.</p>
-                    </div>
-                    
-                    <div class="tech-detail-card">
-                        <h4>Remote Control</h4>
-                        <p>Electrically-actuated arming and firing sequences allow safe operation from remote control station, integrated with engine control systems.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="case-study-section">
-                <h2>Testing Results</h2>
-                
-                <div class="results-content">
-                    <h3>Successful Arc Formation</h3>
-                    <p>Bench testing demonstrated stable 14 kV arc formation with consistent characteristics. Arc successfully maintained across electrode gap under various conditions.</p>
-
-                    <h3>ABS Pyrolysis</h3>
-                    <p>Successfully demonstrated gas generation from ABS puck pyrolysis. High-temperature arc decomposed ABS material, producing hot gas flow suitable for engine ignition.</p>
-
-                    <h3>System Reliability</h3>
-                    <p>All safety interlocks performed as designed throughout testing campaign. Remote operation capability validated with successful firing sequences from control station.</p>
-                </div>
-
-                <div class="impact-grid">
-                    <div class="impact-card">
-                        <div class="impact-icon">⚡</div>
-                        <h4>14 kV Arc</h4>
-                        <p>Stable high-voltage arc generation demonstrated in controlled environment.</p>
-                    </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">🔥</div>
-                        <h4>Gas Generation</h4>
-                        <p>Successful ABS pyrolysis producing hot gas flow for ignition.</p>
-                    </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">🛡️</div>
-                        <h4>Safe Operation</h4>
-                        <p>Comprehensive safety system protecting operators during all testing.</p>
-                    </div>
-                    
-                    <div class="impact-card">
-                        <div class="impact-icon">🔬</div>
-                        <h4>Future Potential</h4>
-                        <p>Showing promise for full-scale engine ignition tests.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="case-study-section alt-bg">
-                <h2>Next Steps</h2>
-                <p>The Arc-Pyro system has successfully demonstrated proof-of-concept for high-voltage ABS pyrolysis ignition. Future work includes:</p>
-                
-                <ul class="next-steps-list">
-                    <li>Integration with full-scale hybrid engine test stand</li>
-                    <li>Optimization of ABS puck geometry for maximum gas generation</li>
-                    <li>Characterization of ignition delay and gas flow characteristics</li>
-                    <li>Development of automated ignition sequencing with engine control systems</li>
-                    <li>Long-term reliability testing under repeated firing cycles</li>
+                <h2>Safety Design (High-Voltage)</h2>
+                <p>High-voltage operation required engineering controls:</p>
+                <ul>
+                    <li>Cabinet limit switches preventing energization when open</li>
+                    <li>Manual isolation switches with visible disconnection</li>
+                    <li>Electrical arming switch and emergency stop at a safe distance</li>
+                    <li>Remote ignition control interface</li>
+                    <li>Fail-safe behavior on power or control loss</li>
                 </ul>
+                <p>In addition to hardware controls:</p>
+                <ul>
+                    <li>Authored formal risk assessments (RA) and safe work instructions (SWI) for high-voltage operation</li>
+                    <li>Ran safety inductions for team members prior to system use</li>
+                    <li>Supported university safety approval and sign-off for testing</li>
+                </ul>
+            </section>
+
+            <div class="split-row">
+                <section class="case-study-section">
+                    <h2>Testing &amp; Results</h2>
+                    <ul>
+                        <li>Stable 14 kV arc formation demonstrated during bench testing</li>
+                        <li>Successful ABS pyrolysis producing gas for ignition</li>
+                        <li>Reliable remote operation with all safety interlocks verified</li>
+                        <li>Demonstrated as a proof-of-concept ignition method for future engine tests</li>
+                    </ul>
+                </section>
+                <div class="split-media">
+                    <div class="video-embed-container">
+                        <iframe src="https://www.youtube.com/embed/3deML3HB_xQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <section class="case-study-section alt-bg">
+                <h2>Technologies</h2>
+                <div class="project-tags">
+                    <span class="tag">High-Voltage Electronics</span>
+                    <span class="tag">Electrical Safety Design</span>
+                    <span class="tag">Power Supply Design</span>
+                    <span class="tag">Electrical Fabrication</span>
+                    <span class="tag">CAD</span>
+                    <span class="tag">Metal Fabrication</span>
+                </div>
             </section>
         </div>
     </main>

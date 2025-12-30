@@ -1229,6 +1229,12 @@ main.case-study {
     margin-bottom: var(--spacing-base);
 }
 
+.case-study-section h3.role-title {
+    font-size: 1.15rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .case-study-section h4 {
     font-size: 1rem;
     color: var(--text-primary);
@@ -1269,6 +1275,10 @@ main.case-study {
     align-items: stretch;
 }
 
+.split-row.wide-text {
+    grid-template-columns: 3fr 2fr;
+}
+
 .split-row .split-media {
     display: flex;
     justify-content: flex-end;
@@ -1287,6 +1297,18 @@ main.case-study {
     height: auto;
     border-radius: 16px;
     box-shadow: var(--card-shadow-hover);
+}
+
+.split-row:not(.wide-text) .split-media img {
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
+}
+
+.split-row .split-media img.crop-right {
+    height: 100%;
+    object-fit: cover;
+    object-position: left center;
 }
 
 .split-row .split-media.compact-media img {
@@ -1574,7 +1596,7 @@ main.case-study {
 }
 
 .video-embed-container {
-    margin: 2rem 0;
+    margin: 0rem 0;
     position: relative;
     padding-bottom: 56.25%;
     height: 0;

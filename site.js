@@ -26,7 +26,7 @@
                 items: [
                     { href: 'solaris-mk-ii.html', label: 'Solaris Mk II & GSE Electronics' },
                     { href: 'arc-pyro-ignitor.html', label: '14 kV High Voltage Ignitor' },
-                    { href: 'solaris-mk-iii.html', label: 'Solaris Mk III Support' },
+                    { href: 'solaris-mk-iii.html', label: 'Solaris Mk III Testing' },
                 ],
             },
             {
