@@ -662,10 +662,15 @@ footer p a {
     max-width: var(--width-wide);
     margin: 0 auto var(--spacing-base) auto;
     background-color: var(--bg-primary);
-    border-radius: 16px;
+    border-radius: 0 0 16px 16px;
     box-shadow: var(--card-shadow);
 }
 
+/* Make the top section on any page have square top corners like Projects.
+   Exclude the homepage hero which has its own full-bleed styling. */
+main > section:first-child:not(.hero-fullbleed) {
+    border-radius: 0 0 16px 16px;
+}
 .page-subtitle-clean {
     font-size: 1.125rem;
     color: var(--text-secondary);
@@ -1127,7 +1132,7 @@ footer p a {
 
     .case-study-header {
         padding: var(--spacing-xl) var(--spacing-base);
-        border-radius: 14px;
+        border-radius: 0 0 14px 14px;
     }
 
     .case-study-header h1 {
@@ -1176,7 +1181,7 @@ main.case-study {
     background: var(--bg-primary);
     padding: var(--spacing-base) var(--spacing-lg);
     margin: 0 auto var(--spacing-base);
-    border-radius: 16px;
+    border-radius: 0 0 16px 16px;
     box-shadow: var(--card-shadow);
     max-width: var(--width-wide);
 }
@@ -2504,6 +2509,12 @@ body.resume main {
     gap: var(--spacing-base);
 }
 
+body.resume .page-header-clean {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 body.resume .projects-section {
     flex: 1 1 auto;
     padding: 0; /* padding comes from the container wrapper */
@@ -2528,6 +2539,11 @@ body.resume .container {
     max-width: var(--width-content);
     margin: 0 auto;
     padding: var(--spacing-base);
+}
+
+body.resume .resume-container {
+    max-width: var(--width-wide);
+    padding: 0;
 }
 
 /* On large screens, use more horizontal space for the resume viewer */
@@ -2599,14 +2615,6 @@ body.resume .resume-viewer iframe {
     display: block;
 }
 
-/* Use full content width for the resume header */
-body.resume .page-header-clean {
-    /* Keep header consistent with other pages */
-    max-width: var(--width-wide);
-    margin: 0 auto;
-    padding-left: var(--spacing-lg);
-    padding-right: var(--spacing-lg);
-}
 
 /* Comparison table for hardware iterations */
 .comparison-table {
