@@ -2,7 +2,7 @@
 const PROJECTS = {
     visionSystem: {
         id: 'vision-system',
-        title: 'Multi-Station Vision Inspection System',
+        title: 'High-Speed Inspection System',
         organization: 'Bosch Australia',
         timeframe: '2024-2025',
         impact: 'Built a <strong>multithreaded</strong> C#/.NET vision system for a <strong>~$8M</strong> manufacturing line, integrating <strong>40+ cameras</strong>, PLC handshakes, SQL logging, and an operator HMI.',
@@ -16,7 +16,7 @@ const PROJECTS = {
     
     solarisMk2: {
         id: 'solaris-mk2',  
-        title: 'Solaris Mk II & Ground Station Equipment Control Electronics',
+        title: 'Solaris Mk II & GSE Electronics',
         organization: 'Monash HPR',
         timeframe: '2023-2025',
         impact: 'Built and operated avionics and ground systems for a <strong>4 kN</strong> hybrid engine, owning <strong>control software</strong>, ground electronics and test preparation for <strong>hot-fire campaigns</strong>.',
@@ -44,7 +44,7 @@ const PROJECTS = {
     
     fruitRobot: {
         id: 'fruit-robot',
-        title: 'Fruit Navigation and Mapping Robot',
+        title: 'Autonomous Fruit Robot',
         organization: 'Monash University',
         timeframe: '2025',
         impact: 'Programmed <strong>autonomous mobile robot</strong> integrating <strong>YOLO</strong> perception, <strong>EKF SLAM</strong>, navigation and path planning to collect fruit autonomously.',
@@ -111,7 +111,7 @@ const PROJECTS = {
     
     solarisMk3: {
         id: 'solaris-mk3',
-        title: 'Solaris Mk III Testing & LOX Feed Systems',
+        title: 'Solaris Mk III Testing',
         organization: 'Monash HPR',
         timeframe: '2023-2025',
         impact: 'Supported R2S competition hot-fire of a <strong>10 kN</strong> <strong>LOX-paraffin</strong> hybrid engine, then worked on early LOX feed system architectures, <strong>P&IDs</strong>, and informal failure analyses.',
