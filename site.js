@@ -40,6 +40,7 @@
             },
         ],
         contact: { href: 'mailto:tamrakar.rachit2004@gmail.com', label: 'Contact' },
+        linkedin: 'https://www.linkedin.com/in/rachit-tamrakar/'
     };
 
     /**
@@ -274,11 +275,42 @@
         window.addEventListener('pagehide', save);
     }
 
+    /**
+     * Inject a consistent footer into pages. Placed inside `.page-content` to
+     * allow the existing layout CSS to keep it full-bleed and pinned to the bottom.
+     */
+    function renderFooter() {
+        if (document.querySelector('footer.site-footer')) return;
+
+        const linkedin = NAV_MODEL.linkedin ? NAV_MODEL.linkedin : 'https://www.linkedin.com/';
+
+        // Derive plain email (remove mailto: if present). Footer shows full email as text.
+        let emailText = '';
+        if (NAV_MODEL.contact && NAV_MODEL.contact.href) {
+            emailText = NAV_MODEL.contact.href.replace(/^mailto:/i, '');
+        }
+
+        const footerMarkup = `
+        <footer class="site-footer">
+            <div class="container">
+                <p>${emailText} &nbsp;•&nbsp; <a href="${linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+            </div>
+        </footer>`;
+
+        const mount = document.querySelector('.page-content');
+        if (mount) {
+            mount.insertAdjacentHTML('beforeend', footerMarkup);
+        } else {
+            document.body.insertAdjacentHTML('beforeend', footerMarkup);
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         renderSideNav();
         setActiveNavLinks();
         initNavGroups();
         initMobileNav();
         initNavScrollPersistence();
+        renderFooter();
     });
 })();

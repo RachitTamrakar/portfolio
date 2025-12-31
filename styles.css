@@ -287,7 +287,6 @@ body:hover::-webkit-scrollbar-thumb {
     display: none;
     flex-direction: column;
     gap: 0.25rem;
-    padding-left: 0.5rem;
     border-left: 2px solid var(--border-color);
     margin-left: 0.5rem;
 }
@@ -2189,7 +2188,7 @@ body.about .facts-list li:last-child {
 
 /* Proof Strip */
 body.about .proof-strip-section {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     padding: var(--spacing-xl);
     border-radius: 16px;
     box-shadow: var(--card-shadow);
@@ -2297,7 +2296,7 @@ body.about .work-content p:last-child {
 
 /* CTA Section */
 body.about .about-cta-section {
-    background-color: var(--bg-secondary);
+    background-color: var(--bg-primary);
     padding: var(--spacing-xl);
     border-radius: 16px;
     box-shadow: var(--card-shadow);
@@ -2313,7 +2312,7 @@ body.about .cta-grid {
 }
 
 body.about .cta-card {
-    background-color: var(--bg-primary);
+    background-color: var(--bg-secondary);
     padding: var(--spacing-xl);
     border-radius: 0.5rem;
     box-shadow: var(--card-shadow);
