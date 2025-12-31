@@ -97,7 +97,7 @@ const PROJECTS = {
     
     arcPyro: {
         id: 'arc-pyro',
-        title: 'Arc-Pyro 14 kV Ignitor',
+        title: '14kV High Voltage Ignitor',
         organization: 'Monash HPR',
         timeframe: '2025',
         impact: 'Designed and tested a <strong>14 kV</strong> arc-ignition system for hybrid rockets, including <strong>safety interlocks</strong> and documentation required for <strong>university safety approval</strong>.',

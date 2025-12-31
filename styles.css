@@ -297,7 +297,7 @@ body:hover::-webkit-scrollbar-thumb {
 
 .nav-sublink {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
 }
 
 .nav-sublink:hover {
