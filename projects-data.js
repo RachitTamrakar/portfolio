@@ -2,11 +2,11 @@
 const PROJECTS = {
     visionSystem: {
         id: 'vision-system',
-        title: 'High-Speed Inspection System',
+        title: 'Multi-Station Vision Inspection System',
         organization: 'Bosch Australia',
         timeframe: '2024-2025',
         impact: 'Built a <strong>multithreaded</strong> C#/.NET vision system for a <strong>~$8M</strong> manufacturing line, integrating <strong>40+ cameras</strong>, PLC handshakes, SQL logging, and an operator HMI.',
-        tags: ['Production', 'Multithreaded Vision', 'Profinet'],
+        tags: ['Production', 'Multithreaded Vision', 'PROFINET'],
         image: 'images/vision_system.png',
         imageAlt: 'Vision System',
         link: 'vision-inspection-system.html',
@@ -16,7 +16,7 @@ const PROJECTS = {
     
     solarisMk2: {
         id: 'solaris-mk2',  
-        title: 'Solaris Mk II & GSE Electronics',
+        title: 'Solaris Mk II & Ground Station Equipment Control Electronics',
         organization: 'Monash HPR',
         timeframe: '2023-2025',
         impact: 'Built and operated avionics and ground systems for a <strong>4 kN</strong> hybrid engine, owning <strong>control software</strong>, ground electronics and test preparation for <strong>hot-fire campaigns</strong>.',
@@ -30,11 +30,11 @@ const PROJECTS = {
 
     irec2025: {
         id: 'irec-2025',
-        title: 'IREC 2025: Project Zenith',
+        title: 'IREC 2025: Pad Operations & Podium Presentation',
         organization: 'Monash HPR',
         timeframe: '2025',
         impact: 'Performed pad operations and technical presentation at <strong>IREC 2025</strong> for Project Zenith, contributing to a successful flight and the <strong>Jim Furfaro Technical Excellence Award</strong>.', 
-        tags: ['Pad Ops', 'Award-Winning'],
+        tags: ['Pad Ops', 'Jim Furfaro Award'],
         image: 'images/irec_pad_photo.png',
         imageAlt: 'IREC Pad Operations',
         link: 'irec-2025-zenith.html',
@@ -44,7 +44,7 @@ const PROJECTS = {
     
     fruitRobot: {
         id: 'fruit-robot',
-        title: 'Autonomous Fruit Robot',
+        title: 'Fruit Navigation and Mapping Robot',
         organization: 'Monash University',
         timeframe: '2025',
         impact: 'Programmed <strong>autonomous mobile robot</strong> integrating <strong>YOLO</strong> perception, <strong>EKF SLAM</strong>, navigation and path planning to collect fruit autonomously.',
@@ -111,7 +111,7 @@ const PROJECTS = {
     
     solarisMk3: {
         id: 'solaris-mk3',
-        title: 'Solaris Mk III Hot-Fire Support',
+        title: 'Solaris Mk III Testing & LOX Feed Systems',
         organization: 'Monash HPR',
         timeframe: '2023-2025',
         impact: 'Supported R2S competition hot-fire of a <strong>10 kN</strong> <strong>LOX-paraffin</strong> hybrid engine, then worked on early LOX feed system architectures, <strong>P&IDs</strong>, and informal failure analyses.',
@@ -125,7 +125,7 @@ const PROJECTS = {
     
     fillStation: {
         id: 'fill-station',
-        title: 'N₂O Fill Station',
+        title: 'N2O Fill Station',
         organization: 'Monash HPR / Design Methods',
         timeframe: '2025',
         impact: 'Developed a <strong>nitrous oxide</strong> fill station with <strong>remote valve control</strong> and <strong>real-time pressure monitoring</strong> to improve accessibility and safety for hobby-grade hybrid rockets.',
