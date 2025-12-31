@@ -94,6 +94,31 @@
     }
 
     /**
+     * Inject a mobile top bar with the brand and nav toggle.
+     */
+    function renderMobileTopBar() {
+        if (document.querySelector('.mobile-top-bar')) return;
+        if (document.body.classList.contains('home')) return;
+
+        const toggle = document.querySelector('.nav-mobile-toggle');
+        if (!toggle) return;
+
+        const bar = document.createElement('div');
+        bar.className = 'mobile-top-bar';
+        bar.innerHTML = `<a href="${NAV_MODEL.brand.href}" class="logo">${NAV_MODEL.brand.label}</a>`;
+
+        // Place the toggle on the left and brand on the right.
+        bar.insertBefore(toggle, bar.firstChild);
+
+        const shell = document.querySelector('.page-shell');
+        if (shell) {
+            shell.insertAdjacentElement('beforebegin', bar);
+        } else {
+            document.body.insertAdjacentElement('afterbegin', bar);
+        }
+    }
+
+    /**
      * Mark the active link in the side navigation based on the current path.
      */
     function setActiveNavLinks() {
@@ -307,6 +332,7 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         renderSideNav();
+        renderMobileTopBar();
         setActiveNavLinks();
         initNavGroups();
         initMobileNav();

@@ -334,6 +334,24 @@ body:hover::-webkit-scrollbar-thumb {
     padding: 0;
 }
 
+.mobile-top-bar {
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 1250;
+    height: 56px;
+    padding: 0 var(--spacing-base);
+    align-items: center;
+    gap: var(--spacing-base);
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-top-bar .logo {
+    margin-left: auto;
+    font-size: 1rem;
+}
+
 
 .nav-mobile-toggle .hamburger,
 .nav-mobile-toggle .hamburger::before,
@@ -402,6 +420,10 @@ body:hover::-webkit-scrollbar-thumb {
         row-gap: var(--spacing-lg);
     }
 
+    .mobile-top-bar {
+        display: flex;
+    }
+
     .side-nav {
         position: fixed;
         inset: 0;
@@ -454,12 +476,24 @@ body:hover::-webkit-scrollbar-thumb {
         display: inline-flex;
     }
 
+    .mobile-top-bar .nav-mobile-toggle {
+        position: static;
+        top: auto;
+        left: auto;
+        box-shadow: none;
+    }
+
     body.home .hero-fullbleed {
         margin: 0 calc(-1 * var(--spacing-lg)) var(--spacing-2xl);
         width: calc(100% + 2 * var(--spacing-lg));
     }
 
     .nav-open .nav-mobile-toggle {
+        left: auto;
+        right: auto;
+    }
+
+    body.home.nav-open .nav-mobile-toggle {
         left: auto;
         right: var(--spacing-base);
     }
