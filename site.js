@@ -293,7 +293,7 @@
         const footerMarkup = `
         <footer class="site-footer">
             <div class="container">
-                <p>${emailText} &nbsp;•&nbsp; <a href="${linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                <p>${emailText} | <a href="${linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
             </div>
         </footer>`;
 
@@ -314,3 +314,7 @@
         renderFooter();
     });
 })();
+
+
+
+

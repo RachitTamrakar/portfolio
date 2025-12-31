@@ -30,10 +30,10 @@ const PROJECTS = {
 
     irec2025: {
         id: 'irec-2025',
-        title: 'IREC 2025: Pad Operations & Podium Presentation',
+        title: 'IREC 2025: Project Zenith',
         organization: 'Monash HPR',
         timeframe: '2025',
-        impact: 'Performed pad operations and technical presentation at <strong>IREC 2025</strong> for Project Zenith, contributing to a successful flight and the <strong>Jim Furfaro Technical Excellence Award</strong>.', 
+        impact: 'Performed pad operations and technical presentation at <strong>IREC 2025</strong> for Project Zenith, contributing to a successful flight and the <strong>Jim Furfaro Technical Excellence Award</strong>.',
         tags: ['Pad Ops', 'Jim Furfaro Award'],
         image: 'images/irec_pad_photo.png',
         imageAlt: 'IREC Pad Operations',
