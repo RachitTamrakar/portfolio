@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solaris Mk II &amp; Ground Station Equipment Control Electronics</title>
+    <title>Solaris Mk II &amp; Ground Station Equipment Control Electronics - Rachit Tamrakar</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="case-study">
+<body class="case-study solaris-mk-ii">
 
     <button class="nav-mobile-toggle" type="button" aria-expanded="false" aria-label="Open navigation">
         <span class="hamburger"></span>
@@ -31,32 +31,45 @@
         </header>
 
         <div class="case-study-content manual-alt">
+            <div class="related-link-inline">
+                <p class="related-note"><strong>See more:</strong> <a href="irec-2025-zenith.html">IREC 2025: Project Zenith</a> - Competition deployment and presentation</p>
+            </div>
+
             <section class="case-study-section proj-section" id="snapshot">
                 <header class="proj-section__header">
                     <h2>System snapshot</h2>
                 </header>
                 <div class="proj-section__body">
-                    <ul>
-                        <li><strong>Role:</strong> Wrote Python control backend; built electrical cabinet; shared ground station ownership and test readiness</li>
-                        <li><strong>Environment:</strong> Hot-fire testing and IREC 2025 launch operations</li>
-                        <li><strong>Interfaces:</strong> LabJack DAQs, STM32s, and Raspberry Pis over RS422/CAN/MQTT; long-range pad-control wireless bridge (24+ km)</li>
-                        <li><strong>Automation:</strong> Automatic fill FSM using capacitive sensor and pressure transducer</li>
-                        <li><strong>Status:</strong> Operational at IREC 2025; team received the Jim Furfaro Technical Excellence Award</li>
-                    </ul>
-                    <div class="media-row" style="margin-top: var(--spacing-lg); max-width: 85%; margin-left: auto; margin-right: auto; grid-template-columns: repeat(3, minmax(0, 1fr));">
-                        <figure class="media-card">
-                            <img src="images/ugs_simplified_diagram-w640.png" srcset="images/ugs_simplified_diagram-w1024.png 1024w, images/ugs_simplified_diagram-w800.png 800w, images/ugs_simplified_diagram-w640.png 640w" sizes="(max-width:900px) 100vw, 28vw" alt="Ground station network architecture" loading="lazy" onerror="this.style.display='none'" style="max-height: 300px; object-fit: contain;">
-                            <figcaption class="image-caption" style="text-align: center;">Simplfied overall system diagram</figcaption>
-                        </figure>
+                    <p>The Solaris Mk II hybrid engine and it's ground support equipment (GSE) requred control electronics that could <strong>fill, ignite, and safe</strong> them remotely while logging high-rate telemetry during cold-flow, hot-fire and launch campaigns.</p>
+
+                    <div class="media-row" style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-xl); gap: var(--spacing-md); max-width: 100%; margin-left: auto; margin-right: auto; grid-template-columns: repeat(3, minmax(0, 1fr));">
                         <figure class="media-card">
                             <img src="images/solaris_showcase-w800.png" srcset="images/solaris_showcase-w1600.png 1600w, images/solaris_showcase-w1024.png 1024w, images/solaris_showcase-w800.png 800w, images/solaris_showcase-w640.png 640w" sizes="(max-width:900px) 100vw, 28vw" alt="Solaris Mk II ground station during showcase" loading="lazy" onerror="this.style.display='none'" style="max-height: 300px; object-fit: contain;">
-                            <figcaption class="image-caption" style="text-align: center;">System setup for showcase</figcaption>
+                            <figcaption class="image-caption" style="text-align: center;">System setup during for showcase night</figcaption>
                         </figure>
                         <figure class="media-card">
-                            <img src="images/ugs_network_overview-w800.png" srcset="images/ugs_network_overview-w1600.png 1600w, images/ugs_network_overview-w1024.png 1024w, images/ugs_network_overview-w800.png 800w, images/ugs_network_overview-w640.png 640w" sizes="(max-width:900px) 100vw, 28vw" alt="Solaris Mk II ground station during showcase" loading="lazy" onerror="this.style.display='none'" style="max-height: 300px; object-fit: contain;">
-                            <figcaption class="image-caption" style="text-align: center;">Network architecture: control station, pad station, onboard electronics.</figcaption>
+                            <img src="images/ugs_simplified_diagram-w800.png" srcset="images/ugs_simplified_diagram-w1024.png 1024w, images/ugs_simplified_diagram-w800.png 800w, images/ugs_simplified_diagram-w640.png 640w" sizes="(max-width:900px) 100vw, 28vw" alt="Ground station network architecture" loading="lazy" onerror="this.style.display='none'" style="max-height: 300px; object-fit: contain;">
+                            <figcaption class="image-caption" style="text-align: center;">Simplified system diagram</figcaption>
+                        </figure>
+                        <figure class="media-card">
+                            <img src="images/ugs_network_overview-w800.png" srcset="images/ugs_network_overview-w1600.png 1600w, images/ugs_network_overview-w1024.png 1024w, images/ugs_network_overview-w800.png 800w, images/ugs_network_overview-w640.png 640w" sizes="(max-width:900px) 100vw, 28vw" alt="GSE network overview" loading="lazy" onerror="this.style.display='none'" style="max-height: 300px; object-fit: contain;">
+                            <figcaption class="image-caption" style="text-align: center;">Network distribution diagram</figcaption>
                         </figure>
                     </div>
+
+                    <h3 class="role-title">My role</h3>
+                    <ul>
+                        <li>Owned the <strong>multithreaded Python control backend</strong> that routed telemetry and executed automated sequences</li>
+                        <li>Built and iterated the <strong>Pad Station electrical cabinet</strong> and field wiring</li>
+                        <li>Integrated mixed hardware: <strong>Raspberry Pi</strong>, <strong>LabJack T7</strong> DAQ/control, and embedded controllers over <strong>RS-422 / CAN / MQTT</strong></li>
+                        <li>Co-presented control architecture at <strong>IREC 2025</strong>; supported award-winning submission</li>
+                    </ul>
+
+                    <h3 class="role-title">Outcome</h3>
+                    <ul>
+                        <li>Operational system used in test campaigns and IREC 2025 launch</li>
+                        <li>Monash HPR received the <strong>Jim Furfaro Technical Excellence Award</strong></li>
+                    </ul>
                 </div>
             </section>
 
@@ -65,90 +78,132 @@
                     <h2>Hardware development</h2>
                 </header>
                 <div class="proj-section__body">
+                    <p>The Pad Station enclosure went through multiple iterations (left to right) to improve reliability, capability, serviceability, and setup time at the pad.</p>
+
                     <div class="media-3up">
                         <figure class="media-card" style="aspect-ratio: 3 / 4;">
                             <img src="images/pad_enclosure_iter_1-w800.png" srcset="images/pad_enclosure_iter_1-w1024.png 1024w, images/pad_enclosure_iter_1-w800.png 800w, images/pad_enclosure_iter_1-w640.png 640w" sizes="(max-width:600px) 100vw, 33vw" alt="Pad enclosure iteration 1" loading="lazy" onerror="this.style.display='none'">
-                            <figcaption class="image-caption" style="text-align: center;">Iteration 1</figcaption>
                         </figure>
                         <figure class="media-card" style="aspect-ratio: 3 / 4;">
                             <img src="images/pad_enclosure_iter_2-w800.png" srcset="images/pad_enclosure_iter_2-w1024.png 1024w, images/pad_enclosure_iter_2-w800.png 800w, images/pad_enclosure_iter_2-w640.png 640w" sizes="(max-width:600px) 100vw, 33vw" alt="Pad enclosure iteration 2" loading="lazy" onerror="this.style.display='none'">
-                            <figcaption class="image-caption" style="text-align: center;">Iteration 2</figcaption>
                         </figure>
                         <figure class="media-card" style="aspect-ratio: 3 / 4;">
                             <img src="images/pad_enclosure_iter_3-w800.png" srcset="images/pad_enclosure_iter_3-w1024.png 1024w, images/pad_enclosure_iter_3-w800.png 800w, images/pad_enclosure_iter_3-w640.png 640w" sizes="(max-width:600px) 100vw, 33vw" alt="Pad enclosure iteration 3" loading="lazy" onerror="this.style.display='none'">
-                            <figcaption class="image-caption" style="text-align: center;">Iteration 3</figcaption>
                         </figure>
                     </div>
+
                     <ul>
-                        <li>Built the main ground station electrical cabinet (DIN rails, wire ducts, ferrules, harnessing).</li>
-                        <li>Integrated power distribution, DAQs, networking, relays, motor drivers, wiring.</li>
-                        <li>Reworked cabinets and harnessing during tests for reliability and fault isolation.</li>
+                        <li>Built the main GSE electrical cabinet: DIN rails, wire ducting, ferrules, harnessing, and labeled field I/O.</li>
+                        <li>Central compute: <strong>Raspberry Pi 4</strong> controlling sensors/actuators through a <strong>LabJack T7</strong> (analog + digital I/O, PWM; up to 100 kHz sampling).</li>
+                        <li>Networked system (router + switches) with long-range wireless bridge hardware for pad-to-control connectivity.</li>
+                        <li>Power architecture: ~12 V source with regulated 12 V / 5 V rails; PoE used where possible to reduce cabling complexity.</li>
+                        <li>Iterated mechanical layout and connectors to speed up field troubleshooting and isolate faults during test days.</li>
                     </ul>
                 </div>
             </section>
 
             <section class="case-study-section alt-bg proj-section" id="capacitive-sensor">
                 <header class="proj-section__header">
-                    <h2>Custom hardware shipped</h2>
+                    <h2>Custom Capacitive Propellant Sensor</h2>
                 </header>
-                <div class="proj-section__body">
-                    <div style="display: flex; gap: var(--spacing-lg); align-items: stretch;">
-                        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                            <ul>
-                                <li><strong>Problem:</strong> Load-cell approach lacked fill accuracy</li>
-                                <li><strong>Ownership:</strong> Led a 4-person team; owned sensing element, STM32 firmware, calibration</li>
-                                <li><strong>Failure + fix:</strong> Diagnosed parasitic capacitance; specified actively driven shielded cable</li>
-                                <li><strong>Result:</strong> Reduced variability to ~10 g; used at IREC 2025 fill; integrated into automatic fill logic</li>
-                            </ul>
-                            <figure class="media-card">
-                                <img src="images/cap_fill_cal_plot-w640.png" srcset="images/cap_fill_cal_plot-w1024.png 1024w, images/cap_fill_cal_plot-w800.png 800w, images/cap_fill_cal_plot-w640.png 640w" sizes="(max-width:600px) 100vw, 45vw" alt="Capacitive sensor calibration plot" loading="lazy" onerror="this.style.display='none'" style="max-height: 400px;">
-                                <figcaption class="image-caption" style="text-align: center;">Calibration showing linear capacitance-to-mass relationship.</figcaption>
-                            </figure>
-                        </div>
-                        <figure class="media-card" style="flex: 0 0 38%;">
-                            <img src="images/cap_fill_assembled-w640.png" srcset="images/cap_fill_assembled-w1024.png 1024w, images/cap_fill_assembled-w800.png 800w, images/cap_fill_assembled-w640.png 640w" sizes="(max-width:600px) 100vw, 38vw" alt="Capacitive sensor assembly" loading="lazy" onerror="this.style.display='none'" style="max-height: 700px;">
-                            <figcaption class="image-caption" style="text-align: center;">Manufactured capacitive sensor assembly.</figcaption>
+                <div class="capacitive-sensor-layout">
+                    <div class="proj-section__body">
+                        <p><strong>Challenge:</strong> We needed an accurate way to estimate onboard nitrous oxide mass during fill. Load-cell based approaches were not accurate or precise enough to achieve repeatable engine performance.</p>
+
+                        <h3 class="role-title">What I owned</h3>
+                        <ul>
+                            <li>Led a <strong>4-person</strong> effort to design, build, and validate a capacitive fill sensor end-to-end</li>
+                            <li>Owned sensing element design, STM32 firmware, calibration and integration</li>
+                        </ul>
+
+                        <h3 class="role-title">Sensor details</h3>
+                        <ul>
+                            <li>Sensing element is a ~500 mm cylindrical capacitor whose capacitance shifts as liquid N₂O replaces gas</li>
+                            <li>Observed near-linear shift on the order of ~18 pF from empty to full; digitized by a custom board</li>
+                            <li>Key failure mode was parasitic capacitance; I fixed this by using an actively driven shield on the sensor cable</li>
+                        </ul>
+
+                        <p><strong>Result:</strong> Enabled repeatable fill-state estimation (repeatability within 10 grams) and became an input to automated fill logic during operations.</p>
+
+                        <figure class="media-card media-card--calibration">
+                            <img src="images/cap_fill_cal_plot-w640.png" srcset="images/cap_fill_cal_plot-w1024.png 1024w, images/cap_fill_cal_plot-w800.png 800w, images/cap_fill_cal_plot-w640.png 640w" sizes="(max-width:600px) 100vw, 45vw" alt="Capacitive sensor calibration plot" loading="lazy" onerror="this.style.display='none'">
+                            <figcaption class="image-caption" style="text-align: center;">Calibration curve used to map capacitance to mass estimate.</figcaption>
+                        </figure>
+                    </div>
+                    <div class="split-media compact-media" style="display:flex; align-items:stretch; gap:var(--spacing-md); height:100%; justify-content:center;">
+                        <figure class="media-card" style="width:100%; max-width:100%; height:100%; display:flex;">
+                            <img src="images/cap_fill_assembled-w640.png" srcset="images/cap_fill_assembled-w1024.png 1024w, images/cap_fill_assembled-w800.png 800w, images/cap_fill_assembled-w640.png 640w" sizes="(max-width:600px) 100vw, 38vw" alt="Capacitive sensor assembly" loading="lazy" onerror="this.style.display='none'" style="height:100%; width:100%; object-fit:cover; object-position:center; display:block;">
                         </figure>
                     </div>
                 </div>
             </section>
 
-            <section class="case-study-section proj-section" id="control-architecture">
-                <header class="proj-section__header">
-                    <h2>Control &amp; safety</h2>
-                </header>
-                <div class="proj-section__body">
-                    <div style="display: flex; gap: var(--spacing-lg); align-items: flex-start;">
-                        <div style="flex: 0 0 30%;">
-                            <p><strong>Automated fill sequence (finite state machine):</strong></p>
-                            <ul>
-                                <li>State transitions from capacitive fill and pressure transducer readings</li>
-                                <li>Controls fill valve and active vent to hit target mass/temperature</li>
-                                <li>Operator initiates; sequence runs autonomously</li>
-                            </ul>
-                            <p><strong>Safety model:</strong></p>
-                            <ul>
-                                <li>Keyed switch isolates pyro channels while crew are present</li>
-                                <li>Fill/dump valves fail to safe on power/control loss</li>
-                                <li>Active vent opens on power/control loss</li>
-                                <li>Watchdogs on critical links trigger safing on heartbeat loss</li>
-                            </ul>
-                            <p><strong>Operations:</strong></p>
-                            <ul>
-                                <li>Operated cold-flow and hot-fire tests; debugged electrical/comms faults under time pressure</li>
-                                <li>Restored capacitive sensor overnight with propulsion lead</li>
-                                <li>Used during IREC 2025 launch operations</li>
-                            </ul>
-                        </div>
-                        <figure class="media-card" style="flex: 0 0 70%;">
-                            <img src="images/front_end_main_screen-w800.png" srcset="images/front_end_main_screen-w1600.png 1600w, images/front_end_main_screen-w1024.png 1024w, images/front_end_main_screen-w800.png 800w, images/front_end_main_screen-w640.png 640w" sizes="(max-width:900px) 100vw, 70vw" alt="Main SCADA control interface" loading="lazy" onerror="this.style.display='none'">
-                            <figcaption class="image-caption" style="text-align: center;">Ignition SCADA interface used during operations.</figcaption>
-                        </figure>
+            <div class="split-section split-section--control">
+                <section class="case-study-section proj-section" id="control-architecture">
+                    <header class="proj-section__header">
+                        <h2>Control &amp; safety</h2>
+                    </header>
+                    <div class="proj-section__body">
+                        <p><strong>Control stack:</strong></p>
+                        <ul>
+                            <li>Pad Station Raspberry Pi ran the control application and hosted an MQTT broker</li>
+                            <li>Sensor polling + actuation via LabJack T7 (pressure, thermocouples, valve control, relays, motors)</li>
+                            <li>Dedicated serial link to onboard electronics over RS-422; CAN used on-vehicle</li>
+                            <li>Control Station running Ignition SCADA UI for visualization and control and also hosting a database for telemetry logging</li>
+                        </ul>
+
+                        <p><strong>Automated fill sequence:</strong></p>
+                        <ul>
+                            <li>Uses capacitive mass estimate and pressure/temperature to achieve a precise propellant temperature and mass</li>
+                            <li>Operator initiates; sequence runs autonomously, controlling onboard and offboard actuators </li>
+                        </ul>
+
+                        <p><strong>Fail-safe design:</strong></p>
+                        <ul>
+                            <li>Keyed isolation for pyro channels while personnel are at the pad</li>
+                            <li>Valves and venting biased to safe positions on power loss</li>
+                            <li>Watchdogs on critical links (UI, DAQ, onboard electronics) trigger safing on heartbeat loss</li>
+                        </ul>
                     </div>
-                    <div class="video-embed-container embed-16x9" style="overflow: hidden;">
-                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7399159028670631938?compact=1" frameborder="0" allowfullscreen scrolling="no" style="overflow: hidden;"></iframe>
-                        <p class="video-caption">Overview of the ground control system and Ignition-based operations during Project Zenith.</p>
-                    </div>
+                </section>
+
+                <div class="split-media" style="display:flex; flex-direction:column; gap:var(--spacing-md);">
+                    <figure class="media-card" style="width:100%; max-width:100%;">
+                        <img src="images/front_end_main_screen-w800.png" srcset="images/front_end_main_screen-w1600.png 1600w, images/front_end_main_screen-w1024.png 1024w, images/front_end_main_screen-w800.png 800w, images/front_end_main_screen-w640.png 640w" sizes="(max-width:900px) 100vw, 70vw" alt="Main SCADA control interface" loading="lazy" onerror="this.style.display='none'" style="width:100%; display:block;">
+                        <figcaption class="image-caption" style="text-align: center;">Ignition SCADA interface used during test operations.</figcaption>
+                    </figure>
+                    <figure class="media-card" style="width:100%; max-width:100%;">
+                        <img src="images/auto_fill_state_machine-w800.png" srcset="images/auto_fill_state_machine-w1600.png 1600w, images/auto_fill_state_machine-w1024.png 1024w, images/auto_fill_state_machine-w800.png 800w" sizes="(max-width:900px) 100vw, 70vw" alt="Automated fill state machine diagram" loading="lazy" onerror="this.style.display='none'" style="width:100%; display:block;">
+                        <figcaption class="image-caption" style="text-align: center;">Automated fill state machine diagram.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="video-embed-container embed-16x9" style="overflow: hidden;">
+                <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7399159028670631938?compact=1" frameborder="0" allowfullscreen scrolling="no" style="overflow: hidden;"></iframe>
+                <p class="video-caption">System overview and operations footage from Project Zenith testing / launch campaign.</p>
+            </div>
+
+            <section class="case-study-section alt-bg">
+                <h2>Technologies</h2>
+                <div class="project-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Raspberry Pi</span>
+                    <span class="tag">Linux</span>
+                    <span class="tag">LabJack T7</span>
+                    <span class="tag">DAQ</span>
+                    <span class="tag">MQTT</span>
+                    <span class="tag">RS-422</span>
+                    <span class="tag">CAN</span>
+                    <span class="tag">Ignition SCADA</span>
+                    <span class="tag">STM32</span>
+                    <span class="tag">Embedded Firmware</span>
+                    <span class="tag">Finite State Machines</span>
+                    <span class="tag">Sensor Calibration</span>
+                    <span class="tag">Networking (Switching/Routing)</span>
+                    <span class="tag">Telemetry Logging</span>
+                    <span class="tag">Electrical Fabrication</span>
+                    <span class="tag">System Safety &amp; Failsafes</span>
                 </div>
             </section>
         </div>

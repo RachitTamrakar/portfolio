@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenith @ IREC 2025 - Launch Operations & Competition Execution - Rachit Tamrakar</title>
+    <meta name="viewport"="width=device-width, initial-scale=1.0">
+    <title>IREC 2025: Pad Operations & Podium Presentation - Rachit Tamrakar</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="case-study">
@@ -19,8 +19,10 @@
         <header class="case-study-header">
             <div class="case-study-header-content">
                 <a href="projects.html" class="back-link">Back to Projects</a>
-                <h1>Zenith @ IREC 2025 - Launch Operations &amp; Competition Execution</h1>
+                <h1>IREC 2025: Pad Operations &amp; Podium Presentation</h1>
                 <div class="case-study-meta">
+                    <span>Avionics Vice Lead</span>
+                    <span>|</span>
                     <span>Monash High Powered Rocketry</span>
                     <span>|</span>
                     <span>June 2025</span>
@@ -29,94 +31,82 @@
         </header>
 
         <div class="case-study-content manual-alt">
-            <section class="case-study-section proj-section" id="operational-context">
-                <header class="proj-section__header">
-                    <h2>Operational context</h2>
-                </header>
-                <div class="proj-section__body">
-                    <div class="media-wide">
-                        <img src="images/zenith_launch-w1600.png" srcset="images/zenith_launch-w1600.png 1600w, images/zenith_launch-w1024.png 1024w, images/zenith_launch-w800.png 800w, images/zenith_launch-w640.png 640w" sizes="100vw" alt="Zenith launch at IREC 2025" loading="lazy" onerror="this.style.display='none'">
-                        <p class="image-caption">Zenith launch during the IREC 2025 campaign.</p>
-                    </div>
+            <div class="related-link-inline" style="margin-bottom: var(--spacing-lg);">
+                <p class="related-note"><strong>See more:</strong> <a href="solaris-mk-ii.html">Solaris Mk II & GSE Electronics</a> - Design and development of the control system</p>
+            </div>
+
+            <div class="split-row">
+                <section class="case-study-section alt-bg">
+                    <h2>Competition Context</h2>
                     <ul>
-                        <li>Zenith hybrid rocket campaign at IREC 2025.</li>
-                        <li>Campaign ran June 1-14 with on-site integration, testing, and launch operations.</li>
-                        <li>Tight time constraints and high-pressure testing conditions.</li>
+                        <li><strong>Event:</strong> Intercollegiate Rocket Engineering Competition (IREC) 2025</li>
+                        <li><strong>Location:</strong> Midland, Texas</li>
+                        <li><strong>Competition:</strong> 140+ teams from universities worldwide</li>
                     </ul>
+                </section>
+                <div class="split-media compact-media">
+                    <img src="images/irec_launch_photo-w1600.png" srcset="images/irec_launch_photo-w1600.png 1600w, images/irec_launch_photo-w1024.png 1024w, images/irec_launch_photo-w800.png 800w, images/irec_launch_photo-w640.png 640w" sizes="(max-width:900px) 100vw, 40vw" alt="IREC launch at IREC 2025" loading="lazy" onerror="this.style.display='none'">
+                </div>
+            </div>
+
+            <section class="case-study-section">
+                <h2>My Role: Pad Operations &amp; Systems Integration</h2>
+                <p>Responsible for pad-side avionics and ground control system readiness during IREC 2025 launch operations, including pre-flight validation, live monitoring, and fault isolation.</p>
+
+                <h3>Responsibilities</h3>
+                <ul>
+                    <li>Pre-operation system checks: valve actuator tests, sensor sanity verification, and communication link validation (CAN, RS-422, MQTT)</li>
+                    <li>Control software dry runs to validate fill, ignition, and abort state machine sequences</li>
+                    <li>Real-time telemetry monitoring from the control station during launch operations</li>
+                    <li>Diagnosis of communication faults and sensor anomalies under time pressure</li>
+                </ul>
+
+                <div class="media-wide" style="margin-top: var(--spacing-lg);">
+                    <img src="images/irec_pad_photo-w1600.png" srcset="images/irec_pad_photo-w1600.png 1600w, images/irec_pad_photo-w1024.png 1024w, images/irec_pad_photo-w800.png 800w, images/irec_pad_photo-w640.png 640w" sizes="100vw" alt="Pad operations at IREC 2025" loading="lazy" style="height: 550px;" onerror="this.style.display='none'">
+                    <p class="image-caption" style="text-align: center; margin-top: var(--spacing-sm);">Pad operations team at IREC 2025 prior to the first launch attempt</p>
                 </div>
             </section>
 
-            <section class="case-study-section alt-bg proj-section proj-section--compact" id="test-launch-operations">
-                <header class="proj-section__header">
-                    <h2>Test &amp; launch operations</h2>
-                </header>
-                <div class="proj-section__body">
-                    <ul>
-                        <li>Worked on engine control and data-acquisition systems used for hot-fire testing and launch operations.</li>
-                        <li>Set up the launch pad and engine systems; performed pre-launch valve and sensor checks.</li>
-                        <li>Assisted with system diagnostics under tight time constraints.</li>
-                        <li>Contributed to last-minute software and hardware debugging to support launch attempts.</li>
-                    </ul>
+            <section class="case-study-section alt-bg">
+                <h2>Crisis: Overnight Sensor Debugging</h2>
+                <p>During our launch attempt the day before, we scrubbed due to unstable readings from the <a href="solaris-mk-ii.html#capacitive-sensor">capacitive oxidizer fill sensor</a>. Without accurate mass measurement, we couldn't target the engine performance needed to hit the 10,000 ft competition target.</p>
+
+                <p><strong>Technical resolution</strong></p>
+                <ul>
+                    <li><strong>Constraint:</strong> ±50 g accuracy required</li>
+                    <li><strong>Failure mode:</strong> Erroneous sensor readings during fill</li>
+                    <li><strong>Diagnosis:</strong> Overnight systematic testing of sensing element, cabling, firmware, and telemetry</li>
+                    <li><strong>Root cause:</strong> Fatigued Molex connector intermittently disconnecting the sensor PCB</li>
+                    <li><strong>Fix:</strong> Field repair through the night: depinned and re-terminated connector; validated via bench testing before 4 AM departure</li>
+                    <li><strong>Outcome:</strong> System operational by morning; propellant loading and launch proceeded</li>
+                </ul>
+            </section>
+
+            <section class="case-study-section">
+                <h2>Competition Presentation</h2>
+                <p>During the IREC technical podium session, I co-presented our ground control and telemetry architecture as part of the team's technical award evaluation.</p>
+
+                <div class="video-embed-container embed-16x9">
+                    <iframe src="https://www.youtube.com/embed/3C_ozpW7En4?start=22810" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p class="video-caption">Podium session: presenting the ground control system and avionics architecture to judges and industry professionals.</p>
                 </div>
             </section>
 
-            <section class="case-study-section proj-section" id="system-rebuild">
-                <header class="proj-section__header">
-                    <h2>Pre-launch system rebuild (decision under uncertainty)</h2>
-                </header>
-                <div class="proj-section__body">
-                    <div class="media-row">
-                        <figure class="media-card">
-                            <img src="images/testing_night-w1024.png" srcset="images/testing_night-w1600.png 1600w, images/testing_night-w1024.png 1024w, images/testing_night-w800.png 800w" sizes="(max-width:900px) 100vw, 45vw" alt="During hot-fire testing, compounding electrical issues emerged." loading="lazy" onerror="this.style.display='none'">
-                            <figcaption class="image-caption">During hot-fire testing, compounding electrical issues emerged.</figcaption>
-                        </figure>
-                        <figure class="media-card">
-                            <img src="images/irec_team_photo-w1024.png" srcset="images/irec_team_photo-w1600.png 1600w, images/irec_team_photo-w1024.png 1024w, images/irec_team_photo-w800.png 800w" sizes="(max-width:900px) 100vw, 45vw" alt="Coordinated a cross-subteam effort involving 20+ teammates." loading="lazy" onerror="this.style.display='none'">
-                            <figcaption class="image-caption">Coordinated a cross-subteam effort involving 20+ teammates.</figcaption>
-                        </figure>
-                    </div>
-                    <ul>
-                        <li>During hot-fire testing, compounding electrical issues emerged.</li>
-                        <li>Initial inclination favored incremental fixes due to schedule pressure.</li>
-                        <li>After reviewing test data and failure modes with propulsion teammates, agreed a full rebuild was safer.</li>
-                        <li>Asked for help beyond the avionics team and mobilized 20+ teammates across subsections.</li>
-                        <li>Rebuilt system performed nominally during launch.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="case-study-section alt-bg proj-section" id="competition-presentation">
-                <header class="proj-section__header">
-                    <h2>Competition &amp; presentation</h2>
-                </header>
-                <div class="proj-section__body">
-                    <ul>
-                        <li>Co-presented the control and telemetry architecture during the IREC podium session.</li>
-                    </ul>
-                    <div class="video-embed-container embed-16x9">
-                        <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7399159028670631938?compact=1" frameborder="0" allowfullscreen></iframe>
-                        <p class="video-caption">Third-party overview of control system architecture.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="case-study-section proj-section" id="outcome">
-                <header class="proj-section__header">
+            <div class="split-row">
+                <section class="case-study-section alt-bg">
                     <h2>Outcome</h2>
-                </header>
-                <div class="proj-section__body">
                     <ul>
-                        <li>Launch to ~12,000 ft.</li>
-                        <li>Team received the Jim Furfaro Award for Technical Excellence and placed 2nd in category (140+ teams).</li>
+                        <li>First successful hybrid rocket launch at IREC 2025, marking the <strong>first Australian team</strong> to fly a hybrid vehicle at competition.</li>
+                        <li><strong>Jim Furfaro Award for Technical Excellence</strong> (from 140+ teams)</li>
+                        <li><strong>2nd place in category</strong></li>
                     </ul>
+                </section>
+                <div class="split-media compact-media">
+                    <img src="images/trophy_solo-w1024.png" srcset="images/trophy_solo-w1600.png 1600w, images/trophy_solo-w1024.png 1024w, images/trophy_solo-w800.png 800w" sizes="(max-width:900px) 100vw, 40vw" alt="Jim Furfaro Award trophy" loading="lazy" onerror="this.style.display='none'">
                 </div>
-            </section>
+            </div>
         </div>
     </main>
-
-            <footer>
-                <p>Contact: <a href="mailto:tamrakar.rachit2004@gmail.com">tamrakar.rachit2004@gmail.com</a></p>
-            </footer>
         </div>
     </div>
 
