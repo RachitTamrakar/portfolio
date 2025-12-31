@@ -1,91 +1,51 @@
-# Rachit Tamrakar - Portfolio Website
+# Rachit Tamrakar - Portfolio
 
-A professional portfolio website showcasing projects, experience, and technical skills.
+Personal portfolio showcasing engineering projects, technical experience, and skills in rocketry, robotics, and industrial automation.
 
-## Overview
+🔗 **Live Site**: [rachittamrakar.github.io/portfolio](https://rachittamrakar.github.io/portfolio)
 
-This is a simple, single-page portfolio website built with vanilla HTML, CSS, and minimal JavaScript. It's designed to be fast, responsive, and easy to deploy.
+## About
 
-## Structure
+Mechanical Engineering student at the University of Arizona with hands-on experience in rocket propulsion systems, autonomous robotics, computer vision, and industrial automation. This portfolio highlights technical projects ranging from rocket engine development to factory automation systems.
 
-- `index.html` - Personal information, education, skills, experience, and contact details
-- `projects.html` - Detailed showcase of technical projects
-- `styles.css` - Styling and responsive design
+## Featured Projects
 
-## Features
+- **Vision Inspection System** - Automated quality control system reducing inspection time by 85%
+- **Solaris Mk II Hybrid Rocket Engine** - Award-winning propulsion system with 1,200+ lbf thrust
+- **IREC 2025 Zenith Rocket** - 30,000 ft competition rocket with custom avionics and ground systems
+- **Autonomous Fruit Harvesting Robot** - Computer vision-enabled agricultural robotics
 
-- **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- **Clean Navigation**: Easy navigation between pages
-- **Professional Layout**: Modern card-based design with hover effects
-- **Fast Loading**: No external dependencies, all code is self-contained
-- **Print Friendly**: Optimized for printing/PDF export
+[View all projects →](https://rachittamrakar.github.io/portfolio/projects.html)
 
-## How to Use
+## Tech Stack
 
-### Local Viewing
+**Languages & Frameworks**: Python, C++, JavaScript, MATLAB, LabVIEW  
+**Hardware & Systems**: Arduino, Raspberry Pi, embedded systems, industrial PLCs  
+**Engineering Tools**: SolidWorks, ANSYS, KiCad, OpenRocket  
+**Data & Vision**: OpenCV, TensorFlow, real-time data acquisition systems
 
-Simply open `index.html` in any web browser:
+## Built With
+
+Pure HTML, CSS, and vanilla JavaScript - no frameworks, no build process. Optimized for fast loading and responsive design.
+
+- **Data-driven architecture**: Projects defined in `projects-data.js` with dynamic rendering
+- **Responsive images**: Multiple resolution variants for optimal performance
+- **Semantic HTML**: Accessible and SEO-friendly structure
+
+## Local Development
+
 ```bash
-# From the website directory
-open index.html
-# or
-python3 -m http.server 8000
-# Then visit http://localhost:8000
+cd website
+python -m http.server 8000
+# Visit http://localhost:8000
 ```
 
-### Deployment Options
+## Contact
 
-#### GitHub Pages
-1. Create a new repository on GitHub
-2. Push this website folder to the repository
-3. Go to Settings > Pages
-4. Select the branch and folder containing these files
-5. Your site will be live at `https://yourusername.github.io/repository-name`
+- **Email**: rachittamrakar@arizona.edu
+- **LinkedIn**: [linkedin.com/in/rachittamrakar](https://linkedin.com/in/rachittamrakar)
+- **GitHub**: [github.com/RachitTamrakar](https://github.com/RachitTamrakar)
 
-#### Netlify
-1. Create account at netlify.com
-2. Drag and drop the website folder
-3. Site goes live instantly with a custom URL
+---
 
-#### Vercel
-1. Create account at vercel.com
-2. Import the repository or upload files
-3. Automatic deployment with custom domain support
-
-#### Traditional Web Hosting
-Upload all files to your web hosting via FTP/SFTP to the public_html or www directory.
-
-## Customization
-
-### Updating Content
-- Edit `index.html` to update personal information, education, experience
-- Edit `projects.html` to add/remove/modify projects
-- Update contact information in the contact section
-
-### Styling
-- Modify `styles.css` to change colors, fonts, spacing
-- Color scheme is defined in CSS variables at the top of styles.css for easy theming
-
-### Adding Pages
-1. Create new HTML file (e.g., `blog.html`)
-2. Copy the header and nav structure from existing pages
-3. Add link to navigation menu in all pages
-4. Follow the same styling patterns
-
-## Browser Support
-
-- Chrome/Edge (latest)
-- Firefox (latest)
-- Safari (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Performance
-
-- No external dependencies
-- Minimal CSS/HTML
-- Fast load times (<100KB total)
-- SEO friendly structure
-
-## License
-
-Personal portfolio - all content and projects belong to Rachit Tamrakar.
+© 2025 Rachit Tamrakar. All project content and code examples are original work unless otherwise noted.
